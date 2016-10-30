@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>OL_BLIEditNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>OL_BLIEditNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>EditFields</fullName>
+        <description>To check if data was entered for line and to show list on Booking detail page</description>
+        <displayedFields>
+            <field>Consignment_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Number_of_Items__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Weight__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Length__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Width__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Height__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>EditFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>OtherEditFields</fullName>
+        <description>fields to appear on new/edit layout that are not name, booking or dimensions/weight.</description>
+        <displayedFields>
+            <field>Consignment_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_First_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_Last_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_Email_Address__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>OtherEditFields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Booking_Line_Item_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Booking Line Item Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Booking__c</fullName>
+        <externalId>false</externalId>
+        <label>Booking</label>
+        <referenceTo>Booking__c</referenceTo>
+        <relationshipLabel>Booking Line Items</relationshipLabel>
+        <relationshipName>Booking_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Consignment_Number__c</fullName>
+        <description>Consignment Number for this Booking Line Item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Consignment Number for this Booking Line Item</inlineHelpText>
+        <label>Consignment Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Height__c</fullName>
+        <description>Field to save one item&apos;s height in meters</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item height in meters</inlineHelpText>
+        <label>Height (cm)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Length__c</fullName>
+        <description>Field to save one item&apos;s length in meters</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item length in meters</inlineHelpText>
+        <label>Length (cm)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Items</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Item_Weight__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Number_of_Items__c),0,Number_of_Items__c) * IF(ISBLANK(Weight__c),0,Weight__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Item Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume__c</fullName>
+        <description>total volume in cm^3</description>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(Height__c) || ISNULL(Length__c) || ISNULL(Width__c),0,Height__c * Length__c * Width__c) * Number_of_Items__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <description>Field to save one item&apos;s weight in kilograms</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item weight in kilograms</inlineHelpText>
+        <label>Weight (kg)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Width__c</fullName>
+        <description>Field to save one item&apos;s width in meters</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item width in meters</inlineHelpText>
+        <label>Width (cm)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Booking Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Line-{0000}</displayFormat>
+        <label>Booking Line Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Booking Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Dimensions_have_to_be_positive_integer</fullName>
+        <active>true</active>
+        <description>All dimensions must be set and be a number greater than 0.</description>
+        <errorConditionFormula>(ISBLANK( Height__c ) || Height__c &lt;= 0 || ISBLANK( Length__c ) || Length__c &lt;= 0 || ISBLANK( Width__c ) || Width__c &lt;= 0) &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>All dimensions must be set and be a number greater than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Height_has_to_be_integer</fullName>
+        <active>true</active>
+        <errorConditionFormula>FLOOR( Height__c ) &lt;&gt; Height__c</errorConditionFormula>
+        <errorMessage>Height cannot have any decimal places - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Length_has_to_be_integer</fullName>
+        <active>true</active>
+        <errorConditionFormula>FLOOR( Length__c ) &lt;&gt; Length__c</errorConditionFormula>
+        <errorMessage>Length cannot have any decimal places - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_height_210</fullName>
+        <active>true</active>
+        <description>every item must have a max length, width or height of 3.6m</description>
+        <errorConditionFormula>(ISNEW() || ISCHANGED(Height__c)) &amp;&amp; Height__c &gt; 210 &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Maximum Height is 210cm - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_length_360</fullName>
+        <active>true</active>
+        <description>every item must have a max length, width or height of 3.6m</description>
+        <errorConditionFormula>(ISNEW() || ISCHANGED(Length__c)) &amp;&amp; Length__c &gt; 360 &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Maximum Length is 360cm - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_width_180</fullName>
+        <active>true</active>
+        <description>every item must have a max length, width or height of 3.6m</description>
+        <errorConditionFormula>(ISNEW() || ISCHANGED(Width__c)) &amp;&amp; Width__c  &gt; 180 &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Maximum Width is 180cm - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoI_has_to_be_positive_integer</fullName>
+        <active>true</active>
+        <description>Number of Items must be set and be a number greater than 0.</description>
+        <errorConditionFormula>(ISBLANK( Number_of_Items__c ) || Number_of_Items__c &lt;= 0) &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Number of Items must be set and be a number greater than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Number_of_Items_required</fullName>
+        <active>true</active>
+        <description>You must enter Number of Items.</description>
+        <errorConditionFormula>ISBLANK( Number_of_Items__c )</errorConditionFormula>
+        <errorMessage>You must enter Number of Items.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Weight_has_to_be_positive_integer</fullName>
+        <active>true</active>
+        <description>Weight must be set and be a number greater than 0.  This does not apply for booking line items created in Universe as they are created with a weight of blank by default.</description>
+        <errorConditionFormula>(ISBLANK( Weight__c ) || Weight__c &lt;= 0) 
+&amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)
+&amp;&amp; NOT (CreatedBy.Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Weight must be set and be a number greater than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Width_has_to_be_integer</fullName>
+        <active>true</active>
+        <errorConditionFormula>FLOOR( Width__c ) &lt;&gt; Width__c</errorConditionFormula>
+        <errorMessage>Width cannot have any decimal places - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+</CustomObject>

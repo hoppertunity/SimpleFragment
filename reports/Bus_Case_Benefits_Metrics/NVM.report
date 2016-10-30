@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Calls Taken</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c:SUM / RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>AHT</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c:SUM) / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA5</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Call Duration (hrs)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallTime__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Related_Contact__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Related_Account__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_Type__c</column>
+            <operator>contains</operator>
+            <value>Inbound</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c</column>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>All Inbound calls - weekly</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Routing_Table__c$Routing_Table__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Id</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Depot__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Name</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Town__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Part_Postcode__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$District__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Routing_Default__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$LastModifiedDate</field>
+    </columns>
+    <description>Routings Object in Salesforce or known as the Depot Boundary records in Universe</description>
+    <format>Tabular</format>
+    <name>Routings - Depot Boundary</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Routings_Depot_Boundary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Routing_Table__c$Routing_Table__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Routing_Table__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

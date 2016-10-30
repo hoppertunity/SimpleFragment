@@ -1,0 +1,683 @@
+<apex:page standardController="Booking__c" title="Booking" extensions="OL_BookingExtension" tabStyle="Booking__c" >
+
+    <apex:includeScript value="{!URLFOR($Resource.jquery1110)}" />
+    <apex:includeScript value="/support/console/31.0/integration.js"/> 
+    <apex:includeScript value="{!URLFOR($Resource.converterJS)}" />
+    <apex:includeScript value="{!URLFOR($Resource.datetimepicker, 'jquery.datetimepicker.js')}" />
+    
+    <apex:stylesheet value="{!URLFOR($Resource.datetimepicker, 'jquery.datetimepicker.css')}" />
+    <style>
+        .three_columns .labelCol{
+            width: 12% !important;
+        }
+        
+        .three_columns .dataCol{
+            width: 21% !important;
+        }
+        
+        .picklist-width{
+            width: 200px;
+        }
+    </style> 
+    
+    <apex:outputpanel id="messages">
+        <apex:pageMessages escape="false"/>
+    </apex:outputpanel>
+    
+<!--    <apex:sectionHeader title="Booking Edit" subtitle="{!IF(Booking__c.Id == null,'New Booking',Booking__c.Name)}"/> -->
+    
+    <apex:form id="mainForm">
+    
+<!--        <apex:actionFunction name="customSaveJS" action="{!customSave}" /> -->
+        <!-- form submit breaks when using render - this is the workaround -->
+        <apex:actionFunction name="gbmailerCOL" action="{!pinpointPostcodeGBMailerCOL}" rerender="addressMainPanel, messages" status="addrLoadingStatus"/>
+        <apex:actionFunction name="gbmailerDEL" action="{!pinpointPostcodeGBMailerDEL}" rerender="addressMainPanel, messages" status="addrLoadingStatus"/>
+        <apex:actionFunction name="gbmailerINV" action="{!pinpointPostcodeGBMailerINV}" rerender="addressMainPanel, messages" status="addrLoadingStatus"/>
+        
+        <apex:actionFunction name="loadOrderContact" action="{!loadContactValuesOC}" rerender="customerPanel" 
+        status="contactLoadingStatus" />
+        <apex:actionFunction name="loadCollectionContact" action="{!loadContactValuesCC}" rerender="customerPanel" 
+        status="contactLoadingStatus" />
+        <apex:actionFunction name="loadDeliveryContact" action="{!loadContactValuesDC}" rerender="customerPanel" 
+        status="contactLoadingStatus" />
+        <apex:actionFunction name="resetSubLOB" action="{!resetSubLOB}" rerender="subLOBId" status="lobLoadingStatus"/>
+        <apex:actionFunction name="refreshLOBHack" rerender="subLOBId" status="lobLoadingStatus" />
+        <apex:actionFunction name="changeReadyDateTimeJS" action="{!changeReadyDateTime}" rerender="depotSection, messages" status="depotLoadingStatus" oncomplete="initDateTimePicker();"/>
+        <apex:actionFunction name="onManualOverrideJS" action="{!onManualOverride}" rerender="depotSection" status="depotLoadingStatus" oncomplete="initDateTimePicker();"/>
+        <apex:actionFunction name="runIntegration" action="{!saveBookingToUniverse}"/>
+  
+        <!-- <apex:inputField value="{!Booking__c.Account__c}" style="display:none;"/> -->  <!-- related lookups not working without this -->
+        <apex:outputField value="{!Booking__c.Coll_Account_Address__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Del_Account_Address__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Routing_Table__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Depot_Routing__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Master_Round_Number__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Close_Time__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Lunch_Start__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Lunch_End__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Total_Volume__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Paperwork_Required__c}" rendered="false" /> <!-- for preload -->
+        <apex:outputField value="{!Booking__c.Commercial_Invoice_Required__c}" rendered="false" /> <!-- for preload -->
+        <apex:pageBlock >
+        
+        <apex:pageBlockSection columns="1" title="Account" collapsible="false">
+            <apex:inputField value="{!Booking__c.Account__c}" rendered="{!!accountSelected}" />
+            <apex:inputField value="{!Booking__c.Company_Name__c}" rendered="{!!accountSelected}" />
+            <apex:outputField value="{!Booking__c.Account__c}" rendered="{!accountSelected && !ISBLANK(Booking__c.Account__c)}" />
+            <apex:outputField value="{!Booking__c.Company_Name__c}" rendered="{!accountSelected && !ISBLANK(Booking__c.Company_Name__c)}" />
+            <apex:pageBlockSectionItem rendered="{!!accountSelected}" >
+                <apex:outputLabel />
+                <apex:commandButton value="Select" action="{!selectAccount}" />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <c:NotificationContainer mainColour="Blue" messageText="{!accountNotifications}" rendered="{!accountSelected}"/>
+        <c:NotificationContainer messageText="{!$ObjectType.Account.fields.Regular_Customer__c.InlineHelpText}" rendered="{!accountSelected && regularCustomer}"/>
+        
+        <apex:outputPanel id="customerPanel" rendered="{!accountSelected}" layout="block" styleClass="contactTable three_columns">
+        <apex:pageBlockSection columns="3" title="Contacts" collapsible="false" >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Order Contact" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Collection Contact" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Delivery Contact" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:inputField value="{!Booking__c.Order_Contact__c}" label="Lookup" rendered="{!!ISBLANK(Booking__c.Account__c)}" 
+            onchange="loadOrderContact();" />
+            <apex:inputField value="{!Booking__c.Collection_Contact__c}" label=" " rendered="{!!ISBLANK(Booking__c.Account__c)}" 
+            onchange="loadCollectionContact();" />
+            <apex:inputField value="{!Booking__c.Delivery_Contact__c}" label=" " rendered="{!!ISBLANK(Booking__c.Account__c)}" 
+            onchange="loadDeliveryContact();" />
+        
+            <apex:repeat value="{!$ObjectType.Booking__c.FieldSets.ContactFields}" var="f" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!IF(BEGINS(f.fieldPath,CONTACT_ORDER_PREFIX),SUBSTITUTE(f.label,'Order Contact',''),'')
+                                            + IF(f.required || f.dbrequired,' *',' ')}" />
+                    <apex:inputText value="{!Booking__c[f]}" styleClass="contactInputs"
+                    disabled="{!IF(BEGINS(f.fieldPath,CONTACT_ORDER_PREFIX),Booking__c.Order_Contact__c!=null,false)
+                            || IF(BEGINS(f.fieldPath,CONTACT_COLLECTION_PREFIX),Booking__c.Collection_Contact__c!=null,false)
+                            || IF(BEGINS(f.fieldPath,CONTACT_DELIVERY_PREFIX),Booking__c.Delivery_Contact__c!=null,false)}" 
+                    maxlength="{!$ObjectType.Booking__c.Fields[f.FieldPath].length}"/>
+                </apex:pageBlockSectionItem>
+            </apex:repeat>
+            
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:commandButton value="Copy Order Details" action="{!copyContactValuesCO2CC}" rerender="customerPanel"
+                status="contactLoadingStatus" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:commandButton value="Copy Order Details" action="{!copyContactValuesCO2DC}" rerender="customerPanel"
+                status="contactLoadingStatus" />
+            </apex:pageBlockSectionItem>
+            
+   <!--         <apex:inputCheckbox value="{!createContactOrd}" label="Create?" rendered="{!Booking__c.Account__c != null}" 
+            disabled="{!Booking__c.Order_Contact__c != null}" />
+            <apex:inputCheckbox value="{!createContactCol}" label="Create?" rendered="{!Booking__c.Account__c != null}" 
+            disabled="{!Booking__c.Collection_Contact__c != null}" />
+            <apex:inputCheckbox value="{!createContactDel}" label="Create?" rendered="{!Booking__c.Account__c != null}" 
+            disabled="{!Booking__c.Delivery_Contact__c != null}" /> 
+    --> 
+        </apex:pageBlockSection>
+        <c:OL_MarketingMessagesNotification contactId="{!Booking__c.Order_Contact__c}" rendered="{!Booking__c.Order_Contact__c != null}" />
+        <script>
+            if(typeof isSaved !== 'undefined') setContactTabs(10);
+        </script>
+        </apex:outputPanel>
+        
+        <apex:actionStatus id="contactLoadingStatus" >
+            <apex:facet name="start" >
+                <img src="/img/loading.gif" alt="Loading..."/>                   
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <apex:outputPanel id="addressMainPanel" styleClass="addressPanelClass {!IF(addressColumns == 3,'three_columns','')}" rendered="{!accountSelected}">
+        
+        <apex:pageBlockSection columns="{!addressColumns}" title="Address" collapsible="false" rendered="{!!isAddressEditMode}">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Collection Address" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Delivery Address" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem rendered="{!showINV}">
+                <apex:outputLabel />
+                <apex:outputText value="Invoice Address" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:outputField value="{!Booking__c.Coll_Postcode__c}" />
+            <apex:outputField value="{!Booking__c.Del_Postcode__c}" />
+            <apex:outputField value="{!Booking__c.Inv_Postcode__c}" rendered="{!showINV}"/>
+            <apex:repeat value="{!$ObjectType.Booking__c.FieldSets.AddressFields}" var="f">
+                <apex:outputField value="{!Booking__c[f]}" rendered="{!IF(BEGINS(f.fieldPath,BOOKING_INVOICE_PREFIX),showINV,true)}"/>
+            </apex:repeat>
+            <apex:pageBlockSectionItem rendered="{!showINV}"/>
+            <apex:pageBlockSectionItem rendered="{!showINV}"/>
+            <apex:outputField value="{!Booking__c.Inv_Phone__c}" rendered="{!showINV}"/>
+            <apex:pageBlockSectionItem rendered="{!showINV}"/>
+            <apex:pageBlockSectionItem rendered="{!showINV}"/>
+            <apex:outputField value="{!Booking__c.Inv_Email__c}" rendered="{!showINV}"/>
+            <apex:outputField value="{!Booking__c.Carriage_Forward__c}" />
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem rendered="{!showINV}"/>
+            <apex:commandButton value="Edit Address" action="{!enterAddressEditMode}" status="addrLoadingStatus" 
+                rerender="addressesFieldSetPanel,addressMainPanel,panelLOBId,depotSection"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="{!addressColumns}" title="Address" collapsible="false" rendered="{!isAddressEditMode}">
+            
+            <!-- hack to persist selection -->
+            <apex:outputText value="{!aaIdCOL}" style="display:none;" />        
+            <apex:outputText value="{!aaIdDEL}" style="display:none;" />
+            <apex:outputText value="test" style="display:none;" rendered="{!showINV}" />
+            
+            <apex:inputField value="{!Booking__c.Carriage_Forward__c}"  styleClass="addressPost">
+                <apex:actionSupport event="onchange" action="{!makeCarriageForward}" rerender="addressMainPanel,addressesFieldSetPanel" 
+                    status="addrLoadingStatus" />
+            </apex:inputField>
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem rendered="{!showINV}"/>
+        
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Collection Address" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel />
+                <apex:outputText value="Delivery Address" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem rendered="{!showINV}">
+                <apex:outputLabel />
+                <apex:outputText value="Invoice Address" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem rendered="{!Booking__c.Account__c != null}">
+                <apex:outputLabel value="Saved Address" for="addressSLCOL" />
+                <apex:selectList value="{!aaIdCOL}" size="1" id="addressSLCOL" styleClass="picklist-width">
+                    <apex:actionSupport event="onchange" action="{!loadAddressCOL}" rerender="addressMainPanel,addressesFieldSetPanel" 
+                    status="addrLoadingStatus" />
+                    <apex:selectOptions value="{!accountAddessesCOL}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem rendered="{!Booking__c.Account__c != null}">
+                <apex:outputLabel value="Saved Address" for="addressSLDEL" />
+                <apex:selectList value="{!aaIdDEL}" size="1" id="addressSLDEL" styleClass="picklist-width">
+                    <apex:actionSupport event="onchange" action="{!loadAddressDEL}" rerender="addressMainPanel,addressesFieldSetPanel" 
+                    status="addrLoadingStatus" />
+                    <apex:selectOptions value="{!accountAddessesDEL}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Search Results" for="addressGBCOL" />
+                <apex:selectList value="{!addressIndexStrCOL}" size="1" id="addressGBCOL" disabled="{!noGBMailerCOL}" styleClass="picklist-width">
+                    <apex:actionSupport event="onchange" action="{!populateGBMailerAddressCOL}" 
+                        rerender="addressMainPanel,addressesFieldSetPanel" status="addrLoadingStatus" />
+                    <apex:selectOptions value="{!gbmAddressesCOL}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Search Results" for="addressGBDEL" />
+                <apex:selectList value="{!addressIndexStrDEL}" size="1" id="addressGBDEL" disabled="{!noGBMailerDEL}" styleClass="picklist-width">
+                    <apex:actionSupport event="onchange" action="{!populateGBMailerAddressDEL}" 
+                    rerender="addressesFieldSetPanel" status="addrLoadingStatus" />
+                    <apex:selectOptions value="{!gbmAddressesDEL}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem rendered="{!showINV}">
+                <apex:outputLabel value="Search Results" for="addressGBINV" />
+                <apex:selectList value="{!addressIndexStrINV}" size="1" id="addressGBINV" disabled="{!noGBMailerINV}" styleClass="picklist-width">
+                    <apex:actionSupport event="onchange" action="{!populateGBMailerAddressINV}" 
+                    rerender="addressesFieldSetPanel" status="addrLoadingStatus" />
+                    <apex:selectOptions value="{!gbmAddressesINV}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            
+            <c:NotificationContainer rendered="{!exceededGBMailerCOL}" messageText="* Not all results shown for collection address" />
+            <c:NotificationContainer rendered="{!exceededGBMailerDEL}" messageText="* Not all results shown for delivery address" />
+            <c:NotificationContainer rendered="{!exceededGBMailerINV}" messageText="* Not all results shown for invoice address" />
+        </apex:pageBlockSection>
+        
+        </apex:outputPanel>
+        
+        <div style="height:20px">
+        <apex:actionStatus id="addrLoadingStatus" >
+            <apex:facet name="start" >
+                <img src="/img/loading.gif" alt="Loading..."/>                   
+            </apex:facet>
+        </apex:actionStatus>
+        </div>
+        
+        <apex:outputPanel id="addressesFieldSetPanel" rendered="{!accountSelected}" layout="block" styleClass="addressTable {!IF(addressColumns == 3,'three_columns','')}">
+            <apex:pageBlockSection columns="{!addressColumns}" rendered="{!isAddressEditMode}">
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Postcode *" />
+                    <apex:panelGrid columns="2" id="theGridC">
+                        <apex:inputText value="{!Booking__c.Coll_Postcode__c}" styleClass="addressInputs" maxlength="{!$ObjectType.Booking__c.Fields['Coll_Postcode__c'].length}"/>
+                        <apex:commandButton value="Search" action="{!emptyAction}" oncomplete="gbmailerCOL();" tabindex="30"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Postcode *" />
+                    <apex:panelGrid columns="2" id="theGridD">
+                        <apex:inputText value="{!Booking__c.Del_Postcode__c}" styleClass="addressInputs" maxlength="{!$ObjectType.Booking__c.Fields['Del_Postcode__c'].length}"/>
+                        <apex:commandButton value="Search" action="{!emptyAction}" oncomplete="gbmailerDEL();" tabindex="45"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!showINV}">
+                    <apex:outputLabel value="Postcode *" />
+                    <apex:panelGrid columns="2" id="theGridI">
+                        <apex:inputText value="{!Booking__c.Inv_Postcode__c}" styleClass="addressInputs" maxlength="{!$ObjectType.Booking__c.Fields['Inv_Postcode__c'].length}"/>
+                        <apex:commandButton value="Search" action="{!emptyAction}" oncomplete="gbmailerINV();" tabindex="60"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+                    
+                <apex:repeat value="{!$ObjectType.Booking__c.FieldSets.AddressFields}" var="f">
+                    <apex:pageBlockSectionItem rendered="{!IF(BEGINS(f.fieldPath,BOOKING_INVOICE_PREFIX),showINV,true)}">
+                        <apex:outputLabel value="{!f.label}{!IF(f.required||f.dbrequired,' *','')}" />
+                        <apex:inputText value="{!Booking__c[f]}" styleClass="addressInputs" maxlength="{!$ObjectType.Booking__c.Fields[f.FieldPath].length}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>
+                
+                <apex:pageBlockSectionItem rendered="{!showINV}"/>
+                <apex:pageBlockSectionItem rendered="{!showINV}"/>
+                <apex:inputField value="{!Booking__c.Inv_Phone__c}" rendered="{!showINV}" styleClass="addressPost"/>
+                <apex:pageBlockSectionItem rendered="{!showINV}"/>
+                <apex:pageBlockSectionItem rendered="{!showINV}"/>
+                <apex:inputField value="{!Booking__c.Inv_Email__c}" rendered="{!showINV}" styleClass="addressPost"/>
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="{!addressColumns}" rendered="{!isAddressEditMode}">
+            
+                <apex:commandButton value="Finish Address" action="{!enterLOBEditMode}" status="addrLoadingStatus"
+                    rerender="addressesFieldSetPanel,addressMainPanel,panelLOBId,depotSection" styleClass="addressPost"/>
+            </apex:pageBlockSection>    
+            <script>
+                if(typeof isSaved !== 'undefined') setAddressTabs(30, {!addressColumns});
+            </script>       
+        </apex:outputPanel>
+        
+        <apex:pageBlockSection columns="2" collapsible="false" title="Goods Info" rendered="{!accountSelected}">
+            <apex:inputField value="{!Booking__c.Goods_Description__c}"/>
+            <apex:inputField value="{!Booking__c.Value__c}" />
+        </apex:pageBlockSection>
+        
+        <apex:outputPanel id="panelLOBId" rendered="{!accountSelected}" >
+        
+        <apex:pageBlockSection columns="1" title="Line Of Business" collapsible="false" rendered="{!!isLOBEditMode}">
+            <apex:outputField value="{!Booking__c.Line_of_Business__c}" />
+            <apex:outputField value="{!Booking__c.Service__c}" />
+            <apex:outputField value="{!Booking__c.Commodity__c}" />
+            <apex:outputField value="{!Booking__c.Enhanced_Liability__c}" />
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="1" title="Line Of Business" collapsible="false" rendered="{!isLOBEditMode}">
+            <apex:inputField value="{!Booking__c.Line_of_Business__c}" rendered="{!ISBLANK(Booking__c.Account__c)}"
+            onchange="resetSubLOB();"/>
+            <apex:pageBlockSectionItem rendered="{!!ISBLANK(Booking__c.Account__c)}">
+                <apex:outputLabel value="Line of Business" />
+                <apex:selectList value="{!Booking__c.Line_of_Business__c}" size="1" disabled="{!!hasLOBs}">
+                    <apex:actionSupport event="onchange" action="{!resetSubLOB}" rerender="subLOBId" status="lobLoadingStatus"/>
+                    <apex:selectOptions value="{!availableLOBs}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+            
+        <apex:outputPanel id="subLOBId">
+        <apex:pageBlockSection columns="1" rendered="{!isLOBEditMode}">
+            <apex:pageBlockSectionItem rendered="{!hasLOBs}">
+                <apex:outputLabel value="Service" />
+                <apex:selectList value="{!Booking__c.Service__c}" size="1" disabled="{!!hasServices}">
+                    <apex:selectOptions value="{!availableServices}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem rendered="{!hasLOBs}">
+                <apex:outputLabel value="Type of packaging" />
+                <apex:selectList value="{!Booking__c.Commodity__c}" size="1" disabled="{!!hasCommodity}">
+                    <apex:selectOptions value="{!availableCommodities}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+<!--            <apex:inputField value="{!Booking__c.Sub_Service__c}" rendered="{!hasLOBs && !ISBLANK(Booking__c.Line_of_Business__c)}" /> -->
+            <apex:pageBlockSectionItem rendered="{!accountSelected}" helpText="{!$ObjectType.Booking__c.fields.Enhanced_Liability__c.inlineHelpText}">
+
+                <apex:outputLabel value="Enhanced Liability *" />
+                <apex:selectList value="{!Booking__c.Enhanced_Liability__c}" size="1" 
+                disabled="{!Booking__c.Enhanced_Liability__c == LIABILITY_ACCOUNTLEVEL}">
+                    <apex:selectOptions value="{!liabilityOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <c:NotificationContainer messageText="{!LOBNotifications}" />
+        </apex:outputPanel>
+        <apex:commandButton value="Finish Line of Business" action="{!enterDepotEditMode}" status="lobLoadingStatus"
+            rerender="addressesFieldSetPanel,addressMainPanel,panelLOBId,depotSection" rendered="{!isLOBEditMode}" oncomplete="initDateTimePicker();"/>
+        <apex:commandButton value="Edit Line of Business" action="{!enterLOBEditMode}" status="lobLoadingStatus" 
+            rerender="addressesFieldSetPanel,addressMainPanel,panelLOBId,depotSection" rendered="{!!isLOBEditMode}"/>
+        <script>
+            setTimeout(function(){if({!isLobEditMode}) refreshLOBHack();},500);     // not rendering on fist load (HACK)
+        </script>
+        </apex:outputPanel>
+        
+        <apex:actionStatus id="lobLoadingStatus" >
+            <apex:facet name="start" >
+                <img src="/img/loading.gif" alt="Loading..."/>                   
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <apex:outputPanel id="depotSection" rendered="{!accountSelected}" >
+        <apex:pageBlockSection columns="1" title="Collection Details" collapsible="false" >
+            <apex:inputText value="{!collectionReadyTime}" styleClass="datepicker" label="{!$ObjectType.Booking__c.fields.Collection_Ready_Time__c.Label}" 
+                rendered="{!isDepotEditMode}" onblur="onBlur();"/>
+            <apex:pageBlockSectionItem rendered="{!isDepotEditMode}">
+                <apex:outputLabel value="Manual Override"/>
+                <apex:inputCheckbox value="{!overrideCollDepot}" onchange="onManualOverrideJS();"/>
+            </apex:pageBlockSectionItem>
+            <apex:outputField value="{!Booking__c.Collection_Ready_Time__c}" rendered="{!!isDepotEditMode}" />
+            <apex:outputField value="{!Booking__c.Collection_Depot__c}" rendered="{!!(isDepotEditMode && overrideCollDepot)}" />
+            <apex:inputField value="{!Booking__c.Collection_Depot__c}" rendered="{!isDepotEditMode && overrideCollDepot}"/>
+        </apex:pageBlockSection>
+        <c:NotificationContainer messageText="{!collDepotNotifications}" rendered="{!isDepotEditMode && !overrideCollDepot}"/>
+
+        </apex:outputPanel>
+        
+        <apex:actionStatus id="depotLoadingStatus" >
+            <apex:facet name="start" >
+                <img src="/img/loading.gif" alt="Loading..."/>                   
+            </apex:facet>
+        </apex:actionStatus>
+            
+        <apex:pageBlockSection columns="2" collapsible="false" title="Booking Details" rendered="{!accountSelected}" >
+            
+            <apex:inputField value="{!Booking__c.Collection_Instructions__c}" />
+            <apex:pageBlockSectionItem />
+            
+            <apex:selectList required="true" value="{!paperworkRequired}" size="1" label="{!$ObjectType.Booking__c.fields.Paperwork_Required__c.Label} *">
+                
+                <apex:selectOption itemValue="null" itemLabel="Please Select"/>
+                <apex:selectOption itemValue="true" itemLabel="Yes"/>
+                <apex:selectOption itemValue="false" itemLabel="No"/>
+                
+            </apex:selectList>
+            <apex:inputField value="{!Booking__c.Status__c}" rendered="{!!ISBLANK(Booking__c.Id)}" />
+             <apex:pageBlockSectionItem rendered="{!!ISBLANK(Booking__c.Id)}" />
+            <!--Added by DH 03/02/2016-->
+            <apex:inputField value="{!Booking__c.Cancellation_Notes__c}" rendered="{!!ISBLANK(Booking__c.Id)}" />
+            <apex:pageBlockSectionItem rendered="{!ISBLANK(Booking__c.Id)}" />
+            
+            <apex:inputField value="{!Booking__c.Number_of_Consignments__c}" label="Number of Consignments *" required="false" />
+            <apex:pageBlockSectionItem />
+            
+            <apex:selectList required="true" value="{!commercialInvoiceRequired}" size="1" label="{!$ObjectType.Booking__c.fields.Commercial_Invoice_Required__c.Label} *">
+                <apex:selectOption itemValue="false" itemLabel="No"/>
+                <apex:selectOption itemValue="true" itemLabel="Yes"/>
+                
+                <!--<apex:selectOption itemValue="null" itemLabel="Please Select"/>-->
+            </apex:selectList>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Close Time *" />
+                <apex:panelGrid columns="3">
+                    <apex:selectList value="{!closeTime.hour}" size="1" >
+                        <apex:selectOptions value="{!closeTime.hourOptions}" />
+                    </apex:selectList>
+                    :
+                    <apex:selectList value="{!closeTime.minute}" size="1" >
+                        <apex:selectOptions value="{!closeTime.minuteOptions}" />
+                    </apex:selectList>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            
+            <apex:inputField value="{!Booking__c.Customer_Reference__c}" />
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Unavailable Start Time" />
+                <apex:panelGrid columns="3">
+                    <apex:selectList value="{!lunchStart.hour}" size="1" >
+                        <apex:selectOptions value="{!lunchStart.hourOptions}" />
+                    </apex:selectList>
+                    :
+                    <apex:selectList value="{!lunchStart.minute}" size="1" >
+                        <apex:selectOptions value="{!lunchStart.minuteOptions}" />
+                    </apex:selectList>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            
+            <apex:inputField value="{!Booking__c.Total_Items__c}" label="Total Items *"/>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Unavailable End Time" />
+                <apex:panelGrid columns="3">
+                    <apex:selectList value="{!lunchEnd.hour}" size="1" >
+                        <apex:selectOptions value="{!lunchEnd.hourOptions}" />
+                    </apex:selectList>
+                    :
+                    <apex:selectList value="{!lunchEnd.minute}" size="1" >
+                        <apex:selectOptions value="{!lunchEnd.minuteOptions}" />
+                    </apex:selectList>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            
+            <apex:inputField value="{!Booking__c.Total_Weight__c}" label="Total Weight *"/>
+            <apex:pageBlockSectionItem />
+            
+        </apex:pageBlockSection>
+        
+        <apex:outputPanel id="bliPanel" rendered="{!accountSelected}" styleClass="bliPanel" >
+        <apex:pageBlockSection columns="1" title="Line Details" collapsible="true" >
+        
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Measurements" />
+                <apex:panelGrid columns="2">
+                    <input type="radio" name="msystem" value="M" onclick="toggleMeasurements();" checked="true" />Metric
+                    <input type="radio" name="msystem" value="I" onclick="refreshBLI();" />Imperial
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            
+            <apex:outputPanel id="linesPanel" styleClass="bliTable" >
+             <apex:actionFunction name="RefreshDarryl" action="{!RefreshDarryl}" reRender="LongLengthWarning"/>
+            <apex:variable var="rowNumber" value="{!0}"/>
+            <apex:pageBlockTable value="{!bookingItems}" var="bi">
+                <apex:column styleClass="rowCounter">
+                    <apex:facet name="header">{!$ObjectType.Booking_Line_Item__c.fields.Number_of_Items__c.Label}</apex:facet>
+                    <apex:inputField value="{!bi.Number_of_Items__c}" onblur="RefreshDarryl();" style="width:60px" styleClass="chIndex" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Weight per item (kg)</label><label class="impLabel">Weight per item (lb)</label></apex:facet>
+                    <apex:inputText value="{!bi.Weight__c}" style="width:60px" styleClass="metGcls{!rowNumber}" />
+                    <apex:inputText styleClass="impGcls{!rowNumber}" style="width:60px;" 
+                        onblur="if(this.value != '') {lbToKg('impGcls{!rowNumber}','metGcls{!rowNumber}');}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Length (cm)</label><label class="impLabel">Length (ft, in)</label></apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!bi.Length__c}" style="width:60px" styleClass="metLcls{!rowNumber}" />
+                    <input type="text" size="6" id="impLFTId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impLFTId{!rowNumber}','impLINId{!rowNumber}','metLcls{!rowNumber}');RefreshDarryl();" />
+                    <input type="text" size="6" id="impLINId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impLFTId{!rowNumber}','impLINId{!rowNumber}','metLcls{!rowNumber}');RefreshDarryl();" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Width (cm)</label><label class="impLabel">Width (ft, in)</label></apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!bi.Width__c}" style="width:60px" styleClass="metWcls{!rowNumber}"  />
+                    <input type="text" size="6" id="impWFTId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impWFTId{!rowNumber}','impWINId{!rowNumber}','metWcls{!rowNumber}');RefreshDarryl();" />
+                    <input type="text" size="6" id="impWINId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impWFTId{!rowNumber}','impWINId{!rowNumber}','metWcls{!rowNumber}');RefreshDarryl();" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Height (cm)</label><label class="impLabel">Height (ft, in)</label></apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!bi.Height__c}" style="width:60px" styleClass="metHcls{!rowNumber}" />
+                    <input type="text" size="6" id="impHFTId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impHFTId{!rowNumber}','impHINId{!rowNumber}','metHcls{!rowNumber}');RefreshDarryl();" />
+                    <input type="text" size="6" id="impHINId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impHFTId{!rowNumber}','impHINId{!rowNumber}','metHcls{!rowNumber}');RefreshDarryl();"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Actions</apex:facet>
+                    <apex:commandLink action="{!removeLine}" value="Remove" id="theCommandLink" rerender="linesPanel" 
+                    status="loadingStatus" styleClass="chIndex">
+                        <apex:param name="rowIndex" value="{!rowNumber}"/>
+                    </apex:commandLink>
+                    <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                </apex:column>
+    
+            </apex:pageBlockTable> 
+            <script>
+                if(typeof isSaved !== 'undefined') {
+                    if($('input[name="msystem"]:checked', '.bliPanel').val() == 'I') refreshBLI();
+                    else toggleMeasurements();
+                }
+            </script>
+            <!--DH-->
+                
+                <apex:outputPanel id="LongLengthWarning" >
+                    <c:NotificationContainer messageText="{!$Setup.Warning_Banner_Messages__c.BookingLongLength__c} ({!NumLongLengths} items)" rendered="{!NumLongLengths > 0}"/>
+                </apex:outputPanel>
+
+            
+            </apex:outputPanel>
+            <apex:commandLink action="{!addLine}" value="Add Line" id="addLineCommandLink" rerender="linesPanel" 
+            status="loadingStatus" styleClass="chIndex"/>
+        </apex:pageBlockSection>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="scriptPanel">
+        <script>
+            $('img[alt="Clear"]').on('mouseup',function() {
+                removeAddresses();
+            });
+            
+            /*function focusRow(rowNum){
+                $(".focus"+rowNum).focus();
+                changeTabIndex(curOrdIndex);
+            }*/
+        </script>
+        </apex:outputPanel>
+        
+        <apex:pageBlockButtons location="both">
+            <!-- this strange save button is the result of SF refusing to submit the form more than once for reasons that remain a mystery -->
+<!--            <apex:commandButton value="Save" action="{!emptyAction}" oncomplete="customSaveJS();" immediate="false"/> -->
+            <apex:commandButton value="Save" action="{!customSave}" rendered="{!accountSelected}" styleClass="chIndex"/>
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" styleClass="chIndex"/>
+        </apex:pageBlockButtons>
+        
+    </apex:pageBlock>
+    
+  </apex:form>
+  
+  <script>
+    //$('img[alt="Clear"]').hide();
+    
+    //setTimeout(function(){$('img[alt="Clear"]').hide()},1000);    //use for dependant lookups X picture (HACK)
+    //setTimeout(function(){refreshDepotHack();},1000);     // not rendering on fist load (HACK)
+    
+    var prevDateStr;
+    
+    if(sforce.console.isInConsole())
+    {
+        sforce.console.setTabTitle('{!tabTitle}');
+    }
+    
+    var isSaved = false;
+    
+    function syncBooking(){
+        runIntegration();
+    }
+    
+    function initDateTimePicker(){
+        jQuery('[class$="datepicker"]').datetimepicker({
+         step: 15,
+         format:'d/m/Y H:i',
+         mask:true
+        });
+        
+        if(prevDateStr == null && $('[class$="datepicker"]').length > 0){
+            prevDateStr = $('[class$="datepicker"]')[0].value;
+        }
+    }
+    
+    function onBlur(){
+        var curVal = $('[class$="datepicker"]')[0].value;
+        if(prevDateStr != curVal){
+            prevDateStr = curVal;
+            changeReadyDateTimeJS();
+        }
+    }
+    
+    $( document ).ready(function() {
+        initDateTimePicker();
+        
+        isSaved = {!isSaved};
+        if(isSaved){
+            syncBooking();
+        } else {
+            toggleMeasurements();
+            setContactTabs(10);
+            setAddressTabs(30, {!addressColumns});
+        }
+    });
+    
+    function setContactTabs(tabIndOffset) {
+        setTabsIndex(tabIndOffset,4,3,".contactTable",".contactInputs");
+    }
+    
+    function setAddressTabs(tabIndOffset, colN) {
+        setTabsIndex(tabIndOffset,15,colN,".addressTable",".addressInputs");
+        setTabsIndex(tabIndOffset+15*colN,4,1,".addressTable",".addressPost")
+    }
+    
+    function setTabsIndex(tabIndOffset,rowsN,colN,tableEl,inputEl) {
+        //$(".contactTable").find("input").css("background-color", "red");
+        var coni = 0;
+        var conj = 0;
+        $(tableEl).find(inputEl).each(function () {
+            var ti = tabIndOffset + conj*rowsN + coni;
+            $(this).attr("tabindex",ti);
+            
+            conj = (conj+1) % colN;
+            if(conj == 0) coni++;
+        });
+    }
+    
+    function refreshBLI() {
+        toggleMeasurements();
+        populateAllImpDimensions($('.bliTable').find('.rowCounter').length)
+    }
+    
+    function toggleMeasurements() {
+        //confirm($('input[name="msystem"]:checked', '.bliPanel').val());
+        if($('input[name="msystem"]:checked', '.bliPanel').val() == 'I') { 
+            $('.bliTable').find('input[id^="imp"]').show();
+            $('.bliTable').find('[class^="imp"]').show();
+            $('.bliTable').find('[class^="met"]').hide();
+        } else {
+            $('.bliTable').find('[class^="met"]').show();
+            $('.bliTable').find('input[id^="imp"]').hide();
+            $('.bliTable').find('[class^="imp"]').hide();
+        }
+    }
+    
+    // convert metric to imperials
+    function populateAllImpDimensions(rowN) {
+        if(rowN != null && !isNaN(rowN) && rowN > 0) {
+            for(var i=0; i<rowN; i++) {
+                kgToLb('metGcls'+i,'impGcls'+i);
+                metresToFeetInches('metLcls'+i,'impLFTId'+i,'impLINId'+i);
+                metresToFeetInches('metWcls'+i,'impWFTId'+i,'impWINId'+i);
+                metresToFeetInches('metHcls'+i,'impHFTId'+i,'impHINId'+i);
+            }
+        }
+    }
+        
+  </script>
+    
+</apex:page>

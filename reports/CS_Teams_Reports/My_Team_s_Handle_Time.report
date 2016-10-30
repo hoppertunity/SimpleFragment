@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_27101073</developerName>
+        <masterLabel>TNT Total Call Duration Buckets</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>300</to>
+            </sourceValues>
+            <value>0-5 Minute</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>300</from>
+                <to>600</to>
+            </sourceValues>
+            <value>5-10 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>600</from>
+                <to>900</to>
+            </sourceValues>
+            <value>10-15 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>900</from>
+                <to>1,200</to>
+            </sourceValues>
+            <value>15-20 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,200</from>
+                <to>1,500</to>
+            </sourceValues>
+            <value>20-25 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,500</from>
+                <to>1,800</to>
+            </sourceValues>
+            <value>25-30 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,800</from>
+            </sourceValues>
+            <value>30+ Minutes</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Average</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Handle_Time__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Handle_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c</field>
+    </columns>
+    <description>Uses TNT Handle Time Calculation which includes wrap up.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My Team&apos;s Handle Time</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Local_Date__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

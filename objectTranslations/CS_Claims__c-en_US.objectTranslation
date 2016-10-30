@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Claim Form</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Claim Forms</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Claims --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- All requested information --></label>
+        <name>All_requested_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Am I the record Owners Manager? --></label>
+        <name>Am_I_the_record_Owners_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Return Mail Sent --></label>
+        <name>ClaimReturnMailSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Stage Status --></label>
+        <name>Claim_Stage_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claims Stage --></label>
+        <name>Claims_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Returned</masterLabel>
+            <translation><!-- Returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Customer</masterLabel>
+            <translation><!-- Sent to Customer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Claims Status --></label>
+        <name>Claims_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consignment no --></label>
+        <name>Consignment_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Claims --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- A copy of relevant commercial invoice --></label>
+        <name>Copy_of_relevant_commercial_invoice__c</name>
+    </fields>
+    <fields>
+        <label><!-- A copy of repair estimate/invoice --></label>
+        <name>Copy_of_repair_estimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost value of consignment exclcuding VAT --></label>
+        <name>Cost_of_consignment_exclcuding_VAT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost value of item(s) exclcuding VAT --></label>
+        <name>Cost_of_items_exclcuding_VAT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit your TNT account --></label>
+        <name>Credit_your_TNT_account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Damaged --></label>
+        <name>Damaged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Despatch --></label>
+        <name>Date_of_dispatch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Declarant_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full name of claimant --></label>
+        <name>Declarant_Full_Name_of__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depot --></label>
+        <name>Depot__c</name>
+        <relationshipLabel><!-- Claims (Depot) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Is auto populated from the Depot field when clicking &apos;Save&apos;. --></help>
+        <label><!-- Depot no --></label>
+        <name>Depot_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detailled description of the item(s) --></label>
+        <name>Detail_description_of_items__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of times the claim form was visited or opened by the customer. --></help>
+        <label><!-- Form Visit Counter --></label>
+        <name>Form_Visit_Counter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lost --></label>
+        <name>Lost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lotus Notes Claims Email ID --></label>
+        <name>Lotus_Notes_Claims_Email_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 1 --></label>
+        <name>Recipient_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 2 --></label>
+        <name>Recipient_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Town --></label>
+        <name>Recipient_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact name --></label>
+        <name>Recipient_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postcode --></label>
+        <name>Recipient_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telephone no --></label>
+        <name>Recipient_Telephone_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Owners Manager --></label>
+        <name>Record_Owners_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Reference no --></label>
+        <name>Reference_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- What is the repair cost? --></label>
+        <name>Repair_cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replacement consignment no --></label>
+        <name>Replacement_Consignment_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salvage value ? --></label>
+        <name>Salvage_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 1 --></label>
+        <name>Sender_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 2 --></label>
+        <name>Sender_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Town --></label>
+        <name>Sender_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact name --></label>
+        <name>Sender_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the Contact above does not have an Email Address stored for them, you can enter one to use here.
+
+If they do, then leave this field blank as it is auto populated from the Contact when clicking &apos;Save&apos;. --></help>
+        <label><!-- Customer Email Address --></label>
+        <name>Sender_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postcode --></label>
+        <name>Sender_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telephone no --></label>
+        <name>Sender_Telephone_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company name --></label>
+        <name>Sender_company_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent To Customer --></label>
+        <name>Sent_To_Customer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is auto populated from the Account field when clicking &apos;Save&apos;. --></help>
+        <label><!-- TNT account no --></label>
+        <name>TNT_account_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight of lost/damaged item(s) kg --></label>
+        <name>Weight_of_items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cheque --></label>
+        <name>cheque__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please state where the damaged item(s) and packing can be inspected --></help>
+        <label><!-- item(s) and packing can be inspected at --></label>
+        <name>damaged_packing_inspection__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brouchers/photographs of the items --></label>
+        <name>photographs_of_the_items__c</name>
+    </fields>
+    <layouts>
+        <layout>CS Lock Record</layout>
+        <sections>
+            <label><!-- Claims Ref --></label>
+            <section>Claims Ref</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Damaged Item(s) Details --></label>
+            <section>Damaged Item(s) Details</section>
+        </sections>
+        <sections>
+            <label><!-- Declaration --></label>
+            <section>Declaration</section>
+        </sections>
+        <sections>
+            <label><!-- Details of lost or damaged consignment --></label>
+            <section>Details of lost or damaged consignment</section>
+        </sections>
+        <sections>
+            <label><!-- Items Included --></label>
+            <section>Items Included</section>
+        </sections>
+        <sections>
+            <label><!-- Please select whether your consignment has been lost or damaged --></label>
+            <section>Please select whether your consignment has been lost or damaged</section>
+        </sections>
+        <sections>
+            <label><!-- Preferred Method of Payment --></label>
+            <section>Preferred Method of Payment</section>
+        </sections>
+        <sections>
+            <label><!-- Recipient details --></label>
+            <section>Recipient details</section>
+        </sections>
+        <sections>
+            <label><!-- Your details (to be completed by the sender) --></label>
+            <section>Your details (to be completed by the sender)</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CS_Agent_Claim Layout</layout>
+        <sections>
+            <label><!-- Claims Ref --></label>
+            <section>Claims Ref</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing Messages --></label>
+            <section>Marketing Messages</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CS_Claim Layout</layout>
+        <sections>
+            <label><!-- Claims Ref --></label>
+            <section>Claims Ref</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Damaged Item(s) Details --></label>
+            <section>Damaged Item(s) Details</section>
+        </sections>
+        <sections>
+            <label><!-- Declaration --></label>
+            <section>Declaration</section>
+        </sections>
+        <sections>
+            <label><!-- Details of lost or damaged consignment --></label>
+            <section>Details of lost or damaged consignment</section>
+        </sections>
+        <sections>
+            <label><!-- Items Included --></label>
+            <section>Items Included</section>
+        </sections>
+        <sections>
+            <label><!-- Please select whether your consignment has been lost or damaged --></label>
+            <section>Please select whether your consignment has been lost or damaged</section>
+        </sections>
+        <sections>
+            <label><!-- Preferred Method of Payment --></label>
+            <section>Preferred Method of Payment</section>
+        </sections>
+        <sections>
+            <label><!-- Recipient details --></label>
+            <section>Recipient details</section>
+        </sections>
+        <sections>
+            <label><!-- Your details (to be completed by the sender) --></label>
+            <section>Your details (to be completed by the sender)</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create New Case --></label>
+        <name>Create_Case</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- CS Customer --></label>
+        <name>CS_Customer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CS Sent to Customer --></label>
+        <name>CS_Sent_to_Customer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- TNT CS Agent --></label>
+        <name>TNT_CS_Agent</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must select a Contact with an Email Address or manually enter the &apos;Customer Email Address&apos;. --></errorMessage>
+        <name>Check_Contact_is_entered</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Send_to_Customer --></label>
+        <name>Send_to_Customer</name>
+    </webLinks>
+</CustomObjectTranslation>

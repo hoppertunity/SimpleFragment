@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Allows users to set the text in the warning messages shown on the Quote and Booking Edit Pages.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>BookingLongLength__c</fullName>
+        <defaultValue>&apos;This is my custom setting message!!!&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>BookingLongLength</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QuoteLongLength__c</fullName>
+        <defaultValue>&apos;Quote&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>QuoteLongLength</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Warning Banner Messages</label>
+</CustomObject>

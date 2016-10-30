@@ -1,0 +1,25 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial">Dear&nbsp;</font>{!Booking__c.OC_First_Name__c}<span style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt">,</span></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">Thank you for using TNT. Please find below confirmation of your collection request.</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial"><b>Contact Name:</b>&nbsp;</font><font face="arial">{!Booking__c.OC_First_Name__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial"><b>Company Name:</b>&nbsp;{!Booking__c.Account__c}</font><font face="arial">{!Booking__c.Company_Name__c}</font><span style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial"><strong>Account Number:</strong> <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 16px arial; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">{!Booking__c.Account_Number__c}</span></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial"><b>Town:&nbsp;</b></font><font face="arial">{!Booking__c.Coll_City__c}</font><span style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt">&nbsp;</span></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial"><b>Postcode:</b>&nbsp;</font><font face="arial">{!Booking__c.Coll_Postcode__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><b>Collection Date / Ready From Time:</b>&nbsp;{!Booking__c.Collection_Ready_Time__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial"><b>Close time at the collection address:</b></font><font face="arial">&nbsp;{!Booking__c.Close_Time__c}</font></div><div><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b>Customer Reference:&nbsp;</b></font><font face="arial">{!Booking__c.Customer_Reference__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">&nbsp; &nbsp; &nbsp;</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt" face="arial">If you have any questions regarding your collection please call Domestic Customer Service on 0800 100 600 quoting your booking reference number&nbsp;</font><font face="arial">{!Booking__c.Name}.</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">For more information on all TNT services including tracking your consignment, please visit <a href="http://www.tnt.co.uk">www.tnt.co.uk</a>.</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="BACKGROUND-COLOR: rgb(255,255,255); FONT-FAMILY: arial; FONT-SIZE: 16px">Yours sincerely,</span></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="BACKGROUND-COLOR: rgb(255,255,255); FONT-FAMILY: arial; FONT-SIZE: 16px"><br></span></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">TNT Domestic Customer Service</font></div>]]></td>
+</tr>
+</table>

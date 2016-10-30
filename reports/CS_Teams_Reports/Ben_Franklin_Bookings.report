@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Order_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Service__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Carriage_Forward__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <operator>equals</operator>
+            <value>atlanta storey,courtney cox,donald powel-brown,gillian hall,julie brown,laura smythe,lisa simpkin,liza graham,namrata jawaheer,nicola wilkins,sally brothwell,sarah scaysbrook,sarah guise</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Ben Franklin Bookings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

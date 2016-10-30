@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Line_of_Business__c$Line_of_Business_Reference__c</field>
+    </columns>
+    <columns>
+        <field>Line_of_Business__c$Name</field>
+    </columns>
+    <columns>
+        <field>Line_of_Business__c$Active__c</field>
+    </columns>
+    <columns>
+        <field>Line_of_Business__c$Commodities__c</field>
+    </columns>
+    <columns>
+        <field>Line_of_Business__c$Routing_Network__c</field>
+    </columns>
+    <columns>
+        <field>Line_of_Business__c$CreatedDate</field>
+    </columns>
+    <description>Report of all loaded LOBs</description>
+    <format>Tabular</format>
+    <name>Line of Business</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Line_of_Business__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Line_of_Business__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

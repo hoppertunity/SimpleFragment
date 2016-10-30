@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Line of Business</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lines of Business</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commodities --></label>
+        <name>Commodities__c</name>
+        <picklistValues>
+            <masterLabel>Assorted</masterLabel>
+            <translation><!-- Assorted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bundle</masterLabel>
+            <translation><!-- Bundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carton</masterLabel>
+            <translation><!-- Carton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dangerous Goods</masterLabel>
+            <translation><!-- Dangerous Goods --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Envelope</masterLabel>
+            <translation><!-- Envelope --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Set</masterLabel>
+            <translation><!-- Full Set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garments</masterLabel>
+            <translation><!-- Garments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incompatible Traffic</masterLabel>
+            <translation><!-- Incompatible Traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jiffy Bag</masterLabel>
+            <translation><!-- Jiffy Bag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Length</masterLabel>
+            <translation><!-- Long Length --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Supplies</masterLabel>
+            <translation><!-- Medical Supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pallet</masterLabel>
+            <translation><!-- Pallet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roll</masterLabel>
+            <translation><!-- Roll --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sack</masterLabel>
+            <translation><!-- Sack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 1</masterLabel>
+            <translation><!-- TSL 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 2</masterLabel>
+            <translation><!-- TSL 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 3</masterLabel>
+            <translation><!-- TSL 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 4</masterLabel>
+            <translation><!-- TSL 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 5</masterLabel>
+            <translation><!-- TSL 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Line of Business Reference --></label>
+        <name>Line_of_Business_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing Network --></label>
+        <name>Routing_Network__c</name>
+        <picklistValues>
+            <masterLabel>EWW</masterLabel>
+            <translation><!-- EWW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EXP</masterLabel>
+            <translation><!-- EXP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RET</masterLabel>
+            <translation><!-- RET --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Line of Business Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>TNT Line of Business Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

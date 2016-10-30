@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Depot_Number__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Depot_Calendar__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>Account.Collection_Queue__c</field>
+    </columns>
+    <columns>
+        <field>Account.Delivery_Queue__c</field>
+    </columns>
+    <columns>
+        <field>Account.Operational_for_Bookings__c</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <description>List of loaded Depots (Account type depot)</description>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Account.Depot</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Depot List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-09-21</startDate>
+    </timeFrameFilter>
+</Report>

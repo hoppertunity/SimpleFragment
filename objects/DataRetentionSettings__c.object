@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Used to set the number of days object records are stored for before they are deleted by a Scheduled Apex Job. See BookingHistory_DataDeletion Apex Class for example.
+
+If the retention period is set to 90 days and 90 days before today is calculated to be 1st January 2016, any code should be developed to delete data from this date or older than this.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>BookingHistoryRetentionPeriod__c</fullName>
+        <defaultValue>365</defaultValue>
+        <description>The Default Value sets how long the Booking History records are stored for in Salesforce. Records whose Movement Date/Time are older than this amount of days will be deleted on a scheduled basis.</description>
+        <externalId>false</externalId>
+        <label>Booking History Retention Period</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Data Retention Settings</label>
+</CustomObject>

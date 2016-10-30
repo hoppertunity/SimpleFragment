@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates that the service is either active or inactive.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Premium_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate if the service is a premium service.</description>
+        <externalId>false</externalId>
+        <label>Premium Service</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ranking__c</fullName>
+        <description>Ranking is used to sort the list of services when displaying them to a user. Lowest ranking is displayed first.</description>
+        <externalId>false</externalId>
+        <label>Ranking</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Routing_Service_Group__c</fullName>
+        <description>Type of service. Indicates that the service is either a normal service, premium service or Saturday delivery service.</description>
+        <externalId>false</externalId>
+        <label>Routing Service Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saturday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Saturday_Collection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if service is a Saturday service collection.</description>
+        <externalId>false</externalId>
+        <label>Saturday Collection</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Saturday_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate if the service is a Saturday service.</description>
+        <externalId>false</externalId>
+        <label>Saturday Service</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Code__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Unique code of the Service.</description>
+        <externalId>true</externalId>
+        <label>Service Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Days__c</fullName>
+        <description>Delivery timescales for the consignment (in days).</description>
+        <externalId>false</externalId>
+        <label>Service Days</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Hour__c</fullName>
+        <description>Service latest delivery hour.</description>
+        <externalId>false</externalId>
+        <label>Service Hour</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Minutes__c</fullName>
+        <description>Service latest delivery minutes.</description>
+        <externalId>false</externalId>
+        <label>Service Minutes</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Time</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Service_Code__c</columns>
+        <columns>Active__c</columns>
+        <columns>Premium_Service__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Service Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Services</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Premium_Service__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Saturday_Service__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

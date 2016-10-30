@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Current_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Number</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prefix__c</fullName>
+        <externalId>false</externalId>
+        <label>Prefix</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Booking Id Settings</label>
+</CustomObject>

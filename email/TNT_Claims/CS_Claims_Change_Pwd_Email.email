@@ -1,0 +1,13 @@
+Dear {!Contact.FirstName},
+
+Thank you for contacting customer support. Your new Customer Portal password can be found below.
+
+
+Please click on the link below for log-in:
+
+https://tntemea.secure.force.com/Claims/Claimsportal
+
+Thank you,
+
+{!User_Name}
+{!Organization.Name} Customer Support

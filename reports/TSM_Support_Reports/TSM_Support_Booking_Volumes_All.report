@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Booking__c$OwnerId$Name</field>
+    </columns>
+    <columns>
+        <field>User.Booking__c$OwnerId$Account__c</field>
+    </columns>
+    <columns>
+        <field>User.Booking__c$OwnerId$Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>User$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User.Booking__c$OwnerId$Status__c</field>
+    </columns>
+    <columns>
+        <field>User.Booking__c$OwnerId$Carriage_Forward__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User.Booking__c$OwnerId$CreatedBy</column>
+            <operator>notEqual</operator>
+            <value>Integration User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$UserRole</column>
+            <operator>equals</operator>
+            <value>Ath TSM Support CSR,Lount TSM Support CSR</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>TSM Support Booking Volumes (All)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Bookings__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Booking__c$OwnerId$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

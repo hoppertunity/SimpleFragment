@@ -1,0 +1,13 @@
+<apex:page standardController="Booking__c" extensions="OL_BookingExtension">
+	<apex:outputField value="{!Booking__c.Close_Time__c}" rendered="false" /> <!-- for preload -->
+	<apex:outputField value="{!Booking__c.Lunch_Start__c}" rendered="false" /> <!-- for preload -->
+	<apex:outputField value="{!Booking__c.Lunch_End__c}" rendered="false" /> <!-- for preload -->
+	<apex:pageblock >
+		<apex:pageBlockTable value="{!bookingItems}" var="bi">
+			<apex:column value="{!bi.Name}"/>
+			<apex:repeat value="{!$ObjectType.Booking_Line_Item__c.FieldSets.EditFields}" var="f" >
+            	<apex:column value="{!bi[f]}"/>
+            </apex:repeat>
+		</apex:pageBlockTable>
+	</apex:pageblock>
+</apex:page>

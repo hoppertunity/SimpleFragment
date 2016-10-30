@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount / PARENTGROUPVAL(RowCount, GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Percentage of Grouping Row</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>BucketField_22416928</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>%</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_22416928</developerName>
+        <masterLabel>SLA Achieved</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Activity.SLA_Minutes_in_Business_Hours__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>60</to>
+            </sourceValues>
+            <value>Less than 1 Hour</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>60</from>
+            </sourceValues>
+            <value>More than 1 Hour</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>CASE_OWNER</field>
+    </columns>
+    <columns>
+        <field>CASE_SUBJECT</field>
+    </columns>
+    <columns>
+        <field>Case.Call_me_back__c</field>
+    </columns>
+    <columns>
+        <field>Activity.Action_Type__c</field>
+    </columns>
+    <columns>
+        <field>Activity.Action_Subtype__c</field>
+    </columns>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <columns>
+        <field>Activity.SLA_Deadline__c</field>
+    </columns>
+    <columns>
+        <field>Activity.SLA_Status__c</field>
+    </columns>
+    <columns>
+        <field>Activity.SLA_Minutes__c</field>
+    </columns>
+    <columns>
+        <field>Activity.SLA_Minutes_in_Business_Hours__c</field>
+    </columns>
+    <description>Overall One hour Call Back Stats</description>
+    <filter>
+        <criteriaItems>
+            <column>Activity.Action_Subtype__c</column>
+            <operator>equals</operator>
+            <value>First Customer Contact</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity.SLA_Deadline__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <operator>equals</operator>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Call_me_back__c</column>
+            <operator>equals</operator>
+            <value>1 hour</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_22416928</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>4a. One Hour Call Back</name>
+    <params>
+        <name>closed</name>
+        <value>closed</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseActivity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CASE_CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

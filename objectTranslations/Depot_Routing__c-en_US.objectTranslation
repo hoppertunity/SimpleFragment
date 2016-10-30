@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Depot Routing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Depot Routings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Collection Cut Off Time --></label>
+        <name>Collection_Cut_Off_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Collection depot – collection routings only --></help>
+        <label><!-- Collection Depot --></label>
+        <name>Collection_Depot__c</name>
+        <relationshipLabel><!-- Depot Routings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Depot Routing Ref --></label>
+        <name>Depot_Routing_Ref__c</name>
+    </fields>
+    <fields>
+        <help><!-- Division number – as an override- or blank for all divisions --></help>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <relationshipLabel><!-- Depot Routings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master Round Number --></label>
+        <name>Master_Round_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Round Group --></label>
+        <name>Round_Group__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Routing Network --></label>
+        <name>Routing_Network__c</name>
+        <picklistValues>
+            <masterLabel>EWW</masterLabel>
+            <translation><!-- EWW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EXP</masterLabel>
+            <translation><!-- EXP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RET</masterLabel>
+            <translation><!-- RET --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Routing Service Group --></label>
+        <name>Routing_Service_Group__c</name>
+        <picklistValues>
+            <masterLabel>Collection</masterLabel>
+            <translation><!-- Collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Routing Table --></label>
+        <name>Routing_Table__c</name>
+        <relationshipLabel><!-- Depot Routings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Depot Routings --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Depot Routing Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

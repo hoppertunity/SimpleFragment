@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_LOB_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Account LOB Id</label>
+        <length>14</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account LOBs</relationshipLabel>
+        <relationshipName>Account_LOBs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Charge_Last_Updated_On__c</fullName>
+        <description>Used with the Long Length field to track when the last update was made.</description>
+        <externalId>false</externalId>
+        <label>Charge Last Updated On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Default_LOB_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Default line of business to be used for bookings.</description>
+        <externalId>false</externalId>
+        <label>Default LOB Indicator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Trade_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>First Trade Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Inspection_Required__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISBLANK(Last_Collection_Date__c) || Last_Collection_Date__c &lt; (TODAY() - 90)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inspection Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Collection_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Collection Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Line of Business</label>
+        <referenceTo>Line_of_Business__c</referenceTo>
+        <relationshipLabel>Account LOBs</relationshipLabel>
+        <relationshipName>Account_LOBs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Long_Length_Charge__c</fullName>
+        <description>These values are manually loaded based on Universe Data so agents can advise customers when requesting quotes and bookings if required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This charge was introduced in July 2015 in line with other suppliers.
+ 
+Charges are based on the Customers Divisional Account Tariff. 
+
+The charge applies if an item is operationally scanned as a Long Length. (Has a 339B Scan Status in Ops Enquiry)</inlineHelpText>
+        <label>Long Length Charge</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Residential_Collection_Charge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Residential Collection Charge</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Residential_Delivery_Charge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Residential Delivery Charge</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Transit_Liability_Charge__c</fullName>
+        <description>Transit liability charge for the liability cover.</description>
+        <externalId>false</externalId>
+        <label>Transit Liability Charge</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Transit_Liability_Value__c</fullName>
+        <description>Transit liability cover.</description>
+        <externalId>false</externalId>
+        <label>Transit Liability Value</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Account LOB</label>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Account LOB Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account LOBs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

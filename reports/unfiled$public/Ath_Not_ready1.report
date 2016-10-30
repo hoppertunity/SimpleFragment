@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Away_Time__c:SUM + NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time__c:SUM) / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Time_Logged_In__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Not Ready</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Away_Time__c:SUM / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Time_Logged_In__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Away</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time__c:SUM / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Time_Logged_In__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Ex. Away</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Ready_for_Outbound_Time__c:SUM / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Time_Logged_In__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Ready Outbound</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Away_Time__c:SUM + NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time__c:SUM) / 60</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA5</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Not Ready Duration in minutes</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__AgentID__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Wrap_Up_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Ready_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Away_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Ready_Outbound_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Inbound_Call_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Inbond_Xfer_Call_Time_hh_mm__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Outbound_Call_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Logged_in_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Number_of_Outbound_Calls__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Number_of_Inbound_Calls_FORMULA__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Number_of_Inbound_Transfers__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Agent__c</column>
+            <operator>equals</operator>
+            <value>,Adam Wotherspoon,Alexis Lunn,Altaf Khalifa,Amanda Timms,Ashley Barnwell,Belinda McDonagh,Bradlee Jukes,Bronwyn Linford,Carrie-Anne Tsinontas,Catherine Sweet,Charlotte Westwood,Coral Wells,David Westwood,Debbie Hopkins,Deepak Gordhan,Eleanor Munslow,Emily Foxall,Faye Bassford,Gillian Snape,Haley Gardner,Hannah Foxall,jenna Dexter,Joseph Mander,Julie Jones,Julie Perry,Katherine Goodall,Katie Finelli,Katie Purcell,Kelly burgess,Lesley Treadwell,Louise Brotherhood,Lynda Gilmour,Michelle Asbury,Michelle Coggins,Michelle Everitt,Mohammed Qasim,Natasha Everton,Nayla Bi,Pam Clarke,Philip Turpin,Rachael Jones,Rebecca Fielding,Rebecca Wincott,Robyn Muir,Sam Barton,Sara Jenkins,Sarah Cartern,Sarah Luton,Sarah McGuffog,Shannon Murrell,Sheetal Sharma,Stephen Miller,Stuart Burnell,Tracey Ball,Zoe Drakeford</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Agent__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Ath Not ready</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Agent_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

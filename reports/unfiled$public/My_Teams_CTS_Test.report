@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount / PARENTGROUPVAL(RowCount, GRAND_SUMMARY)</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Percentage</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>BucketField_72723228</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>%</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_72723228</developerName>
+        <masterLabel>SLA Achieved</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Case.Case_Age_In_Business_Hours__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>10</to>
+            </sourceValues>
+            <value>Closed within 24 Hours</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>10</from>
+            </sourceValues>
+            <value>Closed After 24 Hours</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSED_DATE</field>
+    </columns>
+    <columns>
+        <field>Case.Case_Age_In_Business_Hours__c</field>
+    </columns>
+    <description>Do not use</description>
+    <filter>
+        <criteriaItems>
+            <column>CLOSED</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AGE</column>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Case_Age_In_Business_Hours__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_72723228</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My Teams CTS Test</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

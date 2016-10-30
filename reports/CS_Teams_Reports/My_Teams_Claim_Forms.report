@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CS_Claims__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>CS_Claims__c.TNT_account_no__c</field>
+    </columns>
+    <columns>
+        <field>CS_Claims__c.Claims_Stage__c</field>
+    </columns>
+    <columns>
+        <field>CS_Claims__c.Depot__c</field>
+    </columns>
+    <columns>
+        <field>CS_Claims__c.Depot_no__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <description>Grouped by Agent for last week</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_CREATED_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My Teams Claim Forms</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$CS_Claims__c</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

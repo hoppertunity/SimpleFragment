@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account$Assigned_Agent__c</field>
+    </columns>
+    <columns>
+        <field>Account$Phone</field>
+    </columns>
+    <columns>
+        <field>Account$CS_Owner__c</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$FirstName</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$LastName</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$Phone</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$Email</field>
+    </columns>
+    <description>For Rupa to check contacts have been loaded correctly</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$CS_Owner__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Major Accounts with CS Owner &amp; Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_or_without_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Account$CS_Owner__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

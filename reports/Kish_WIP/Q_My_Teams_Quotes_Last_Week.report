@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Company_Name__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Service_Name__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Is_Premium_Service__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Enhanced_Liability_Option__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Price__c</field>
+    </columns>
+    <description>Includes Priced Quotes Only</description>
+    <filter>
+        <criteriaItems>
+            <column>Quote__c.Price__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_CREATED_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Q. My Teams Quotes Last Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Quote__c</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

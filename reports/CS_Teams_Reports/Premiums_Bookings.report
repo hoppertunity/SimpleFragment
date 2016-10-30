@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount / PARENTGROUPVAL(RowCount, GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Percentage of Parent Grouping</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>BucketField_24683112</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% of Parent Group</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_24683112</developerName>
+        <masterLabel>Premium Service?</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Booking__c.Service__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>09:00 EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>09:00 SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>09:00 SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <value>Premium</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>10 DAY FASHION</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 EXPRESS (DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 EXPRESS (NON DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 EXPRESS (DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2 DAY EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2-3 DAY ROAD</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3 DAY EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>9:00 EXPRESS (DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>9:00 EXPRESS (NON DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 ECONOMY EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DEDICATED NETWORK</sourceValue>
+            </sourceValues>
+            <value>Non Premium</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <description>% of Premium Bookings made in Service Cloud</description>
+    <filter>
+        <criteriaItems>
+            <column>Booking__c.Booking_Id__c</column>
+            <operator>startsWith</operator>
+            <value>177</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_24683112</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Booking__c.Service__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>5a. Premium Bookings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Routing_Table__c$Name</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Routing_Table__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Part_Postcode__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$District__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c$Town__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c.Service_Guarantees__r$Service_Guaranteed__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c.Service_Guarantees__r$Service_Available__c</field>
+    </columns>
+    <columns>
+        <field>Routing_Table__c.Service_Guarantees__r$Name</field>
+    </columns>
+    <description>Service Not Guaranteed and Routing info</description>
+    <format>Tabular</format>
+    <name>Service Not Guaranteed and Routing info</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Routings_and_Service_Not_Guaranteed__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Routing_Table__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,242 @@
+<apex:page standardController="Quote__c" extensions="OL_BookingQuoteHelper" tabStyle="Quote__c" >
+  
+  <apex:includeScript value="{!URLFOR($Resource.jquery1110)}" /> 
+  <apex:includeScript value="/support/console/31.0/integration.js"/>
+  <apex:includeScript value="{!URLFOR($Resource.converterJS)}" /> 
+  
+  <apex:pageMessages escape="false"/>
+  
+<!--   <apex:sectionHeader title="Quote Edit" subtitle="{!IF(Quote__c.Id == null,'New Quote',Quote__c.Name)}"/> -->
+  
+  <apex:form >
+  
+    <apex:pageBlock rendered="{!!Quote__c.Quote_is_Valid__c && Quote__c.Id != null}">
+        <apex:pageMessage summary="This quote has expired and can no longer be edited." severity="warning" strength="3" />
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="Back" action="{!cancel}" immediate="true" />
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    
+    <apex:pageBlock rendered="{!Quote__c.Quote_is_Valid__c || Quote__c.Id == null}">
+        <!-- SF doesn't trigger an onchange event when removing value from dependant lookup -->
+        <!-- therefore drastic measures were taken -->
+        <apex:actionFunction name="changeAccount" action="{!resetAddresses}" rerender="addressPanel,scriptPanel" status="loadingStatus"/>
+        <apex:actionFunction name="clearAccountJS" action="{!clearAccount}" rerender="addressPanel,scriptPanel" status="loadingStatus"/>
+        <apex:actionFunction name="changeColPC" action="{!collectionPostcodeChanged}" rerender="addressPanel" status="loadingStatus" oncomplete="setFocusToDeliveryPostcode();"/>
+        <apex:actionFunction name="changeContact" action="{!findContactEmail}" rerender="customerPanel,emailPanel" status="loadingStatus"/>
+        <apex:actionFunction name="customSaveJS" action="{!customSave}" />
+        
+        <apex:pageBlockSection columns="1" title="Details" collapsible="false">
+            <apex:repeat value="{!$ObjectType.Quote__c.FieldSets.EditFields}" var="f" rows="2">
+                <apex:inputField value="{!Quote__c[f]}" rendered="{!f.Label != 'Account' || !hadAccount}" 
+                onchange="{!IF(f.Label == 'Account','changeAccount();','')}{!IF(f.Label == 'Contact','changeContact();','')}"
+                label="{!f.label}{!IF(f.required||f.dbrequired,' *','')}" required="false" />
+                <apex:outputField value="{!Quote__c[f]}" rendered="{!f.Label == 'Account' && hadAccount}" />
+            </apex:repeat>
+        </apex:pageBlockSection>
+        <!-- more page logic was requested -->
+        <apex:outputPanel id="emailPanel">
+        <apex:pageBlockSection columns="1" collapsible="false">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Email" />
+                <apex:inputText value="{!Quote__c.Email_Only__c}" disabled="{!hasContactEmail}"/>
+            </apex:pageBlockSectionItem>
+            <apex:inputField value="{!Quote__c.Email_the_quote__c}" />
+        </apex:pageBlockSection>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="addressPanel" styleClass="addressPanelClass">
+        
+        <apex:outputPanel id="customerPanel">
+        <apex:pageBlockSection columns="1" title="New Customer" collapsible="false" rendered="{!Quote__c.Contact__c == null}" >
+            <apex:repeat value="{!$ObjectType.Quote__c.FieldSets.CompanyFields}" var="f" >
+                <apex:inputField value="{!Quote__c[f]}" rendered="{!currentAccount.Id == null}" label="{!f.label}{!IF(f.required||f.dbrequired,' *','')}" />
+            </apex:repeat>
+            <apex:repeat value="{!$ObjectType.Quote__c.FieldSets.ContactFields}" var="f" >
+                <apex:inputField value="{!Quote__c[f]}" label="{!f.label}{!IF(f.required||f.dbrequired,' *','')}"/>
+            </apex:repeat>
+        </apex:pageBlockSection>
+        <c:OL_MarketingMessagesNotification contactId="{!Quote__c.Contact__c}" rendered="{!Quote__c.Contact__c != null}" />
+        </apex:outputPanel>
+        
+        
+        <apex:pageBlockSection columns="1" title="Delivery Details" collapsible="false"/>
+        <apex:outputPanel id="addressesFieldSetPanel" >
+        <apex:pageBlockSection columns="2">
+            <apex:repeat value="{!$ObjectType.Quote__c.FieldSets.AddressFields}" var="f" >
+                <apex:inputField value="{!Quote__c[f]}" label="{!f.label}{!IF(f.required||f.dbrequired,' *','')}" required="false" 
+                        onchange="{!IF(f.fieldPath == 'Collection_Postcode__c' && aaDefPC != null,'changeColPC();','')}" 
+                        styleClass="{!IF(f.fieldPath == 'Delivery_Postcode__c', 'delPostcode', '')}"/>
+                <apex:pageBlockSectionItem rendered="{!f.fieldPath == 'Delivery_Postcode__c'}" />
+            </apex:repeat>
+        </apex:pageBlockSection>
+        </apex:outputPanel>
+        
+        </apex:outputPanel>
+        
+        <apex:pageBlockSection columns="2" title="Description of Goods" collapsible="false">
+            <apex:repeat value="{!$ObjectType.Quote__c.FieldSets.EditFields}" var="f" first="4">
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Quote__c.fields[f].inlineHelpText}">
+                    <apex:outputLabel value="{!f.label}{!IF(f.required||f.dbrequired,' *','')}" />
+                    <apex:inputField value="{!Quote__c[f]}" required="false" />
+                </apex:pageBlockSectionItem>
+            </apex:repeat>
+        </apex:pageBlockSection>
+        
+        <apex:outputPanel id="oliPanel" styleClass="oliPanel">
+        <apex:pageBlockSection columns="1" title="Consignment Details" collapsible="true">
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Measurements" />
+                <apex:panelGrid columns="2">
+                    <input type="radio" name="msystem" value="M" onclick="toggleMeasurements();" checked="true" />Metric
+                    <input type="radio" name="msystem" value="I" onclick="refreshOLI();" />Imperial
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            
+            <apex:outputPanel id="linesPanel" styleClass="oliTable" >
+            <apex:actionFunction name="RefreshDarryl" action="{!RefreshDarryl}" reRender="LongLengthWarning"/>
+          
+            <apex:variable var="rowNumber" value="{!0}"/>
+            <apex:pageBlockTable value="{!quoteItems}" var="qi">
+                <apex:column styleClass="rowCounter">
+                    <apex:facet name="header">{!$ObjectType.Quote_Line_Item__c.fields.Number_of_Items__c.Label}</apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!qi.Number_of_Items__c}" style="width:60px" styleClass="chIndex"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Weight per item (kg)</label><label class="impLabel">Weight per item (lb)</label></apex:facet>
+                    <apex:inputText value="{!qi.Weight__c}" style="width:60px" styleClass="metGcls{!rowNumber}" />
+                    <apex:inputText styleClass="impGcls{!rowNumber}" style="width:60px" 
+                        onblur="if(this.value != '') {lbToKg('impGcls{!rowNumber}','metGcls{!rowNumber}');}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Length (cm)</label><label class="impLabel">Length (ft, in)</label></apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!qi.Length__c}" style="width:60px" styleClass="metLcls{!rowNumber}" />
+                    <input type="text" size="6" id="impLFTId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impLFTId{!rowNumber}','impLINId{!rowNumber}','metLcls{!rowNumber}');RefreshDarryl();" />
+                    <input type="text" size="6" id="impLINId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impLFTId{!rowNumber}','impLINId{!rowNumber}','metLcls{!rowNumber}');RefreshDarryl();" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Width (cm)</label><label class="impLabel">Width (ft, in)</label></apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!qi.Width__c}" style="width:60px" styleClass="metWcls{!rowNumber}" />
+                    <input type="text" size="6" id="impWFTId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impWFTId{!rowNumber}','impWINId{!rowNumber}','metWcls{!rowNumber}');RefreshDarryl();" />
+                    <input type="text" size="6" id="impWINId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impWFTId{!rowNumber}','impWINId{!rowNumber}','metWcls{!rowNumber}');RefreshDarryl();" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"><label class="metLabel">Height (cm)</label><label class="impLabel">Height (ft, in)</label></apex:facet>
+                    <apex:inputText onblur="RefreshDarryl();" value="{!qi.Height__c}" style="width:60px" styleClass="metHcls{!rowNumber}" />
+                    <input type="text" size="6" id="impHFTId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impHFTId{!rowNumber}','impHINId{!rowNumber}','metHcls{!rowNumber}');RefreshDarryl();" />
+                    <input type="text" size="6" id="impHINId{!rowNumber}" 
+                        onblur="feetInchesToMetres('impHFTId{!rowNumber}','impHINId{!rowNumber}','metHcls{!rowNumber}');RefreshDarryl();" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Quote_Line_Item__c.fields.Pallet_Policy__c.Label}</apex:facet>
+                    <apex:inputField value="{!qi.Pallet_Policy__c}" styleClass="chIndex"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Actions</apex:facet>
+                    <apex:commandLink action="{!removeLine}" value="Remove" id="theCommandLink" rerender="linesPanel" 
+                    status="loadingStatus" styleClass="chIndex">
+                        <apex:param name="rowIndex" value="{!rowNumber}"/>
+                    </apex:commandLink>
+                    <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                </apex:column>
+    
+            </apex:pageBlockTable>
+            
+            <!--DH-->
+            <!-- 
+             <apex:outputPanel id="LongLengthWarning" >
+                    <c:NotificationContainer messageText="{!$Setup.Warning_Banner_Messages__c.QuoteLongLength__c} ({!NumLongLengths} items)" rendered="{!NumLongLengths > 0}"/>
+                </apex:outputPanel>
+            -->
+            <script>
+                if(typeof hasLoaded !== 'undefined') {
+                    if($('input[name="msystem"]:checked', '.oliPanel').val() == 'I') refreshOLI();
+                    else toggleMeasurements();
+                }
+            </script>
+            </apex:outputPanel>
+             
+            <apex:commandLink action="{!addLine}" value="Add Line" id="addLineCommandLink" rerender="linesPanel" 
+            status="loadingStatus" styleClass="chIndex"/>
+        </apex:pageBlockSection>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="scriptPanel">
+        <script>
+            $('img[alt="Clear"]').on('mouseup',function() {
+                clearAccountJS();
+            });
+        </script>
+        </apex:outputPanel>
+        
+        <apex:actionStatus id="loadingStatus" >
+            <apex:facet name="start" >
+                <img src="/img/loading.gif" alt="Loading..."/>                   
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <apex:pageBlockButtons location="both">
+            <apex:commandButton value="Save Hack" action="{!customSave}" style="display:none;"/>
+            <apex:commandButton value="Save" action="{!emptyAction}" oncomplete="customSaveJS();" immediate="false" styleClass="chIndex"/>
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" styleClass="chIndex"/>
+        </apex:pageBlockButtons>
+        
+    </apex:pageBlock>
+    
+  </apex:form>
+  
+  <script>
+    if(sforce.console.isInConsole())
+    {
+        sforce.console.setTabTitle('{!IF(Quote__c.Id == null,'New Quote',Quote__c.Name)}');
+    }
+    
+    $( document ).ready(function() {
+        hasLoaded = true;
+        toggleMeasurements();
+    });
+    
+    function refreshOLI() {
+        toggleMeasurements();
+        populateAllImpDimensions($('.oliTable').find('.rowCounter').length)
+    }
+    
+    function toggleMeasurements() {
+        //confirm($('input[name="msystem"]:checked', '.oliPanel').val());
+        if($('input[name="msystem"]:checked', '.oliPanel').val() == 'I') { 
+            $('.oliTable').find('input[id^="imp"]').show();
+            $('.oliTable').find('[class^="imp"]').show();
+            $('.oliTable').find('[class^="met"]').hide();
+        } else {
+            $('.oliTable').find('[class^="met"]').show();
+            $('.oliTable').find('input[id^="imp"]').hide();
+            $('.oliTable').find('[class^="imp"]').hide();
+        }
+    }
+    
+    // convert metric to imperials
+    function populateAllImpDimensions(rowN) {
+        if(rowN != null && !isNaN(rowN) && rowN > 0) {
+            for(var i=0; i<rowN; i++) {
+                kgToLb('metGcls'+i,'impGcls'+i);
+                metresToFeetInches('metLcls'+i,'impLFTId'+i,'impLINId'+i);
+                metresToFeetInches('metWcls'+i,'impWFTId'+i,'impWINId'+i);
+                metresToFeetInches('metHcls'+i,'impHFTId'+i,'impHINId'+i);
+            }
+        }
+    }
+    
+    //set focus to delivery postcode when collection postcode has been changed
+    function setFocusToDeliveryPostcode(){
+        $('input[class="delPostcode"]').focus();
+    }
+    
+  </script>
+  
+</apex:page>

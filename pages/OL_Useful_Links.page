@@ -1,0 +1,49 @@
+<apex:page >
+    <apex:includeScript value="/support/console/31.0/integration.js"/>
+    
+    <style>
+        a {
+            text-decoration: none;
+            font-size: 130% !important;
+            display: block;
+        }
+    </style>
+
+    <br/>
+    
+    <a href="#" onclick="openTab('http://tntnet2/depotdatabase/depotlocator.asp', 'Depot Locator');">Depot Locator</a><br/>
+    <a href="#" onclick="openTab('http://duc.gb.tntpost.com/tntduc/', 'DUCS');">DUCS</a><br/>
+    <a href="#" onclick="openTab('https://express.tnt.com/mydelivery/flow/redelivery.html?execution=e2s1', 'myDelivery');">myDelivery</a><br/>
+    <a href="#" onclick="openTab('http://tntemea.force.com/OutOfHours', 'OOH');">Out of Hours Contacts</a><br/>
+    <a href="#" onclick="openTab('http://10.209.1.231/tokweb22.ASP?WCI=login&WCE=frmlogin&WCU', 'POD_Images');">POD Images</a><br/>
+    <a href="#" onclick="openTab('https://www.paragon-ebiz.com/adminindex.jsp?ContractId=298', 'Stationery Admin Login');">Stationery (Admin Login)</a><br/>
+
+    <script>
+    
+        var gLink, gName;
+        
+        function openTab(link, name){
+            gLink = link;
+            gName = name;
+            
+            if(sforce.console.isInConsole()){
+                openPrimaryTabByName();
+            } else {
+                //window.open('/'+dId, '_blank');
+            }
+        }
+        
+        function openPrimaryTabByName() {
+            sforce.console.focusPrimaryTabByName(gName, focusSuccess);
+        }
+        
+        var focusSuccess = function focusSuccess(result) {
+            //Report whether going to the primary tab was successful
+            if (result.success != true) {
+                sforce.console.openPrimaryTab(null, gLink, true, gName, null, gName);
+            }
+        };
+        
+    </script>
+
+</apex:page>

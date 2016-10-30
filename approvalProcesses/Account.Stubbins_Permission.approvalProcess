@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>dan@tntneworg.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>josemi@tntneworg.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>All On-Stop accounts must go to Stubbins</description>
+        <label>Step 1</label>
+        <name>Step_1</name>
+    </approvalStep>
+    <description>Approval Process to ask Stubbins for permission to process a Quote or Booking</description>
+    <emailTemplate>Internal_Templates/Stubbins_Request</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Account.Request_Stubbins_Permission__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.On_Stop__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Allow_On_Stop_Temp</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Remove_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Remove_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Stubbins Permission</label>
+    <recallActions>
+        <action>
+            <name>Remove_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

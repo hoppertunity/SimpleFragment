@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LOB Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LOBs Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- LOB Service Key --></label>
+        <name>LOB_Service_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <relationshipLabel><!-- LOBs Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- LOBs Services --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>LOB Service Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

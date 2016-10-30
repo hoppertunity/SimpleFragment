@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Auto_Escalation_Comment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>comment to put in when case changes priority through workflow</shortDescription>
+        <value>AUTO-ESCALATED</value>
+    </labels>
+    <labels>
+        <fullName>Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>Error_Msg_Alfanumeric</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Msg Alfanumeric</shortDescription>
+        <value>Only alphanumeric characters are allowed.</value>
+    </labels>
+    <labels>
+        <fullName>Error_Msg_Numeric</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Msg Numeric</shortDescription>
+        <value>Only numeric characters are allowed.</value>
+    </labels>
+    <labels>
+        <fullName>Residential_Collection_Postcode_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>warn agent collection postcode is residential</shortDescription>
+        <value>A supplement will apply to this consignment as the collection address is residential</value>
+    </labels>
+    <labels>
+        <fullName>Residential_Delivery_Postcode_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>warn agent delivery postcode is residential</shortDescription>
+        <value>A supplement will apply to this consignment as the delivery address is residential</value>
+    </labels>
+    <labels>
+        <fullName>Salesforce_End_Depot</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Salesforce End Depot</shortDescription>
+        <value>178</value>
+    </labels>
+    <labels>
+        <fullName>Salesforce_Start_Depot</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Salesforce Start Depot</shortDescription>
+        <value>177</value>
+    </labels>
+    <labels>
+        <fullName>Saturday_Service_Info</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Saturday_Service_Info</shortDescription>
+        <value>Would the customer prefer a Saturday Service?</value>
+    </labels>
+    <labels>
+        <fullName>Service_Not_Guaranteed_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service Not Guaranteed Message</shortDescription>
+        <value>This Service is NOT guaranteed</value>
+    </labels>
+    <labels>
+        <fullName>TrackingCreateCaseHelpText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TrackingCreateCaseHelpText</shortDescription>
+        <value>Use this button to open a Case that requires follow up activity. The Case will be created in your name but you can add your notes and assign the Case as required.</value>
+    </labels>
+    <labels>
+        <fullName>TrackingReckordTrackHelpText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TrackingReckordTrackHelpText</shortDescription>
+        <value>Every time you perform a tracking activity for a customer enquiry you must record this using this button. The button will log this as a Case and close the Case as there is no follow up required.</value>
+    </labels>
+</CustomLabels>

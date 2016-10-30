@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Q&amp;A / FAQ</label>
+            <name>QA_FAQ</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Policy Document</label>
+            <name>Policy_Document</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Form/Template</label>
+            <name>Form_Template</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Training Document</label>
+            <name>Training_Document</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Database/Tool</label>
+            <name>Database_Tool</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Guide</label>
+            <name>Detailed_Guide</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Process Document</label>
+            <name>Process_Document</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Topic</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+        <object>Question</object>
+    </objectUsage>
+</DataCategoryGroup>

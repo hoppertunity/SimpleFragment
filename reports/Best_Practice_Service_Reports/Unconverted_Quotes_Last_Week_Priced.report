@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Quote__c$Name</field>
+    </columns>
+    <columns>
+        <field>Quote__c$Owner</field>
+    </columns>
+    <columns>
+        <field>Quote__c$Account__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
+        <aggregateTypes>Minimum</aggregateTypes>
+        <field>Quote__c$Price__c</field>
+    </columns>
+    <crossFilters>
+        <operation>without</operation>
+        <primaryTableColumn>Quote__c$Id</primaryTableColumn>
+        <relatedTable>Booking__c</relatedTable>
+        <relatedTableJoinColumn>Quote__c</relatedTableJoinColumn>
+    </crossFilters>
+    <description>Shows all priced quotes that are not associated with a Booking record</description>
+    <filter>
+        <criteriaItems>
+            <column>Quote__c$Price__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Quote__c.Bookings__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Unconverted Quotes Last Week (Priced)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Quotes_with_or_without_Bookings__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Quote__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

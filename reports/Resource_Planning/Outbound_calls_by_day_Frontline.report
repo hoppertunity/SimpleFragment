@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_Service_Name__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_ROLE</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Local_Date__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CLID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c</field>
+    </columns>
+    <description>CSR &amp; TL Outbound calls by day - Frontline</description>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_Type__c</column>
+            <operator>equals</operator>
+            <value>Outbound Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_OWNER_ROLE</column>
+            <operator>contains</operator>
+            <value>FL</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Outbound calls by day - Frontline</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

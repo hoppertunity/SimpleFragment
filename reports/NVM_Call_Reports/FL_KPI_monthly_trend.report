@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Calls Taken</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c:SUM / NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c:SUM) * 100</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA6</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Hold</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.Call_Answered_in_10__c:SUM / RowCount) * 100</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA7</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Calls Answered in 10 sec</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount/PARENTGROUPVAL(RowCount, CUST_CREATED_DATE )</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA8</developerName>
+        <downGroupingContext>BucketField_17130696</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Against Created Date</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_17130696</developerName>
+        <masterLabel>Answered</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>Calls Abandoned</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+            </sourceValues>
+            <value>Calls Answered</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CLID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_Service_Name__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallTime__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Ring_Duration__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_ID__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Queue_Duration__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_Transfer_Time__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.Call_Answered_in_10__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_Service_Name__c</column>
+            <operator>equals</operator>
+            <value>Frontline,SSS Booking,SSS Track,SSS DG,Sales FL Xfer,FL Dom Xfer</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_17130696</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>FL KPI - monthly trend</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2015-09-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-05-01</startDate>
+    </timeFrameFilter>
+</Report>

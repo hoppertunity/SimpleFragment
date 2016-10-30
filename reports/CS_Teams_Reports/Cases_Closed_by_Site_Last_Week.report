@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_24461524</developerName>
+        <masterLabel>Site</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>User$UserRole</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Ath Apple 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 3 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Central Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 2 Team Lead</sourceValue>
+            </sourceValues>
+            <value>Atherstone</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lount FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 5 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Admin CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Fashion CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Admin Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 4 Team Lead</sourceValue>
+            </sourceValues>
+            <value>Lount</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Manchester MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester Support CSR</sourceValue>
+            </sourceValues>
+            <value>Manchester</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mauritius CSR</sourceValue>
+            </sourceValues>
+            <value>Mauritius</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>User.Case$OwnerId$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$Account</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$Type</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$Case_Types_Level_2__c</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$Owner__c</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$CreatedBy</field>
+    </columns>
+    <description>Grouped using a bucket field based on user roles. Does not contain Record Track Cases.</description>
+    <filter>
+        <criteriaItems>
+            <column>User.Case$OwnerId$Type</column>
+            <operator>notEqual</operator>
+            <value>FCR - Record Track</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User*User$User_Site__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$UserRole</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Cases Closed by Site Last Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Cases__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Case$OwnerId$ClosedDate</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

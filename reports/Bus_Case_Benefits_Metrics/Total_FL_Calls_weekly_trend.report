@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Calls Taken</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c:SUM + NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c:SUM + NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_Transfer_Time__c:SUM) / RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg. Handle time w/o wrap up in seconds</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c:SUM) / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA5</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Call Duration (hrs)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c:SUM + NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c:SUM + NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__After_Call_Work_Time__c:SUM) / RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA6</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>AHT</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA7</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Weekly Total Calls</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallTime__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Ring_Duration__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_Transfer_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_Service_Name__c</column>
+            <operator>equals</operator>
+            <value>Frontline,SSS Booking,SSS Track,SSS DG,Sales FL Xfer,FL Dom Xfer</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Total FL Calls - weekly trend</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST60</interval>
+    </timeFrameFilter>
+</Report>

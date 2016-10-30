@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this when we don&apos;t have an invoice and need to request one from the customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Simple_TNT_Logo</letterhead>
+    <name>Missing Commercial Invoice for Channel Islands</name>
+    <style>freeForm</style>
+    <subject>Commercial Invoice Required for TNT Consignment {!Case.Consignment_Number__c}</subject>
+    <textOnly>Hi {!Contact.FirstName}
+
+I am emailing in relation to consignment number {!Case.Consignment_Number__c} that is going to the Channel Islands.
+
+The consignment has been held at our depot as the goods need a commercial invoice for Customs purposes. Please can you provide this to us by return email.
+
+Yours sincerely,
+
+TNT Domestic Customer Service</textOnly>
+    <type>html</type>
+</EmailTemplate>

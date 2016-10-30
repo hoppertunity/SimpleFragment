@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Coll_Org_Name__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Del_Org_Name__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Booking__c.Account__c</column>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Booking__c.Carriage_Forward__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>No Account &amp; No CFWD</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Booking__c.Collection_Ready_Time__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

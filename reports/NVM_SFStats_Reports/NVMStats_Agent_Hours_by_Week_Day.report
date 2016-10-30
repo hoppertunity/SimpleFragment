@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Ready_Time__c:SUM / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Ready Hrs</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Away_Time__c:SUM + NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time__c:SUM) / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Away Hrs</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Inbound_Call_Time__c:SUM+NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Outbound_Call_Time__c:SUM) / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>OnCall Hrs</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Wrap_Up_Time__c:SUM / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Wrap Hrs</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA3</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA4</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Agent__c</groupingColumn>
+        <legendPosition>Bottom</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Inbound_Call_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Number_of_Inbound_Calls_FORMULA__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Number_of_Outbound_Calls__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Outbound_Call_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Ready_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Wrap_Up_Time__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Agent__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>NVMStats Agent Hours by ISOWeek - Day</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Agent_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Date__c</dateColumn>
+        <interval>INTERVAL_PREVCURY</interval>
+    </timeFrameFilter>
+</Report>

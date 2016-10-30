@@ -1,0 +1,37 @@
+<apex:page standardController="Account" extensions="OL_AccountOnStopSubmit" action="{!submitAccount}" sidebar="false" showHeader="false">
+	
+	<apex:pageMessages />
+	
+	
+	<apex:outputPanel rendered="{!!hasError && Account.On_Stop__c && !Account.Stubbins_Temporary_Permission__c}">
+		<p style="text-align:center;vertical-align:middle;">
+			Account {!Account.Name} was successfully submitted for approval.
+		</p>
+	</apex:outputPanel>
+	
+	<apex:outputPanel rendered="{!Account.On_Stop__c && Account.Stubbins_Temporary_Permission__c}">
+		<p style="text-align:center;vertical-align:middle;">
+			Temporary permission granted for account {!Account.Name}.
+		</p>
+	</apex:outputPanel>
+	
+	<apex:outputPanel rendered="{!!Account.On_Stop__c}">
+		<p style="text-align:center;vertical-align:middle;">
+			Account {!Account.Name} is not On Stop.
+		</p>
+	</apex:outputPanel>
+	
+	<script type="text/javascript">
+		if({!!hasError})	// if page rendered OK close it after 10 seconds
+		{
+			setTimeout(
+				function()
+				{
+					window.close()
+				},
+				5000);
+		}
+	</script>
+	
+	
+</apex:page>

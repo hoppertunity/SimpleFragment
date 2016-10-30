@@ -1,0 +1,109 @@
+<apex:page standardController="Quote__c" extensions="OL_GetQuotePricingDetailsExtension" action="{!requestPrice}" >
+
+    <apex:includeScript value="{!URLFOR($Resource.jquery1110)}" /> 
+    <apex:includeScript value="/support/console/31.0/integration.js"/>
+    
+    <script>
+        function unCheckOther(el){
+            $('.dateCheckBox').attr('checked', false);
+            if(el.checked == true){
+              $('.selCheckBox').attr('checked', false);
+              el.checked = true;
+              var dtCh = $(el).closest('.outPanel').find('.dateCheckBox');
+              $(dtCh).attr('checked', true);
+              $(dtCh).prop('checked', true);
+            }
+        }
+        
+        
+        
+        
+    </script>
+    
+    <style>
+        .srcTable td{
+            border: 0px !important;
+        }
+    </style>
+    
+    <apex:pageMessages escape="false"/>
+<apex:form >
+    <apex:pageblock >
+    
+        <apex:pageBlockSection columns="1" title="Quote Details" collapsible="false">
+            <apex:outputField value="{!Quote__c.Name}" />
+            <apex:outputField value="{!Quote__c.Collection_Date__c}" />
+            <apex:outputField value="{!Quote__c.Collection_Postcode__c}" />
+            <apex:outputField value="{!Quote__c.Delivery_Postcode__c}" />
+         </apex:pageBlockSection>
+         <apex:pageBlockSection columns="1" title="If the customer does not wish to go ahead with this quote then please record the reason why" collapsible="false">
+            <apex:inputField value="{!Quote__c.Reason_for_Not_Booking__c}" />
+        </apex:pageBlockSection>
+        
+            <apex:repeat value="{!responceData.del}" var="dd">
+                <apex:outputpanel styleClass="outPanel">
+                    <div class="pbSubheader brandTertiaryBgr tertiaryPalette">
+                        <apex:inputCheckbox value="{!dd.selected}" styleClass="dateCheckBox" style="display: none;"/>
+                        <h3>Delivery on &nbsp;
+                            <apex:outputText value="{0,date,EEE dd MMM yyyy}">
+                                <apex:param value="{!dd.delDt}" />
+                            </apex:outputText></h3>
+                    </div>
+                    <apex:pageBlockTable value="{!dd.delSvcs.delSvc}" var="ds">
+                        <apex:column headerValue="Select">
+                            <apex:inputCheckbox value="{!ds.selected}" styleClass="selCheckBox" onChange="unCheckOther(this);"/>
+                        </apex:column>
+                        <apex:column value="{!ds.svcCd}" headerValue="Code"/>
+                        <apex:column headerValue="Name">
+                            <apex:outputpanel rendered="{!CONTAINS(serviceKeys, '*' + ds.svcCd + '*')}">
+                                {!services[ds.svcCd].Name}
+                            </apex:outputpanel>
+                        </apex:column>
+                        <apex:column headerValue="Charge">{!ds.qtAmt}&nbsp;{!ds.curCd}</apex:column>
+                        <apex:column headerValue="Guaranteed">
+                            <apex:inputCheckbox value="{!ds.guarSvcInd}" disabled="true"/>
+                        </apex:column>
+                        <apex:column headerValue="Premium">
+                            <apex:inputCheckbox value="{!ds.prSvcInd}" disabled="true"/>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">
+                                <div style="float:left; width:30%;">&nbsp;Cat.</div>
+                                <div style="float:left; width:40%;">&nbsp;Description</div>
+                                <div style="float:left; width:30%;">&nbsp;Val.</div>
+                            
+                            </apex:facet>
+                            <table width="100%" cellspacing="0" cellpadding="0" class="srcTable">
+                                <apex:repeat value="{!ds.srchrgs.srchrg}" var="src" >
+                                    <tr>
+                                        <td width="30%">{!src.srchrgTypCd}</td>
+                                        <td width="40%">{!src.srchrgTypNm}</td>
+                                        <td width="30%">{!IF(!ISBLANK(src.chrgAmt), src.chrgAmt + ' ' + src.curCd, '')}
+                                            {!IF(!ISBLANK(src.chrgPrcnt) && !ISBLANK(src.chrgAmt), ', ' , '')}
+                                            {!IF(!ISBLANK(src.chrgPrcnt),src.chrgPrcnt+'%' , '')}
+                                            </td>
+                                    </tr>
+                                </apex:repeat>
+                            </table>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:outputpanel> 
+            </apex:repeat>
+         
+        
+        <apex:pageBlockButtons location="both">
+            <apex:commandButton value="Save selected price" action="{!savePrice}" rendered="{!!errorOnLoad}" />
+            <apex:commandButton value="Cancel" action="{!cancel}" />
+        </apex:pageBlockButtons>
+        
+    
+    </apex:pageblock>
+</apex:form>
+
+<script>
+    if(sforce.console.isInConsole())
+    {
+        sforce.console.setTabTitle("{!IF(Quote__c.Id == null,'Quote',Quote__c.Name)}");
+    }
+</script>
+</apex:page>

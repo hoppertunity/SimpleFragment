@@ -1,0 +1,32 @@
+<apex:page controller="OL_MarketingMessagesController" tabStyle="CampaignMember" showHeader="false" sidebar="false"
+title="Marketing messages for {!con.Name}">
+
+    <apex:form style="padding:10px;">
+        <apex:pageBlock mode="maindetail" >
+            <apex:pageBlockSection columns="1" title="Contact Info" collapsible="false">
+                <apex:outputField value="{!con.Name}" />
+                <apex:outputField value="{!con.AccountId}" />
+                <apex:outputField value="{!con.Email}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock mode="maindetail" title="Promotions">
+            <apex:repeat value="{!con.campaignMembers}" var="cm" >
+                <apex:pageBlockSection columns="1" collapsible="false"
+                title="{!cm.Campaign.Name} ({!cm.Campaign.StartDate} - {!cm.Campaign.EndDate})"  >
+                    <apex:outputField value="{!cm.Campaign.Description}" />
+                    <apex:inputField value="{!cm.Interested__c}" />
+                    <apex:inputField value="{!cm.Response__c}" style="width:50%;"/>
+                </apex:pageBlockSection>
+            </apex:repeat>
+            
+            <apex:pageBlockButtons location="both">
+            <apex:commandButton value="Save" action="{!saveList}" oncomplete="window.close();" />
+            <apex:commandButton value="Cancel" onclick="window.close();" />
+        </apex:pageBlockButtons>
+        
+        </apex:pageBlock>
+    </apex:form>
+
+    
+</apex:page>

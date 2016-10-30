@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>Custom Object that is part of the NVM Advanced Reporting Installed Package.
+
+Each record is individually numbered with the prefix TX- and gives details about the information that the Advanced Reporting package has been able to request from the ContactWorld API.</description>
+    <mobileReady>false</mobileReady>
+    <motif>Custom67: Gears</motif>
+</CustomTab>

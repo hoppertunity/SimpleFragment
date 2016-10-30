@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Booking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bookings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Am I the record Owners Manager? --></label>
+        <name>Am_I_the_record_Owners_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Id --></label>
+        <name>Booking_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Auto Number --></label>
+        <name>Booking_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Rejected by Depot --></label>
+        <name>Booking_Rejected_by_Depot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Email Address --></label>
+        <name>CC_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Fax Number --></label>
+        <name>CC_Fax_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact First Name --></label>
+        <name>CC_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Last Name --></label>
+        <name>CC_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Middle Initials --></label>
+        <name>CC_Middle_Initials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Mobile Phone Number --></label>
+        <name>CC_Mobile_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Phone Extension --></label>
+        <name>CC_Phone_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Phone Number --></label>
+        <name>CC_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact Title --></label>
+        <name>CC_Title__c</name>
+        <picklistValues>
+            <masterLabel>Dr.</masterLabel>
+            <translation><!-- Dr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miss</masterLabel>
+            <translation><!-- Miss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mr</masterLabel>
+            <translation><!-- Mr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mrs</masterLabel>
+            <translation><!-- Mrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms</masterLabel>
+            <translation><!-- Ms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof.</masterLabel>
+            <translation><!-- Prof. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Record details of who, when and why the booking has been cancelled. --></help>
+        <label><!-- Cancellation Notes --></label>
+        <name>Cancellation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carriage Forward --></label>
+        <name>Carriage_Forward__c</name>
+    </fields>
+    <fields>
+        <label><!-- Close Time --></label>
+        <name>Close_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Address --></label>
+        <name>Coll_Account_Address__c</name>
+        <relationshipLabel><!-- Bookings (Collection Account Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City/Town --></label>
+        <name>Coll_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Coll_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- County/Region --></label>
+        <name>Coll_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- District --></label>
+        <name>Coll_District__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Org Name --></label>
+        <name>Coll_Org_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Postal Code --></label>
+        <name>Coll_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Name --></label>
+        <name>Coll_Premise_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Number --></label>
+        <name>Coll_Premise_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 1 --></label>
+        <name>Coll_Street_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 2 --></label>
+        <name>Coll_Street_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Premise --></label>
+        <name>Coll_Sub_Premise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Confirmed --></label>
+        <name>Collection_Confirmed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Contact --></label>
+        <name>Collection_Contact__c</name>
+        <relationshipLabel><!-- Bookings (Collection Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Collection Depot --></label>
+        <lookupFilter>
+            <errorMessage><!-- Collection Depot must be an Account of type &quot;Depot&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>Collection_Depot__c</name>
+        <relationshipLabel><!-- Bookings (Collection Depot) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Collection Instructions/Comments --></label>
+        <name>Collection_Instructions_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Instructions --></label>
+        <name>Collection_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Collection Number for this Booking --></help>
+        <label><!-- Collection Number --></label>
+        <name>Collection_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Ready Time --></label>
+        <name>Collection_Ready_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commercial Invoice Required --></label>
+        <name>Commercial_Invoice_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of packaging --></label>
+        <name>Commodity__c</name>
+        <picklistValues>
+            <masterLabel>Assorted</masterLabel>
+            <translation><!-- Assorted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bundle</masterLabel>
+            <translation><!-- Bundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carton</masterLabel>
+            <translation><!-- Carton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dangerous Goods</masterLabel>
+            <translation><!-- Dangerous Goods --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Envelope</masterLabel>
+            <translation><!-- Envelope --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Set</masterLabel>
+            <translation><!-- Full Set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garments</masterLabel>
+            <translation><!-- Garments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incompatible Traffic</masterLabel>
+            <translation><!-- Incompatible Traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jiffy Bag</masterLabel>
+            <translation><!-- Jiffy Bag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Length</masterLabel>
+            <translation><!-- Long Length --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Supplies</masterLabel>
+            <translation><!-- Medical Supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pallet</masterLabel>
+            <translation><!-- Pallet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roll</masterLabel>
+            <translation><!-- Roll --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sack</masterLabel>
+            <translation><!-- Sack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 1</masterLabel>
+            <translation><!-- TSL 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 2</masterLabel>
+            <translation><!-- TSL 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 3</masterLabel>
+            <translation><!-- TSL 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 4</masterLabel>
+            <translation><!-- TSL 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 5</masterLabel>
+            <translation><!-- TSL 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Phone --></label>
+        <name>Company_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consignment Number --></label>
+        <name>Consignment_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date/Time --></label>
+        <name>Created_Date_Time_for_Reporting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Hour --></label>
+        <name>Created_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Reference --></label>
+        <name>Customer_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Email Address --></label>
+        <name>DC_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Fax Number --></label>
+        <name>DC_Fax_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact First Name --></label>
+        <name>DC_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Last Name --></label>
+        <name>DC_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Middle Initials --></label>
+        <name>DC_Middle_Initials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Mobile Phone Number --></label>
+        <name>DC_Mobile_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Phone Extension --></label>
+        <name>DC_Phone_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Phone Number --></label>
+        <name>DC_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact Title --></label>
+        <name>DC_Title__c</name>
+        <picklistValues>
+            <masterLabel>Dr.</masterLabel>
+            <translation><!-- Dr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miss</masterLabel>
+            <translation><!-- Miss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mr</masterLabel>
+            <translation><!-- Mr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mrs</masterLabel>
+            <translation><!-- Mrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms</masterLabel>
+            <translation><!-- Ms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof.</masterLabel>
+            <translation><!-- Prof. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dangerous Goods --></label>
+        <name>Dangerous_Goods__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Address --></label>
+        <name>Del_Account_Address__c</name>
+        <relationshipLabel><!-- Bookings (Delivery Account Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City/Town --></label>
+        <name>Del_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Del_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- County/Region --></label>
+        <name>Del_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- District --></label>
+        <name>Del_District__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Org Name --></label>
+        <name>Del_Org_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Postal Code --></label>
+        <name>Del_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Name --></label>
+        <name>Del_Premise_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Number --></label>
+        <name>Del_Premise_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 1 --></label>
+        <name>Del_Street_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 2 --></label>
+        <name>Del_Street_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Premise --></label>
+        <name>Del_Sub_Premise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Contact --></label>
+        <name>Delivery_Contact__c</name>
+        <relationshipLabel><!-- Bookings (Delivery Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delivery Depot --></label>
+        <lookupFilter>
+            <errorMessage><!-- Delivery Depot must be an Account of type &quot;Depot&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>Delivery_Depot__c</name>
+        <relationshipLabel><!-- Bookings (Delivery Depot) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delivery Instructions --></label>
+        <name>Delivery_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depot Routing --></label>
+        <name>Depot_Routing__c</name>
+        <relationshipLabel><!-- Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Does the contact want the booking emailed to them? --></help>
+        <label><!-- Email the booking reference? --></label>
+        <name>Email_the_booking_reference__c</name>
+    </fields>
+    <fields>
+        <help><!-- EL not available for precious stones, precious metals, laptop computers, plasma and LCD screens, jewellery, money, glass, china, objects of art, antiques, documents or any films, tapes, discs, memory cards or any such other data or image carrying goods. --></help>
+        <label><!-- Enhanced Liability --></label>
+        <name>Enhanced_Liability__c</name>
+        <picklistValues>
+            <masterLabel>0 - None</masterLabel>
+            <translation><!-- 0 - None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - £4.00</masterLabel>
+            <translation><!-- 1 - £4.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - £7.00</masterLabel>
+            <translation><!-- 2 - £7.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - £10.00</masterLabel>
+            <translation><!-- 3 - £10.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Level</masterLabel>
+            <translation><!-- Account Level --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description of Goods --></label>
+        <name>Goods_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Packing Class 1 --></label>
+        <name>Hazchem_1_Packing_Class__c</name>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>II</masterLabel>
+            <translation><!-- II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>III</masterLabel>
+            <translation><!-- III --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Quantity 1 --></label>
+        <name>Hazchem_1_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Technical Name 1 --></label>
+        <name>Hazchem_1_Technical_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem UN Number 1 --></label>
+        <name>Hazchem_1_UN_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Unit of Measure 1 --></label>
+        <name>Hazchem_1_UOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Packing Class 2 --></label>
+        <name>Hazchem_2_Packing_Class__c</name>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>II</masterLabel>
+            <translation><!-- II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>III</masterLabel>
+            <translation><!-- III --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Quantity 2 --></label>
+        <name>Hazchem_2_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Technical Name 2 --></label>
+        <name>Hazchem_2_Technical_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem UN Number 2 --></label>
+        <name>Hazchem_2_UN_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Unit of Measure 2 --></label>
+        <name>Hazchem_2_UOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Packing Class 3 --></label>
+        <name>Hazchem_3_Packing_Class__c</name>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>II</masterLabel>
+            <translation><!-- II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>III</masterLabel>
+            <translation><!-- III --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Quantity 3 --></label>
+        <name>Hazchem_3_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Technical Name 3 --></label>
+        <name>Hazchem_3_Technical_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem UN Number 3 --></label>
+        <name>Hazchem_3_UN_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hazchem Unit of Measure 3 --></label>
+        <name>Hazchem_3_UOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- City/Town --></label>
+        <name>Inv_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Inv_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- County/Region --></label>
+        <name>Inv_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- District --></label>
+        <name>Inv_District__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Inv_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Org Name --></label>
+        <name>Inv_Org_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>Inv_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Postal Code --></label>
+        <name>Inv_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Name --></label>
+        <name>Inv_Premise_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Number --></label>
+        <name>Inv_Premise_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 1 --></label>
+        <name>Inv_Street_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 2 --></label>
+        <name>Inv_Street_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Premise --></label>
+        <name>Inv_Sub_Premise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Synchronisation Failed --></label>
+        <name>Is_Synchronisation_Failed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line of Business (Division) --></label>
+        <name>Line_of_Business__c</name>
+        <relationshipLabel><!-- Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unavailable End Time --></label>
+        <name>Lunch_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unavailable Start Time --></label>
+        <name>Lunch_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Round Number --></label>
+        <name>Master_Round_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Divisional Account Indicator --></label>
+        <name>No_LOB_Ind__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not Collected Reason --></label>
+        <name>Not_Collected_Reason__c</name>
+        <picklistValues>
+            <masterLabel>ADVERSE WEATHER</masterLabel>
+            <translation><!-- ADVERSE WEATHER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHECK ADDRESS</masterLabel>
+            <translation><!-- CHECK ADDRESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COLL/DEL UNKNOWN</masterLabel>
+            <translation><!-- COLL/DEL UNKNOWN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPANY CLOSED</masterLabel>
+            <translation><!-- COMPANY CLOSED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CON PHYSICALLY TRANSHIPPD</masterLabel>
+            <translation><!-- CON PHYSICALLY TRANSHIPPD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CON TRANSHIPPED DATA ONLY</masterLabel>
+            <translation><!-- CON TRANSHIPPED DATA ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONSIGNEE ON HOLIDAY</masterLabel>
+            <translation><!-- CONSIGNEE ON HOLIDAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONSIGNMENT/ITEM REFUSED</masterLabel>
+            <translation><!-- CONSIGNMENT/ITEM REFUSED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEL AREA INACCESSIBLE</masterLabel>
+            <translation><!-- DEL AREA INACCESSIBLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DELAYED BY STRIKE</masterLabel>
+            <translation><!-- DELAYED BY STRIKE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GOODS NOT READY</masterLabel>
+            <translation><!-- GOODS NOT READY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HAZARDOUS GOODS</masterLabel>
+            <translation><!-- HAZARDOUS GOODS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HELD FOR CUSTOMER PICK UP</masterLabel>
+            <translation><!-- HELD FOR CUSTOMER PICK UP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INCORRECT ROUND</masterLabel>
+            <translation><!-- INCORRECT ROUND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDUSTRIAL ACTION</masterLabel>
+            <translation><!-- INDUSTRIAL ACTION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSUFFICIENT PACKAGING</masterLabel>
+            <translation><!-- INSUFFICIENT PACKAGING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACK OF DRIVER TIME</masterLabel>
+            <translation><!-- LACK OF DRIVER TIME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MISSED ON DEL ROUTE</masterLabel>
+            <translation><!-- MISSED ON DEL ROUTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MISSED PICK UP</masterLabel>
+            <translation><!-- MISSED PICK UP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOVED/CHANGED DEL ADDRESS</masterLabel>
+            <translation><!-- MOVED/CHANGED DEL ADDRESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO DOCUMENTATION</masterLabel>
+            <translation><!-- NO DOCUMENTATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO GOODS</masterLabel>
+            <translation><!-- NO GOODS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOT DEL NITE BOX FULL</masterLabel>
+            <translation><!-- NOT DEL NITE BOX FULL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOT HOME</masterLabel>
+            <translation><!-- NOT HOME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOT YET ATTEMPTED</masterLabel>
+            <translation><!-- NOT YET ATTEMPTED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QUEUING</masterLabel>
+            <translation><!-- QUEUING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REJECTED BY DRIVER</masterLabel>
+            <translation><!-- REJECTED BY DRIVER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RET 2 ORIG BY HUB/GATEWAY</masterLabel>
+            <translation><!-- RET 2 ORIG BY HUB/GATEWAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VEHICLE / DRIVER ACCIDENT</masterLabel>
+            <translation><!-- VEHICLE / DRIVER ACCIDENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VEHICLE BREAKDOWN</masterLabel>
+            <translation><!-- VEHICLE BREAKDOWN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VERBAL POD CONFIRM ONLY</masterLabel>
+            <translation><!-- VERBAL POD CONFIRM ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WRONG DELIVERY ROUTE</masterLabel>
+            <translation><!-- WRONG DELIVERY ROUTE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Consignments --></label>
+        <name>Number_of_Consignments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Email Address --></label>
+        <name>OC_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Fax Number --></label>
+        <name>OC_Fax_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact First Name --></label>
+        <name>OC_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Last Name --></label>
+        <name>OC_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Middle Initials --></label>
+        <name>OC_Middle_Initials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Mobile Phone Number --></label>
+        <name>OC_Mobile_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Phone Extension --></label>
+        <name>OC_Phone_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Phone Number --></label>
+        <name>OC_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Contact Title --></label>
+        <name>OC_Title__c</name>
+        <picklistValues>
+            <masterLabel>Dr.</masterLabel>
+            <translation><!-- Dr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miss</masterLabel>
+            <translation><!-- Miss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mr</masterLabel>
+            <translation><!-- Mr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mrs</masterLabel>
+            <translation><!-- Mrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms</masterLabel>
+            <translation><!-- Ms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof.</masterLabel>
+            <translation><!-- Prof. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order Contact --></label>
+        <name>Order_Contact__c</name>
+        <relationshipLabel><!-- Bookings (Order Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Reference Number --></label>
+        <name>Order_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Origin Depot --></label>
+        <name>Origin_Depot__c</name>
+        <relationshipLabel><!-- Bookings (Origin Depot) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Origin --></label>
+        <name>Origin__c</name>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universe</masterLabel>
+            <translation><!-- Universe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Driver take notes --></label>
+        <name>Paperwork_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <lookupFilter>
+            <errorMessage><!-- Quote must belong to the same Account as the booking --></errorMessage>
+        </lookupFilter>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What is the reason for the Depot rejecting the booking? --></help>
+        <label><!-- Reason for Depot Rejection --></label>
+        <name>Reason_for_Depot_Rejection__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Owners Manager --></label>
+        <name>Record_Owners_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the customer has provided their own reference number for the booking, what is it? --></help>
+        <label><!-- Reference # provided by customer --></label>
+        <name>Reference_provided_by_customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Order Number --></label>
+        <name>Reg_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depot Boundary Reference --></label>
+        <name>Routing_Table__c</name>
+        <relationshipLabel><!-- Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Special Instructions --></label>
+        <name>Special_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Instructions for the Driver --></label>
+        <name>Special_Instructions_for_the_Driver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Allocated to Round</masterLabel>
+            <translation><!-- Allocated to Round --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collected</masterLabel>
+            <translation><!-- Collected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Collected</masterLabel>
+            <translation><!-- Not Collected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected to Customer Services</masterLabel>
+            <translation><!-- Rejected to Customer Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unconfirmed</masterLabel>
+            <translation><!-- Unconfirmed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Service --></label>
+        <name>Sub_Service__c</name>
+        <picklistValues>
+            <masterLabel>Carriage Forward</masterLabel>
+            <translation><!-- Carriage Forward --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dangerous Goods</masterLabel>
+            <translation><!-- Dangerous Goods --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Synchronisation Error Message --></label>
+        <name>Synchronisation_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Party Acknowledgement --></label>
+        <name>Third_Party_Acknowledgement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Items --></label>
+        <name>Total_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Volume --></label>
+        <name>Total_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Volume (m3) --></label>
+        <name>Total_Volume_m3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Weight --></label>
+        <name>Total_Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <layouts>
+        <layout>Blocked Admin Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Booking Line Items Details --></label>
+            <section>Booking Line Items Details</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Addresses --></label>
+            <section>Collection / Delivery Addresses</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Contacts --></label>
+            <section>Collection / Delivery Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hazardous Goods Details --></label>
+            <section>Hazardous Goods Details</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Address --></label>
+            <section>Invoice Address</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Blocked Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Booking Line Items Details --></label>
+            <section>Booking Line Items Details</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Addresses --></label>
+            <section>Collection / Delivery Addresses</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Contacts --></label>
+            <section>Collection / Delivery Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hazardous Goods Details --></label>
+            <section>Hazardous Goods Details</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Address --></label>
+            <section>Invoice Address</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Booking Admin Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Booking Line Items Details --></label>
+            <section>Booking Line Items Details</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Addresses --></label>
+            <section>Collection / Delivery Addresses</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Contacts --></label>
+            <section>Collection / Delivery Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hazardous Goods Details --></label>
+            <section>Hazardous Goods Details</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Address --></label>
+            <section>Invoice Address</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Booking Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Booking Line Items Details --></label>
+            <section>Booking Line Items Details</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Addresses --></label>
+            <section>Collection / Delivery Addresses</section>
+        </sections>
+        <sections>
+            <label><!-- Collection / Delivery Contacts --></label>
+            <section>Collection / Delivery Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hazardous Goods Details --></label>
+            <section>Hazardous Goods Details</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Address --></label>
+            <section>Invoice Address</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Blocked Booking --></label>
+        <name>Blocked_Booking</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Booking --></label>
+        <name>New_Booking</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This contact is not authorised to make bookings --></errorMessage>
+        <name>Authorised_contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Collection or Delivery County/Region is &apos;Channel Islands&apos;, &apos;Commercial Invoice Required&apos; Field should be set to &apos;Yes&apos;. --></errorMessage>
+        <name>Commercial_Invoice_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Required field missing: Type of Packaging (Commodity) --></errorMessage>
+        <name>Commodity_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Account requires a Reference. Please enter one --></errorMessage>
+        <name>Customer_Reference_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot save a dangerous goods item to an account which doesn&apos;t ship dangerous goods. --></errorMessage>
+        <name>Dangerous_Goods</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select value for Booking Status --></errorMessage>
+        <name>Do_not_allow_Status_None</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To email the booking, you have to select a contact with a stored email address, or populate the email field with an email address --></errorMessage>
+        <name>Email_address_details_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Account is On Stop. Approval must be given from Stubbins to save a Booking for this Account. --></errorMessage>
+        <name>On_Stop_Booking_Prevention_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The &apos;Total Weight&apos; for a Booking must be less than 99999. --></errorMessage>
+        <name>Total_Weight_must_be_less_than_99999kg</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only bookings with a current Status of Unconfirmed, Rejected to Customer Services or Not Collected can be changed to a &apos;Confirmed&apos; status. --></errorMessage>
+        <name>Unconfirmed_Bookings</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid phone number (7-15 digits, no spaces) --></errorMessage>
+        <name>Valid_Phone_Numbers_CC_Phone_Number</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid phone number (7-15 digits, no spaces) --></errorMessage>
+        <name>Valid_Phone_Numbers_DC_Phone_Number</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid phone number (7-15 digits, no spaces) --></errorMessage>
+        <name>Valid_Phone_Numbers_OC_Phone_Number</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>Clone</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Quote --></label>
+        <name>Create_Quote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_from_Contact --></label>
+        <name>New_from_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Synchronise --></label>
+        <name>Synchronise</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Track_Consignment --></label>
+        <name>Track_Consignment</name>
+    </webLinks>
+</CustomObjectTranslation>

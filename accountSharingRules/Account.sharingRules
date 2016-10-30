@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AccountSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>Account_Moderators</fullName>
+        <sharedTo>
+            <group>Account_Record_Moderators</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Major_Account__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>None</caseAccessLevel>
+        <contactAccessLevel>None</contactAccessLevel>
+        <description>Shares Major Accounts with a Public Group who can edit Accounts to manage their Case Routing and CS Owners</description>
+        <name>Account Moderators</name>
+        <opportunityAccessLevel>None</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Major_Accounts</fullName>
+        <sharedTo>
+            <group>Major_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Major_Account__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>None</caseAccessLevel>
+        <contactAccessLevel>None</contactAccessLevel>
+        <name>Major Accounts</name>
+        <opportunityAccessLevel>None</opportunityAccessLevel>
+    </criteriaBasedRules>
+</AccountSharingRules>

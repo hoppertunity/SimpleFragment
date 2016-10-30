@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this form for raising Credits or Downgrades against consignments</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TNT_People_Network</letterhead>
+    <name>Downgrade Form</name>
+    <style>freeForm</style>
+    <subject>Consignment Amendment - {!Case.Delivery_Depot__c} - Consignment note number {!Case.Consignment_Number__c}</subject>
+    <textOnly>Free of Charge / Consignment Amendment Request Form
+
+(a) Position of Responsibility:
+
+Requester Name:
+Position:
+
+Note:- Please refer to authorisation table for levels of authority.
+
+(b) Requested Action (Indicate yes next to the relevant option)
+
+Free of Charge Request:
+Consignment Amendment:
+Hand Rate Request:
+
+(c) Consignment / Account Number Details
+
+Account Number:
+Consignment Note No:
+Original Details:
+New Details:
+
+(d) Reason for Request / Other Additional information:
+
+
+
+(e) Loss in Revenue
+
+Original Revenue Value: £
+
+New Revenue Value:£
+
+Loss in Revenue:£</textOnly>
+    <type>html</type>
+</EmailTemplate>

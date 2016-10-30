@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FreezeUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LinkToSetupUserDetailAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ManagePermSetsAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>PasswordUnlockAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResetPasswordAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UserActivationAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AVAYA_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>AVAYA ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__MostRecentCallEventTimestamp__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The timestamp of the most recent call event (deliver, transfer...) that this user has handled</description>
+        <externalId>false</externalId>
+        <label>Most Recent Call Event Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__MostRecentCallIsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Most Recent Call Is Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__MostRecentCall__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Most Recent Call</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Agent_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>NVM Agent Id for Contact World for Salesforce</description>
+        <externalId>true</externalId>
+        <inlineHelpText>NVM Agent Id for Contact World for Salesforce. This should be set to the correct NVM Agent Id to make sure that call tasks are assigned to the correct Salesforce user.</inlineHelpText>
+        <label>NVM Agent Id</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Cell__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Cell Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( MobilePhone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(MobilePhone , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=User&quot;, 
+                   MobilePhone  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Cell Phone</inlineHelpText>
+        <label>NVM Cell</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Extension__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Extension Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( Extension  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(Extension , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=User&quot;, 
+                   Extension  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Extension Phone</inlineHelpText>
+        <label>NVM Extension</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( Phone )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(Phone, &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=User&quot;, 
+                   Phone, &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Phone</inlineHelpText>
+        <label>NVM Phone</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TNT_Cost_Centre__c</fullName>
+        <externalId>false</externalId>
+        <label>TNT Cost Centre</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Function__c</fullName>
+        <description>Populates the business function based on the Users Role containing the function name. Used in reports to see site level data.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Profile.Name, &quot;Integration&quot;), &quot;Integration (API) User&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Admin&quot;), &quot;Admin&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Apple&quot;), &quot;Apple&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Central Support&quot;), &quot;Central Support&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Claims&quot;), &quot;Claims Team&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Fashion&quot;), &quot;Fashion&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;FL&quot;), &quot;Frontline&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;MAD&quot;), &quot;Majors&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Director&quot;), &quot;CS Management Team&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Management&quot;), &quot;CS Management Team&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Country Manager&quot;), &quot;CS Management Team&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Mauritius&quot;), &quot;Mauritius&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Quality&quot;), &quot;Quality Team&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Resource Planning&quot;), &quot;Resource Planning&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Security&quot;), &quot;Security&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Ath Support&quot;), &quot;Support&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Lount Support&quot;), &quot;Support&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Trainer&quot;), &quot;Trainer&quot;,
+IF(CONTAINS(UserRole.Name, &quot;TSM Support&quot;), &quot;TSM Support&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Manchester Support&quot;), &quot;Support&quot;,
+IF(CONTAINS(UserRole.Name, &quot;UKIT&quot;), &quot;UKIT&quot;, &quot;Unknown&quot;)))))))))))))))))))))</formula>
+        <inlineHelpText>Populates the business function based on the Users Role containing the function name. Used in reports to see site level data.</inlineHelpText>
+        <label>User Function</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Site__c</fullName>
+        <description>Populates the Site based on the Users Role containing the site name. Used in reports to see site level data.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(UserRole.Name, &quot;Ath&quot;), &quot;Atherstone&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Claims&quot;), &quot;Stubbins&quot;, 
+IF(CONTAINS(UserRole.Name, &quot;Lount&quot;), &quot;Lount&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Quality&quot;), &quot;Lount&quot;,
+IF(CONTAINS(UserRole.Name, &quot;UKIT&quot;), &quot;Atherstone&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Manchester&quot;), &quot;Manchester&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Mauritius&quot;), &quot;Mauritius&quot;,
+IF(CONTAINS(UserRole.Name, &quot;Resource Planning&quot;), &quot;Lount&quot;,&quot;Unknown&quot;))))))))</formula>
+        <inlineHelpText>Populates the Site based on the Users Role containing the site name. Used in reports to see site level data.</inlineHelpText>
+        <label>User Site</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X18_Digit_ID__c</fullName>
+        <description>Converts the 15 digit ID into an 18 digit ID</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <label>18 Digit ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>Active_Platform_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.TITLE</columns>
+        <columns>CORE.USERS.DEPARTMENT</columns>
+        <columns>CORE.USERS.DIVISION</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>NVMContactWorld__NVM_Agent_Id__c</columns>
+        <columns>MANAGER</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.USERTYPE</field>
+            <operation>equals</operation>
+            <value>S</value>
+        </filters>
+        <label>Active Platform Users</label>
+    </listViews>
+    <listViews>
+        <fullName>AdminUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>System Administrator</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Admin Users</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Users</label>
+    </listViews>
+    <listViews>
+        <fullName>CSR_Role</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>TIMEZONE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>contains</operation>
+            <value>CSR</value>
+        </filters>
+        <filters>
+            <field>TIMEZONE</field>
+            <operation>equals</operation>
+            <value>73</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>CSR Role</label>
+    </listViews>
+    <listViews>
+        <fullName>CS_Agent_Profile</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>CS Agent</value>
+        </filters>
+        <label>CS Agent Profile</label>
+    </listViews>
+    <listViews>
+        <fullName>CS_Development_Manager</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>CS Development Manager</value>
+        </filters>
+        <label>CS Development Manager</label>
+    </listViews>
+    <listViews>
+        <fullName>CS_Team_Leader_Role_Profile</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>CS Team Leader</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>contains</operation>
+            <value>Team Lead</value>
+        </filters>
+        <label>CS Team Leader Role and Profile</label>
+    </listViews>
+    <listViews>
+        <fullName>Deactivated_Team_Leaders</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>NVMContactWorld__NVM_Agent_Id__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>CS Team Leader</value>
+        </filters>
+        <label>Deactivated Team Leaders</label>
+    </listViews>
+    <listViews>
+        <fullName>IntegrationUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>Integration User</value>
+        </filters>
+        <label>Integration Users</label>
+    </listViews>
+    <listViews>
+        <fullName>MRU_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.TITLE</columns>
+        <columns>CORE.USERS.DEPARTMENT</columns>
+        <columns>CORE.USERS.DIVISION</columns>
+        <columns>MANAGER</columns>
+        <columns>TIMEZONE</columns>
+        <columns>CREATED_BY_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>contains</operation>
+            <value>Mauritius</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>MRU Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Non_Chatter</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>notContain</operation>
+            <value>Chatter</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Non Chatter</label>
+    </listViews>
+    <listViews>
+        <fullName>Roadshow_3</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>contains</operation>
+            <value>SME2</value>
+        </filters>
+        <label>Roadshow 3</label>
+    </listViews>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.PHONE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.EXTENSION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.CELL</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.PHONE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USER_ROLE.NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

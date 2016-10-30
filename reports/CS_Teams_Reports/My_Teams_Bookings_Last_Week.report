@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Carriage_Forward__c</field>
+    </columns>
+    <description>Grouped by User for last week</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <operator>startsWith</operator>
+            <value>177</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_OWNER_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My Teams Bookings Last Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Away_Time__c:SUM + NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Extended_Away_Time__c:SUM) / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Time_Logged_In__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Not Ready</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Inbound_Call_Time__c:SUM + NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Inbound_Transfer_Time__c:SUM +NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Outbound_Call_Time__c:SUM + NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Wrap_Up_Time__c:SUM) / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Time_Logged_In__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Time Utilisation</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Tine_Logged_In_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Inbound_Call_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Inbound_Xfer_Call_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Outbound_Call_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Extended_Away_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Away_Time_hh_mm_seconds__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Ready_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Ready_Outbound_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Wrap_Up_Time_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Debrief_With_Supervisor_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Computer_Related_Issues_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Comfort_Break_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Return_To_Work_10_Mins_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Helping_Advising_Colleagues_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Admin_At_Workdesk_hh_mm_ss__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.Admin_Team_Duties_Walkaway_hh_mm_ss__c</field>
+    </columns>
+    <description>Shows both Major and Minor Agent States used in Contact Pad</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Agent__c</field>
+        <sortByName>FORMULA2</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>CustomSummaryFormula</sortType>
+    </groupingsDown>
+    <name>Agent State Summary (TU / NR)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Agent_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

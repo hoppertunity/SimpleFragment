@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
+        <aggregateTypes>Minimum</aggregateTypes>
+        <field>Quote__c.Price__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Is_Premium_Service__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Total_Volume__c</field>
+    </columns>
+    <columns>
+        <field>Quote__c.Total_Weight__c</field>
+    </columns>
+    <description>Used on Quote Overview Dashboard to show range of Prices we have quoted on</description>
+    <filter>
+        <criteriaItems>
+            <column>Quote__c.Price__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Quote__c.Service_Name__c</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>Quotes Last Week (Priced)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Quote__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

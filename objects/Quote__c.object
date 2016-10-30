@@ -1,0 +1,1392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>OL_QuoteEditNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>OL_QuoteEditNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>AddressFields</fullName>
+        <description>fields used to input a new address into quote</description>
+        <displayedFields>
+            <field>Collection_Postcode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Delivery_Postcode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Delivery_Town__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Carriage_Forward__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>AddressFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>CompanyFields</fullName>
+        <description>fields for capturing company info</description>
+        <displayedFields>
+            <field>Company_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>CompanyFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ContactFields</fullName>
+        <description>fields to capture contact info</description>
+        <displayedFields>
+            <field>Contact_First_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_Last_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>ContactFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>EditFields</fullName>
+        <description>fields to show for when editing or creating a new quote</description>
+        <displayedFields>
+            <field>Account__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Email_Only__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Email_the_quote__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Commodity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Items_Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Value__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Enhanced_Liability_Option__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Dangerous_Goods__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Fuel_Supplement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Collection_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Reason_for_Not_Booking__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>EditFields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Account__c),&apos;&apos;,Account__r.Account_Number__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Am_I_the_record_Owners_Manager__c</fullName>
+        <description>Used to calculate whether the logged in user is the record Owners Manger or not.</description>
+        <externalId>false</externalId>
+        <formula>IF( Owner:User.ManagerId = $User.Id , True , False)</formula>
+        <label>Am I the record Owners Manager?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Carriage_Forward__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Carriage Forward</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Collection_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Collection Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Collection_Postcode__c</fullName>
+        <description>Collection postcode</description>
+        <externalId>false</externalId>
+        <label>Collection: Postcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commodity__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of packaging</label>
+        <picklist>
+            <picklistValues>
+                <fullName>TSL 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASSORTED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CARTON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENVELOPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GARMENTS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DANGEROUS GOODS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INCOMPATIBLE TRAFFIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JIFFY BAG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LONG LENGTH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MEDICAL SUPPLIES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PALLET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ROLL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FULL SET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TECHNOLOGY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BUNDLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Contact must belong to the same Account as specified on Quote record.</errorMessage>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Dangerous_Goods__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>is this a shipment of dangerous goods?</description>
+        <externalId>false</externalId>
+        <label>Dangerous Goods</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Date__c</fullName>
+        <description>Received from Responce</description>
+        <externalId>false</externalId>
+        <label>Delivery Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Postcode__c</fullName>
+        <description>Delivery postcode</description>
+        <externalId>false</externalId>
+        <label>Delivery: Postcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Town__c</fullName>
+        <description>Delivery Town</description>
+        <externalId>false</externalId>
+        <label>Delivery: Town</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Only__c</fullName>
+        <description>email field if matching contact cannot be found</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_the_quote__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox field to indicate that contact wants to be emailed the quote</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the contact want the quote emailed to them?</inlineHelpText>
+        <label>Email the quote?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enhanced_Liability_Option__c</fullName>
+        <description>The Tier/Level of Enhanced Liability selected by the customer for a Booking/Quote</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What level of Enhanced Liability does the customer want for this quote?</inlineHelpText>
+        <label>Enhanced Liability Option</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0 - None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 - £3.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 - £6.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 - £9.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fuel_Supplement__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Fuel Supplement should be entered only when you receive communication of a rate change.  If left blank a default value is used in the quotation.</inlineHelpText>
+        <label>Fuel Supplement</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Is_Guaranteed_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Receive from Responce</description>
+        <externalId>false</externalId>
+        <label>Is Guaranteed Service</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Premium_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Receive from Responce</description>
+        <externalId>false</externalId>
+        <label>Is Premium Service</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Items_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description of Content</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>No_Long_Length_Items__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Stores the number of Long Length Items that have been entered on the Quote Line Items Over 160cm in any dimension.  This value is calculated within the code on record Edit and is set when the user clicks Save. (See OL_BookingQuoteHelper.cls)</description>
+        <externalId>false</externalId>
+        <label>No. Long Length Items</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pallet_Pollicy__c</fullName>
+        <externalId>false</externalId>
+        <label>Pallet Pollicy</label>
+        <summaryFilterItems>
+            <field>Quote_Line_Item__c.Pallet_Policy__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Quote_Line_Item__c.Quote__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quote_is_Valid__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This is to confirm whether a Quote is valid or out of date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A quote remains valid to proceed to a booking until midnight on the day it is created</inlineHelpText>
+        <label>Quote is Valid</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Not_Booking__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Not Booking</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer to book via CIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incompatible traffic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need to confirm with bill payer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need to confirm with receiver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Old rate removed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unable to offer EL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unable to offer required service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Record_Owners_Manager__c</fullName>
+        <description>Shows the name of the record Owners Manager as setup on User records. This field is used for reporting at team level.</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.Manager.FirstName + &apos; &apos; + Owner:User.Manager.LastName</formula>
+        <label>Record Owners Manager</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Name__c</fullName>
+        <description>Name of service that was selected for Quote</description>
+        <externalId>false</externalId>
+        <label>Service Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!ISBLANK(Account__r.Account_Special_Instructions__c),Account__r.Account_Special_Instructions__c,&apos;&apos;) &amp;  BR() &amp;
+IF(!ISBLANK(Account__r.Special_Instructions_2__c),Account__r.Special_Instructions_2__c ,&apos;&apos;) &amp;  BR() &amp;
+IF(!ISBLANK(Account__r.Special_Instructions_3__c),Account__r.Special_Instructions_3__c ,&apos;&apos;) &amp;  BR() &amp;
+IF(!ISBLANK(Account__r.Special_Instructions_4__c),Account__r.Special_Instructions_4__c ,&apos;&apos;) &amp;  BR() &amp;
+IF(!ISBLANK(Account__r.Special_Instructions_5__c),Account__r.Special_Instructions_5__c ,&apos;&apos;) &amp;  BR() &amp;
+IF(!ISBLANK(Account__r.Special_Instructions_6__c),Account__r.Special_Instructions_6__c ,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Special Instructions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplements_Details__c</fullName>
+        <description>Supplements included in Price.  Get from Response.</description>
+        <externalId>false</externalId>
+        <label>Supplements Details</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Number of Items</label>
+        <summarizedField>Quote_Line_Item__c.Number_of_Items__c</summarizedField>
+        <summaryForeignKey>Quote_Line_Item__c.Quote__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Volume_Rounded__c</fullName>
+        <description>Total Volume rounded to 3 decimal places. It is the same as the Volume field but has been kept as it is used in the Quote integration to send the volume amount. We could remove this field in future but would require the interface to be updated also.</description>
+        <externalId>false</externalId>
+        <formula>Total_Volume__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Volume Rounded</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Volume</label>
+        <summarizedField>Quote_Line_Item__c.Volume__c</summarizedField>
+        <summaryForeignKey>Quote_Line_Item__c.Quote__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Weight__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Weight (kg)</label>
+        <summarizedField>Quote_Line_Item__c.Total_Weight__c</summarizedField>
+        <summaryForeignKey>Quote_Line_Item__c.Quote__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Validation_Deadline__c</fullName>
+        <defaultValue>TODAY()+1</defaultValue>
+        <externalId>false</externalId>
+        <label>Quote Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Volumetric_Weight__c</fullName>
+        <description>This field is not used as part of the Quote interface but is useful for agents to determine Quote parameters used in the price calculation</description>
+        <externalId>false</externalId>
+        <formula>Total_Volume__c  * 250</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volumetric Weight (kg)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Quote</label>
+    <listViews>
+        <fullName>All_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Price__c</columns>
+        <columns>Quote_is_Valid__c</columns>
+        <columns>Service_Name__c</columns>
+        <columns>Total_Weight__c</columns>
+        <columns>Value__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Quotes</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Todays_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Price__c</columns>
+        <columns>Quote_is_Valid__c</columns>
+        <columns>Service_Name__c</columns>
+        <columns>Total_Weight__c</columns>
+        <columns>Value__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>All Today&apos;s Quotes</label>
+    </listViews>
+    <listViews>
+        <fullName>Last_Weeks_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Price__c</columns>
+        <columns>Quote_is_Valid__c</columns>
+        <columns>Service_Name__c</columns>
+        <columns>Total_Weight__c</columns>
+        <columns>Value__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_WEEK</value>
+        </filters>
+        <label>Last Weeks Quotes</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Collection_Date__c</columns>
+        <columns>Contact_First_Name__c</columns>
+        <columns>Contact_Last_Name__c</columns>
+        <columns>Contact_Phone__c</columns>
+        <columns>Collection_Postcode__c</columns>
+        <columns>Delivery_Postcode__c</columns>
+        <columns>Price__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Quotes</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Quotes_Last_Week</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Collection_Date__c</columns>
+        <columns>Contact_First_Name__c</columns>
+        <columns>Contact_Last_Name__c</columns>
+        <columns>Contact_Phone__c</columns>
+        <columns>Collection_Postcode__c</columns>
+        <columns>Delivery_Postcode__c</columns>
+        <columns>Price__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_WEEK</value>
+        </filters>
+        <label>My Quotes Last Week</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Quotes_This_Week</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Collection_Date__c</columns>
+        <columns>Contact_First_Name__c</columns>
+        <columns>Contact_Last_Name__c</columns>
+        <columns>Contact_Phone__c</columns>
+        <columns>Collection_Postcode__c</columns>
+        <columns>Delivery_Postcode__c</columns>
+        <columns>Price__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>My Quotes This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Quotes_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Collection_Date__c</columns>
+        <columns>Contact_First_Name__c</columns>
+        <columns>Contact_Last_Name__c</columns>
+        <columns>Contact_Phone__c</columns>
+        <columns>Collection_Postcode__c</columns>
+        <columns>Delivery_Postcode__c</columns>
+        <columns>Price__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>My Quotes Today</label>
+    </listViews>
+    <listViews>
+        <fullName>This_Weeks_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Price__c</columns>
+        <columns>Quote_is_Valid__c</columns>
+        <columns>Service_Name__c</columns>
+        <columns>Total_Weight__c</columns>
+        <columns>Value__c</columns>
+        <columns>Email_the_quote__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>This Weeks Quotes</label>
+    </listViews>
+    <listViews>
+        <fullName>Unpriced_Quotes_This_This_Week</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Account_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Quote_is_Valid__c</columns>
+        <columns>Total_Weight__c</columns>
+        <columns>Value__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Price__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>Unpriced Quotes This Week</label>
+    </listViews>
+    <nameField>
+        <displayFormat>QR{000000}</displayFormat>
+        <label>Quote Reference</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Quotes</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>NewQuote</fullName>
+        <active>true</active>
+        <description>Quote without price, can be edited</description>
+        <label>New Quote</label>
+        <picklistValues>
+            <picklist>Commodity__c</picklist>
+            <values>
+                <fullName>ASSORTED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BUNDLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CARTON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DANGEROUS GOODS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ENVELOPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL SET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GARMENTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INCOMPATIBLE TRAFFIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIFFY BAG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LONG LENGTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICAL SUPPLIES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PALLET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ROLL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECHNOLOGY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Enhanced_Liability_Option__c</picklist>
+            <values>
+                <fullName>0 - None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>1 - %C2%A33%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - %C2%A36%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - %C2%A39%2E00</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Not_Booking__c</picklist>
+            <values>
+                <fullName>Customer to book via CIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incompatible traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need to confirm with bill payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need to confirm with receiver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Old rate removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to offer EL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to offer required service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PricedQuote</fullName>
+        <active>true</active>
+        <description>Quote with price, can not be edited</description>
+        <label>Priced Quote</label>
+        <picklistValues>
+            <picklist>Commodity__c</picklist>
+            <values>
+                <fullName>ASSORTED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BUNDLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CARTON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DANGEROUS GOODS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ENVELOPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL SET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GARMENTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INCOMPATIBLE TRAFFIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIFFY BAG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LONG LENGTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICAL SUPPLIES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PALLET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ROLL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECHNOLOGY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Enhanced_Liability_Option__c</picklist>
+            <values>
+                <fullName>0 - None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>1 - %C2%A33%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - %C2%A36%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - %C2%A39%2E00</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Not_Booking__c</picklist>
+            <values>
+                <fullName>Customer to book via CIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incompatible traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need to confirm with bill payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need to confirm with receiver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Old rate removed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to offer EL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to offer required service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Quote_is_Valid__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Weight__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Value__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Quote_is_Valid__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Weight__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Value__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Account_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quote_is_Valid__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Weight__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Value__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Dangerous_Goods</fullName>
+        <active>false</active>
+        <description>You cannot save a dangerous goods item to an account which doesn&apos;t ship dangerous goods.</description>
+        <errorConditionFormula>ISPICKVAL(Account__r.Dangerous_Goods__c,&apos;No&apos;) &amp;&amp; Dangerous_Goods__c</errorConditionFormula>
+        <errorDisplayField>Dangerous_Goods__c</errorDisplayField>
+        <errorMessage>You cannot save a dangerous goods item to an account which doesn&apos;t ship dangerous goods.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Postcode_or_Town_are_mandatory</fullName>
+        <active>false</active>
+        <description>Delivery Postcode or Town are requier</description>
+        <errorConditionFormula>ISBLANK( Delivery_Postcode__c ) &amp;&amp; ISBLANK( Delivery_Town__c )</errorConditionFormula>
+        <errorDisplayField>Delivery_Postcode__c</errorDisplayField>
+        <errorMessage>Delivery Postcode or Town should be entered</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Email_or_Contact</fullName>
+        <active>true</active>
+        <description>Email can only be entered if there is no Contact found and vice versa.</description>
+        <errorConditionFormula>Email_the_quote__c &amp;&amp;  Email_Only__c = &apos;&apos; &amp;&amp;   Contact__r.Email  = &apos;&apos;</errorConditionFormula>
+        <errorDisplayField>Email_the_quote__c</errorDisplayField>
+        <errorMessage>To email the quote, you have to select a contact with a stored email address, or populate the email field with an email address</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>On_Stop_Quote_Prevention_Rule</fullName>
+        <active>false</active>
+        <description>When the On Stop field is checked, the Account is ON STOP. Only a Stubbins user is able to edit the status of an Account which is ON STOP. No Quote can be saved against this account without permissions from Stubbins.</description>
+        <errorConditionFormula>Account__r.On_Stop__c = TRUE &amp;&amp; !Account__r.Stubbins_Temporary_Permission__c</errorConditionFormula>
+        <errorDisplayField>Account__c</errorDisplayField>
+        <errorMessage>This Account is On Stop. Approval must be given from Stubbins to save a Quote for this Account.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>CreateNew</fullName>
+        <availability>online</availability>
+        <description>Copy Quote for Editing</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/OL_QuoteEditNew?retURL=%2F{!Quote__c.Id}&amp;scontrolCaching=1&amp;sfdc.override=1&amp;oId={!Quote__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Booking</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Booking</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/30.0/integration.js&quot;)}
+    if ({!Quote__c.Quote_is_Valid__c}){
+	if(sforce.console.isInConsole())
+	{
+		var openSubtab = function openSubtab(result) {
+			var primaryTabId = result.id;
+			sforce.console.openSubtab(primaryTabId , &quot;/apex/OL_BookingEditNew?qId={!Quote__c.Id}\&amp;retURL=%2F{!Quote__c.Id}&quot;, true, &apos;New Booking&apos;, null);
+		};
+		sforce.console.getEnclosingPrimaryTabId(openSubtab);
+	}
+	else
+	{
+		window.open(&quot;/apex/OL_BookingEditNew?qId={!Quote__c.Id}\&amp;retURL=%2F{!Quote__c.Id}&quot;,&quot;_blank&quot;);
+	}
+} else {
+	alert(&quot;Quote is not valid. Create new Quote to be able to create a Booking.&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_from_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/OL_QuoteEditNew?CF{!$Setup.Service_Settings__c.Account_in_Quote__c}={!Account.Id}&amp;CF{!$Setup.Service_Settings__c.Account_in_Quote__c}_lkid={!Account.Id}&amp;CF{!$Setup.Service_Settings__c.Contact_in_Quote__c}={!Contact.Name}&amp;CF{!$Setup.Service_Settings__c.Contact_in_Quote__c}_lkid={!Contact.Id}&amp;scontrolCaching=1&amp;retURL=%2F{!Contact.Id}&amp;sfdc.override=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Request_Price</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Request Price</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/32.0/integration.js&quot;)}
+var totalWeightStr = &apos;{!Quote__c.Total_Weight__c}&apos;;
+totalWeightStr = totalWeightStr.replace(&quot;,&quot;, &quot;&quot;);
+var totalWeight = parseInt(totalWeightStr);
+if(totalWeight &lt; 1){
+	alert(&quot;Please enter at least one Quote line to be able to request price.&quot;);
+} else {
+	if({!Quote__c.Quote_is_Valid__c})
+	{
+		if(sforce.console.isInConsole())
+		{
+			var openSubtab = function openSubtab(result) {
+					var primaryTabId = result.id;
+					sforce.console.openSubtab(primaryTabId , &quot;/apex/OL_GetQuotePricingDetails?id={!Quote__c.Id}&quot;, true, &apos;Quote Pricing&apos;, null);
+			};
+			sforce.console.getEnclosingPrimaryTabId(openSubtab);
+		}
+		else
+		{
+			window.location=&quot;/apex/OL_GetQuotePricingDetails?id={!Quote__c.Id}&quot;;
+		}
+	}
+	else
+	{
+		alert(&quot;This Quote has expired and cannot be priced.&quot;);
+	}
+}</url>
+    </webLinks>
+</CustomObject>

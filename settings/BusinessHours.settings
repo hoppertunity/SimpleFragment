@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessHoursSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <businessHours>
+        <active>true</active>
+        <default>true</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Default</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Europe/London</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <holidays>
+        <activityDate>2015-12-28</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Boxing Day 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-12-26</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Boxing Day 2016</name>
+    </holidays>
+    <holidays>
+        <businessHours>Default</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>Christmas Day</name>
+        <recurrenceDayOfMonth>25</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>December</recurrenceMonthOfYear>
+        <recurrenceStartDate>2014-12-25</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2016-12-27</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Christmas Day Substitute 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-05-02</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Early May Bank Holiday 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-04</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Early May bank holiday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-04-06</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-28</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2017-04-17</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday 2017</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-04-03</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-25</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2017-04-14</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday 2017</name>
+    </holidays>
+    <holidays>
+        <businessHours>Default</businessHours>
+        <isRecurring>true</isRecurring>
+        <name>New Years Day</name>
+        <recurrenceDayOfMonth>1</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>January</recurrenceMonthOfYear>
+        <recurrenceStartDate>2015-01-01</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
+    <holidays>
+        <activityDate>2017-01-02</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>New Years Substitute 2017</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-05-30</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Spring Bank Holiday 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-05-25</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Spring bank holiday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2016-08-29</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Summer Bank Holiday 2016</name>
+    </holidays>
+    <holidays>
+        <activityDate>2015-08-31</activityDate>
+        <businessHours>Default</businessHours>
+        <isRecurring>false</isRecurring>
+        <name>Summer bank holiday</name>
+    </holidays>
+</BusinessHoursSettings>

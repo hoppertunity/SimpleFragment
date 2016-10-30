@@ -1,0 +1,97 @@
+<apex:page standardController="Booking_Line_Item__c" tabStyle="Booking_Line_Item__c">
+
+	<apex:includeScript value="{!URLFOR($Resource.jquery1110)}" /> 
+	<apex:includeScript value="{!URLFOR($Resource.converterJS)}" /> 
+	
+	<apex:pageMessages escape="false"/>
+	
+	<apex:sectionHeader title="Booking Line Item Edit" 
+	subtitle="{!IF(Booking_Line_Item__c.Id == null,'New Booking Line Item',Booking_Line_Item__c.Name)}"/>
+	
+	<apex:form >
+	
+	<apex:pageBlock title="Booking Line Item Edit" mode="edit" id="BLIblockId">
+		<apex:pageBlockSection columns="1" title="Information" collapsible="false">
+			<apex:inputField value="{!Booking_Line_Item__c.Name}" required="true" />
+			<apex:inputField value="{!Booking_Line_Item__c.Booking__c}" required="true" rendered="{!Booking_Line_Item__c.Id == null}"/>
+			<apex:outputField value="{!Booking_Line_Item__c.Booking__c}" rendered="{!Booking_Line_Item__c.Id != null}"/>
+			<apex:repeat value="{!$ObjectType.Booking_Line_Item__c.FieldSets.OtherEditFields}" var="f">
+  				<apex:inputField value="{!Booking_Line_Item__c[f]}" required="{!f.required || f.dbrequired}" />
+  			</apex:repeat>
+		</apex:pageBlockSection>
+		
+		<apex:pageBlockSection columns="2" title="Package Size" collapsible="false" >
+		
+			<!-- height -->
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Height (cm)" for="metHId" />
+				<apex:inputText value="{!Booking_Line_Item__c.Height__c}" id="metHId" styleClass="metHcls" size="12"
+				onblur="metresToFeetInches('metHcls','impHFTId','impHINId');" />
+			</apex:pageBlockSectionItem>
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Height (ft in)"/>
+				<span>
+					<input type="text" size="6" id="impHFTId" onblur="feetInchesToMetres('impHFTId','impHINId','metHcls');"/>
+					<input type="text" size="6" id="impHINId" onblur="feetInchesToMetres('impHFTId','impHINId','metHcls');"/>
+				</span>
+			</apex:pageBlockSectionItem>
+			
+			<!-- width -->
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Width (cm)" for="metWId" />
+				<apex:inputText value="{!Booking_Line_Item__c.Width__c}" id="metWId" styleClass="metWcls" size="12"
+				onblur="metresToFeetInches('metWcls','impWFTId','impWINId');" />
+			</apex:pageBlockSectionItem>
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Width (ft in)"/>
+				<span>
+					<input type="text" size="6" id="impWFTId" onblur="feetInchesToMetres('impWFTId','impWINId','metWcls');"/>
+					<input type="text" size="6" id="impWINId" onblur="feetInchesToMetres('impWFTId','impWINId','metWcls');"/>
+				</span>
+			</apex:pageBlockSectionItem>
+			
+			<!-- length -->
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Length (cm)" for="metLId" />
+				<apex:inputText value="{!Booking_Line_Item__c.Length__c}" id="metLId" styleClass="metLcls" size="12"
+				onblur="metresToFeetInches('metLcls','impLFTId','impLINId');" />
+			</apex:pageBlockSectionItem>
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Length (ft in)"/>
+				<span>
+					<input type="text" size="6" id="impLFTId" onblur="feetInchesToMetres('impLFTId','impLINId','metLcls');"/>
+					<input type="text" size="6" id="impLINId" onblur="feetInchesToMetres('impLFTId','impLINId','metLcls');"/>
+				</span>
+			</apex:pageBlockSectionItem>
+			
+			<!-- weight -->
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Weight (kg)" for="metGId" />
+				<apex:inputText value="{!Booking_Line_Item__c.Weight__c}" id="metGId" styleClass="metGcls" size="12"
+				onblur="kgToLb('metGcls','impGcls');" />
+			</apex:pageBlockSectionItem>
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="Weight (lb)"/>
+				<apex:inputText styleClass="impGcls" size="16" onblur="lbToKg('impGcls','metGcls');"/>
+			</apex:pageBlockSectionItem>
+			
+		</apex:pageBlockSection>
+		
+		<apex:pageBlockButtons location="both">
+  			<apex:commandButton value="Save" action="{!save}" />
+  			<apex:commandButton value="Cancel" action="{!cancel}" />
+  		</apex:pageBlockButtons>
+  		
+	</apex:pageBlock>
+	
+	</apex:form>
+
+</apex:page>

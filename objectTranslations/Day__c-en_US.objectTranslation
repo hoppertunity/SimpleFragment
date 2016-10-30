@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Day</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Days</value>
+    </caseValues>
+    <fields>
+        <label><!-- Calendar Week --></label>
+        <name>Calendar_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calendar Year --></label>
+        <name>Calendar_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calendar --></label>
+        <name>Calendar__c</name>
+        <relationshipLabel><!-- Days --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day Key --></label>
+        <name>Day_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day Number --></label>
+        <name>Day_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day Type --></label>
+        <name>Day_Type__c</name>
+        <picklistValues>
+            <masterLabel>Non-Working Day</masterLabel>
+            <translation><!-- Non-Working Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Day</masterLabel>
+            <translation><!-- Working Day --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Day Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

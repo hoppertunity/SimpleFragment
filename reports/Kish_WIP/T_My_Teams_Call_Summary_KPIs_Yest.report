@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c:SUM / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Agent Talk Time / 60</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Talk Time (Hours)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c:SUM / NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c:SUM) *100</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Hold Time (Consult Time) / Agent Talk Time</description>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Hold Time %</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartSummaries>
+            <aggregate>Average</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent_Talk_Time__c</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA5</column>
+        </chartSummaries>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>NVMStatsSF__NVM_Call_Summary__c$Is_Short_Call__c</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c$Is_Short_Call__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Consult_Time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent_Talk_Time__c</field>
+    </columns>
+    <description>Hold Time % | Short Calls | Average Talk Time (ATT) | Total Talk Time</description>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Interaction_Type__c</column>
+            <operator>equals</operator>
+            <value>Inbound Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent_Talk_Time__c</column>
+            <operator>notEqual</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>T. My Teams Call Summary KPIs Yest</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>NVM_Call_Summaries_Custom__c</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>NVMStatsSF__NVM_Call_Summary__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

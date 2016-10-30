@@ -1,0 +1,14 @@
+<messaging:emailTemplate subject="TNT Claim Return. Claim Reference no: {!relatedTo.Reference_no__c} Consignment no: {!relatedTo.Consignment_no__c} Depot code:{!relatedTo.Depot_no__c}" recipientType="Contact" relatedToType="CS_Claims__c">
+
+<messaging:htmlEmailBody >
+
+<p>Attached is Claim {!relatedTo.Name} returned by {!relatedTo.Sender_Contact_Name__c}</p>
+
+<p>Reference No: {!relatedTo.Reference_no__c}</p>
+
+</messaging:htmlEmailBody>
+
+<messaging:attachment renderAs="PDF" filename="{!relatedTo.Reference_no__c}" >
+    <c:CS_Claims_Form_PDF cid="{!relatedTo.Id}"></c:CS_Claims_Form_PDF>
+</messaging:attachment> 
+</messaging:emailTemplate>

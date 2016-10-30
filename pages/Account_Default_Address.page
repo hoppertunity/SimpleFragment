@@ -1,0 +1,24 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false" extensions="DefaultAccount">
+  <apex:pageBlock >
+      <apex:pageBlockSection columns="2" rendered="{!isDefault}">
+          <apex:outputField value="{!defAdd.Legacy_Address_Id__c}" />
+          <apex:outputField value="{!defAdd.Contact__c}"/>
+          <apex:outputField value="{!defAdd.Org_Name__c}"/>
+          <apex:outputField value="{!defAdd.Last_Used__c}"/>
+          <apex:outputField value="{!defAdd.Premise_Name__c}"/>
+          <apex:outputField value="{!defAdd.Comments_on_account_address__c}"/>
+          <apex:outputField value="{!defAdd.Street_1__c}"/>
+          <apex:pageBlockSectionItem />
+          <apex:outputField value="{!defAdd.Street_2__c}"/>
+          <apex:pageBlockSectionItem />
+          <apex:outputField value="{!defAdd.City__c}"/>
+          <apex:pageBlockSectionItem />
+          <apex:outputField value="{!defAdd.District__c}"/>
+          <apex:pageBlockSectionItem />
+          <apex:outputField value="{!defAdd.County__c}"/>
+          <apex:pageBlockSectionItem />
+          <apex:outputField value="{!defAdd.Postcode__c}"/>
+          <apex:pageBlockSectionItem />  
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

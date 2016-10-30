@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User$Profile</field>
+    </columns>
+    <description>Users grouped by Site based on their User Role and stated Manager in Salesforce</description>
+    <filter>
+        <criteriaItems>
+            <column>User$Manager</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$UserRole</column>
+            <operator>contains</operator>
+            <value>CSR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Manager</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$UserRole</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CS Agents by Site and Team Lead</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>22.0</apiVersion>
+    <available>true</available>
+    <description>Returned Claim Form email back to TNT UK Claims Team inbox as pdf attachment</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CS Email to TNT UK Claims</name>
+    <style>none</style>
+    <type>visualforce</type>
+</EmailTemplate>

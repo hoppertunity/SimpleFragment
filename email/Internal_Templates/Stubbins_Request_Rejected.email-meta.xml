@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to send when On-Stop approval is rejected</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Simple_TNT_Logo</letterhead>
+    <name>Stubbins Request Rejected</name>
+    <style>freeForm</style>
+    <subject>Account On Stop Approval rejected</subject>
+    <textOnly>Hello
+
+Your request to remove On-Stop temporarily on Account {!Account.Name} ({!Account.AccountNumber}) has been accepted.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,334 @@
+<apex:page controller="OL_SearchConsignmentController" tabStyle="Quote__c" id="srchPage" action="{!initSearch}" docType="html-5.0">
+	
+	<apex:includeScript value="{!URLFOR($Resource.jquery1110)}" />
+	<apex:includeScript value="{!URLFOR($Resource.multiselect, 'js/jquery-ui-1.10.3.custom.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.multiselect, 'js/jquery.multiselect.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.multiselect, 'js/jquery.multiselect.filter.js')}" />
+	<apex:includeScript value="/support/console/31.0/integration.js"/>
+
+    <apex:stylesheet value="{!URLFOR($Resource.multiselect, 'css/jquery-ui-1.10.3.custom.min.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.multiselect, 'css/jquery.multiselect.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.multiselect, 'css/jquery.multiselect.filter.css')}" />
+	
+	<script>
+		function applyMultiselects() {
+			$('[class$="Single"]').multiselect({multiple: false, header: true, selectedList: 1 }).multiselectfilter();
+			
+			$('.ui-multiselect').css('width', '123px');
+			$('.ui-multiselect-menu').css('width','200px');
+		}
+		
+		function destroyMultiselects() {
+			$('[class$="Single"]').multiselect("destroy");
+		}
+		
+		$(function() {
+			applyMultiselects();
+		});
+		
+		function validateForm(){
+			var res = true;
+			
+			//validate consignment Number
+			res = validateNumInput('conNum', 'conNumErrMsg');
+			
+			//validate Col Req Num
+			tmpRes = validateNumInput('colReqNum', 'colReqNumErrMsg');
+			res = res && tmpRes;
+						
+			if(res){
+				search();
+			}
+			
+			return res;
+		}
+		
+		function validateAdvancedForm(){
+			var res = true;
+			
+			//validate Account Number
+			res = validateNumInput('accNum', 'accNumErrMsg');
+			
+			//validate Colllection Round Num
+			tmpRes = validateNumInput('colRdNum', 'colRdNumErrMsg');
+			res = res && tmpRes;
+			
+			//validate Delivery Round Num
+			tmpRes = validateNumInput('delRdNum', 'delRdNumErrMsg');
+			res = res && tmpRes;
+			
+			//validate Delivery Postcode
+			tmpRes = validateAlfaNumInput('delPost', 'delPostErrMsg');
+			res = res && tmpRes;
+			
+			if(res){
+				searchAdvanced();
+			}
+			
+			return res;
+		}
+		
+		function validateNumInput(id, errMsgId){
+			var data = $("[id$='"+id+"']")[0].value;
+			var res = !/\D/.test(data);
+			if(!res){
+				$('div[id$="'+errMsgId+'"]').removeClass('hidden');
+			} else {
+				$('div[id$="'+errMsgId+'"]').addClass('hidden');
+			}
+			
+			return res;
+		}
+		
+		function validateAlfaNumInput(id, errMsgId){
+			var data = $("[id$='"+id+"']")[0].value;
+			var res = !/[^a-zA-Z0-9\s]/.test(data);
+			if(!res){
+				$('div[id$="'+errMsgId+'"]').removeClass('hidden');
+			} else {
+				$('div[id$="'+errMsgId+'"]').addClass('hidden');
+			}
+			
+			return res;
+		}
+	
+		function pressEnter(e) {
+   			if(e.keyCode == 13) {
+       			validateForm();
+       			return false;
+   			}
+   			
+   			return true;
+		}
+		
+		
+	</script>
+	
+	<style>
+		.threeColTbl td.data2Col, .threeColTbl th.labelCol {
+			width: 14% !important;
+			vertical-align: middle;
+		}
+		
+		.advncTbl td.data2Col, .advncTbl th.labelCol {
+			width: 12% !important;
+			vertical-align: middle;
+		}
+		
+		.labels-right{text-align: left !important;}
+		
+		.list-width{width:123px;}
+		
+		.upper-case {text-transform: uppercase;}
+		
+	</style>
+	
+	<apex:form id="myForm">
+		<apex:actionFunction name="showDetails" action="{!viewRes}"/>
+		<apex:actionFunction name="search" action="{!search}" rerender="resultPanel,msgPanel" status="dataLoadingStatus" oncomplete="showDetailsJS();"/>
+		<apex:actionFunction name="searchAdvanced" action="{!searchAdvanced}" rerender="resultPanel,msgPanel" status="dataLoadingStatus" oncomplete="showDetailsJS();"/>
+		<apex:outputpanel id="msgPanel">
+			<apex:pageMessages escape="false"/>
+			<script>
+				function showDetailsJS(){
+					console.log('>>>{!showDetails}');
+					if('{!showDetails}' == 'true'){
+						showDetails();
+					}
+				}
+			</script>
+		</apex:outputpanel>
+		<apex:pageBlock id="mainBlock">
+			<apex:pageBlockSection columns="1" title="Consignment Search">
+				<apex:outputpanel id="searchPanel">
+					<table width="100%" cellspacing="0" cellpadding="0" class="detailList threeColTbl">
+						<tr>
+							<th class="labelCol"><apex:outputLabel value="Con Number : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.tntConNum}" styleClass="upper-case" maxlength="8" id="conNum" onkeypress="return pressEnter(event);"/>
+								<div class="errorMsg hidden" id="conNumErrMsg"><strong>{!$Label.Error}:</strong>{!$Label.Error_Msg_Numeric}</div></td>
+							<th class="labelCol"><apex:outputLabel value="Coll Req Number : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.bkgNum}" styleClass="upper-case" maxlength="10" id="colReqNum" onkeypress="return pressEnter(event);"/>
+								<div class="errorMsg hidden" id="colReqNumErrMsg"><strong>{!$Label.Error}:</strong>{!$Label.Error_Msg_Numeric}</div></td>
+							<th class="labelCol"><apex:outputLabel value="Cust Ref Number : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.custRef}" styleClass="upper-case" maxlength="15" id="custRefNum" onkeypress="return pressEnter(event);"/></td>
+							<td class="data2Col"><input class="btn" id="btnbasicsearch" value="Search" onclick="validateForm();" type="button"/></td>
+						</tr>
+					</table>
+				</apex:outputpanel>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1" title="Advanced Search" id="advSearchSec">
+				<apex:outputpanel id="advSearchPanel">
+					<table width="100%" cellspacing="0" cellpadding="0" class="detailList advncTbl">
+						<tr>
+							<th class="labelCol"><apex:outputLabel value="Date From : "/></th>
+							<td class="data2Col"><apex:inputField value="{!quote.Collection_Date__c}"/></td>
+							<th class="labelCol"><apex:outputLabel value="Date To : "/></th>
+							<td class="data2Col" colspan="5"><apex:inputField value="{!quoteTo.Collection_Date__c}"/></td>
+						</tr><tr>
+							<th class="labelCol"><apex:outputLabel value="Account No : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.actNum}" styleClass="upper-case" id="accNum" maxlength="10"/>
+								<div class="errorMsg hidden" id="accNumErrMsg"><strong>{!$Label.Error}:</strong>{!$Label.Error_Msg_Numeric}</div></td>
+							<th class="labelCol"><apex:outputLabel value="Sender Name : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.sndrNm}" styleClass="upper-case"/></td>
+							<th class="labelCol"><apex:outputLabel value="Del Name : "/></th>
+							<td class="data2Col" colspan="3"><apex:inputText value="{!consReq.delToNm}" styleClass="upper-case"/></td>
+						</tr><tr>
+							<th class="labelCol"><apex:outputLabel value="Coll Depot : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.colDep}" multiselect="false" id="colDepotInput" size="1" styleClass="colDepotSingle">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!depotItems}" />
+								</apex:selectList></td>
+							<th class="labelCol"><apex:outputLabel value="Coll Round No : "/></th>
+							<td class="data2Col" colspan="5"><apex:inputText value="{!consReq.colRnd}" styleClass="upper-case" id="colRdNum" maxlength="3"/>
+								<div class="errorMsg hidden" id="colRdNumErrMsg"><strong>{!$Label.Error}:</strong>{!$Label.Error_Msg_Numeric}</div></td>
+						</tr><tr>
+							<th class="labelCol"><apex:outputLabel value="Del Depot : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.delDep}" multiselect="false" id="delDepotInput" size="1" styleClass="delDepotSingle">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!depotItems}" />
+								</apex:selectList></td>
+							<th class="labelCol"><apex:outputLabel value="Del Round No : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.delRnd}" styleClass="upper-case" id="delRdNum" maxlength="3"/>
+								<div class="errorMsg hidden" id="delRdNumErrMsg"><strong>{!$Label.Error}:</strong>{!$Label.Error_Msg_Numeric}</div></td>
+							<th class="labelCol"><apex:outputLabel value="Del Date : "/></th>
+							<td class="data2Col"><apex:inputField value="{!quote.Delivery_Date__c}"/></td>
+							<th class="labelCol"><apex:outputLabel value="Bay No : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.bayNum}" styleClass="upper-case"/></td>
+						</tr><tr>
+							<th class="labelCol"><apex:outputLabel value="Origin Depot : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.orgDep}" multiselect="false" id="ornDepotInput" size="1" styleClass="ornDepotSingle">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!depotItems}" />
+								</apex:selectList>				</td>
+							<th class="labelCol"><apex:outputLabel value="Del Post Code : "/></th>
+							<td class="data2Col"><apex:inputText value="{!consReq.delAddr.pstCd}" styleClass="upper-case" id="delPost"/>
+								<div class="errorMsg hidden" id="delPostErrMsg"><strong>{!$Label.Error}:</strong>{!$Label.Error_Msg_Alfanumeric}</div></td>
+							<th class="labelCol"><apex:outputLabel value="Del Town : "/></th>
+							<td class="data2Col" colspan="3"><apex:inputText value="{!consReq.delAddr.twn}" styleClass="upper-case"/></td>
+						</tr><tr>
+							<th class="labelCol"><apex:outputLabel value="Service : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.svcCd}" multiselect="false" id="svcInput" size="1" styleClass="list-width">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!serviceItems}" />
+								</apex:selectList></td>
+							<th class="labelCol"><apex:outputLabel value="Sub - Service : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.options}" multiselect="false" id="optInput" size="1" styleClass="list-width">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!optionItems}" />
+								</apex:selectList></td>
+							<th class="labelCol"><apex:outputLabel value="Note Type : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.ntTyp}" multiselect="false" id="ntInput" size="1" styleClass="list-width">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!noteTypeItems}" />
+								</apex:selectList></td>
+							<th class="labelCol"><apex:outputLabel value="Line of Business : "/></th>
+							<td class="data2Col"><apex:selectList value="{!consReq.lobRef}" multiselect="false" id="lobInput" size="1" styleClass="list-width">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!lobItems}" />
+								</apex:selectList></td>
+						</tr><tr>
+							<th class="labelCol"><apex:outputLabel value="Status : "/></th>
+							<td class="data2Col">
+								<apex:selectList value="{!consReq.stsHstry.sts}" multiselect="false" id="conStsInput" size="1" styleClass="list-width">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!conStatusItems}" />
+								</apex:selectList></td>
+							<th class="labelCol"><apex:outputLabel value="Sub Status : "/></th>
+							<td class="data2Col" colspan="5">
+								<apex:selectList value="{!consReq.stsHstry.subSts}" multiselect="false" id="conSubStsInput" size="1" styleClass="list-width">
+									<apex:selectOption itemLabel="--None--" itemValue=""/>
+									<apex:selectOptions value="{!conSubStatusItems}" />
+								</apex:selectList></td>
+						</tr><tr>
+							<th class="labelCol labels-right" colspan="6">
+								<apex:inputCheckbox value="{!consReq.stsHstry.negStsInd}"/><apex:outputLabel value="Negative Status"/>&nbsp;&nbsp;&nbsp;&nbsp;
+								<apex:inputCheckbox value="{!consReq.stsHstry.negSubStsInd}"/><apex:outputLabel value="Negative Sub-Status"/>
+							</th>
+							<td class="data2Col" style="text-align:right;">
+								<apex:commandButton action="{!resetFilters}" value="Clear All" rerender="searchPanel,advSearchPanel" 
+									onclick="destroyMultiselects();" oncomplete="applyMultiselects();"/></td>
+							<td class="data2Col"><input type="button" value="Advanced Search" onclick="validateAdvancedForm();" class="btn"/></td>
+						</tr>
+					</table>
+				</apex:outputpanel>
+			</apex:pageBlockSection>
+			<apex:actionStatus id="dataLoadingStatus" >
+	 			<apex:facet name="start" >
+	            	<img src="/img/loading.gif" alt="Loading..."/>                   
+	        	</apex:facet>
+	  		</apex:actionStatus>
+			<apex:outputpanel id="resultPanel">
+				<apex:outputpanel rendered="{!cons != null && cons.con != null && cons.con.size != null}">
+					<apex:pageBlockSection columns="1" title="Consignment Summary, Total Count : {!cons.con.size}">
+						<apex:pageBlockTable value="{!cons.con}" var="item">
+	
+				            <apex:column >
+				            	<apex:facet name="header">Consignment Number</apex:facet>
+				            	<a href="#" onclick="openTab('{!item.unqConNum}');">{!item.tntConNum}</a>
+				            	
+				            </apex:column>
+				            <apex:column headerValue="Note Type" value="{!item.ntTypCd}"/>
+				            <apex:column headerValue="Sender's Name" value="{!item.sndrNm}"/>
+				            <apex:column >
+				            	<apex:facet name="header">Division</apex:facet>
+			            		<apex:outputText value="{!IF(CONTAINS(delimitedLobCodes, '*'+item.lobRef+'*'), lobMap[item.lobRef], item.lobRef)}"/>
+				            </apex:column>
+				            <apex:column >
+				            	<apex:facet name="header">Service</apex:facet>
+			            		<apex:outputText value="{!IF(CONTAINS(delimitedServiceCodes, '*'+item.svcCd+'*'), serviceMap[item.svcCd], item.svcCd)}"/>
+				            </apex:column>
+				            <apex:column >
+				            	<apex:facet name="header">Collection</apex:facet>
+			            		<apex:outputText value="{0,date,dd/MM/yy}">
+				                    <apex:param value="{!item.colDt}" />
+				                </apex:outputText>
+				            </apex:column>
+				            <apex:column headerValue="Deliver To" value="{!item.delToNm}"/>
+				            <apex:column headerValue="Town" value="{!item.delAddr.twn}"/>
+				            <apex:column headerValue="Discrep Indicator" >
+				            	<apex:facet name="header">Discrep Indicator</apex:facet>
+			            		<apex:outputText value="{!IF(item.discInd, 'Y', 'N')}"/>
+				            </apex:column>
+				            <apex:column headerValue="Pod Status" value="{!item.pod.podSts}"/>
+				            <apex:column headerValue="Consignment Status" value="{!item.curConSts.sts}"/> 
+				
+				        </apex:pageBlockTable>
+				        <apex:outputpanel >
+					        <apex:commandLink action="{!prew}" value="<<Previous" rendered="{!pageNumber != 1}" 
+					        	rerender="resultPanel,msgPanel" status="dataLoadingStatus"/>
+					        <apex:outputText value=" | " rendered="{!pageNumber != 1 && cons.con.size = pageSize}"/>
+					        <apex:commandLink action="{!next}" value="Next>>" rendered="{!cons.con.size = pageSize}" 
+					        	rerender="resultPanel,msgPanel" status="dataLoadingStatus"/>
+				        </apex:outputpanel>
+					</apex:pageBlockSection>
+				</apex:outputpanel>
+				<apex:outputpanel rendered="{!cons =! null && cons.con.size = 0}">
+					<apex:outputText value="No existing details returned for this Consignment"/>
+				</apex:outputpanel>
+			</apex:outputpanel>
+		</apex:pageBlock>
+	</apex:form>
+	<script>
+		$( document ).ready(function() {
+		    if(sforce.console.isInConsole())
+		  	{
+		  		$('html, body, form').css('height', '100%');
+		  		$('form').css('overflow', 'scroll');
+		  	}
+		  	
+		  	twistSection(document.getElementById('srchPage:myForm:mainBlock:advSearchSec').childNodes[0].childNodes[0]);
+		});
+		
+		function openTab(conId){
+			var url = location.protocol+'//'+location.host+'/apex/OL_SearchConsignmentById?conId='+conId;
+			sforce.console.openPrimaryTab(null, url, true, conId);
+		}
+		
+	</script>
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Lount FL 3 CSR</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Lount FL 3 CSR</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Lount_FL_3_Team_Lead</parentRole>
+</Role>

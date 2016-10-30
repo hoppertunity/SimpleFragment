@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>amanda.yardley@tnt.co.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>CS_Team_Leaders</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </folderShares>
+    <name>CS Management Dashboards</name>
+</DashboardFolder>

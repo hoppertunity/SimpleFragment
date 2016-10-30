@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplicationComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buttonText>Useful Links</buttonText>
+    <height>215</height>
+    <isHeightFixed>false</isHeightFixed>
+    <isHidden>false</isHidden>
+    <isWidthFixed>false</isWidthFixed>
+    <visualforcePage>OL_Useful_Links</visualforcePage>
+    <width>200</width>
+</CustomApplicationComponent>

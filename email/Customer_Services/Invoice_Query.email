@@ -1,0 +1,386 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><br></p>
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 191;mso-padding-alt:0cm 0cm 0cm 0cm">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:21.25pt">
+  <td width="15%" valign="top" style="width:15.76%;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">Account No:<o:p></o:p></span></b></p>
+  </td>
+  <td width="34%" style="width:34.26%;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:solid windowtext .75pt;
+  padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">&nbsp;</span></b></p>
+  </td>
+  <td width="15%" valign="top" style="width:15.76%;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">Account Name:<o:p></o:p></span></b></p>
+  </td>
+  <td width="34%" style="width:34.18%;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:solid windowtext .75pt;
+  padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">&nbsp;</span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:21.25pt">
+  <td width="15%" valign="top" style="width:15.76%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">Contact Name: <o:p></o:p></span></b></p>
+  </td>
+  <td width="34%" style="width:34.26%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">&nbsp;</span></b></p>
+  </td>
+  <td width="15%" valign="top" style="width:15.76%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">Email address:<o:p></o:p></span></b></p>
+  </td>
+  <td width="34%" style="width:34.18%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">&nbsp;</span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes;height:21.25pt">
+  <td width="15%" valign="top" style="width:15.76%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">Telephone No:<o:p></o:p></span></b></p>
+  </td>
+  <td width="34%" style="width:34.26%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">&nbsp;</span></b></p>
+  </td>
+  <td width="15%" valign="top" style="width:15.76%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">Fax No:<o:p></o:p></span></b></p>
+  </td>
+  <td width="34%" style="width:34.18%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size: 10pt; font-family: Helv, sans-serif;">&nbsp;</span></b></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="margin-bottom: 0.0001pt;"><br></p><table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 0cm 0cm 0cm">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:24.75pt">
+  <td width="20%" style="width:20.02%;border:solid windowtext 1.0pt;padding:
+  0cm 0cm 0cm 0cm;height:24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">Invoice No:</span></b><span style="font-size:
+  12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB"><o:p></o:p></span></p>
+  </td>
+  <td width="20%" style="width:20.0%;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 0cm 0cm 0cm;height:24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">&nbsp;Invoice Date:</span></b><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+  &quot;Times New Roman&quot;;mso-fareast-language:EN-GB"><o:p></o:p></span></p>
+  </td>
+  <td width="20%" style="width:20.0%;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 0cm 0cm 0cm;height:24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">Invoice Value:</span></b><span style="font-size:
+  12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB"><o:p></o:p></span></p>
+  </td>
+  <td width="20%" style="width:20.02%;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 0cm 0cm 0cm;height:24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">Depot:</span></b><span style="font-size:12.0pt;
+  font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB"><o:p></o:p></span></p>
+  </td>
+  <td width="19%" style="width:19.96%;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 0cm 0cm 0cm;height:24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">Query Type:</span></b><span style="font-size:
+  12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;mso-yfti-lastrow:yes;height:24.75pt">
+  <td width="20%" style="width:20.02%;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;
+  height:24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">&nbsp;</span></b></p>
+  </td>
+  <td width="20%" style="width:20.0%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">&nbsp;<o:p></o:p></span></b></p>
+  </td>
+  <td width="20%" style="width:20.0%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">&nbsp;</span></b></p>
+  </td>
+  <td width="20%" style="width:20.02%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">&nbsp;<o:p></o:p></span></b></p>
+  </td>
+  <td width="19%" style="width:19.96%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  24.75pt">
+  <p class="MsoNormal" align="center" style="margin: 0cm 0cm 0.0001pt 0.75pt; text-align: center; page-break-after: avoid;"><b><span style="font-size:10.0pt;
+  font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+  mso-fareast-language:EN-GB">&nbsp;</span></b></p></td></tr></tbody></table><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><br></p><table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 191;mso-padding-alt:0cm 0cm 0cm 0cm">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:21.25pt">
+  <td width="34%" valign="top" style="width:34.58%;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">A = Service
+  Failure/Late Delivery<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" style="width:32.92%;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:solid windowtext .75pt;
+  padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">H = Charged
+  on Incorrect Division<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" valign="top" style="width:32.5%;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">O =
+  Supplement/Surcharge Refund<o:p></o:p></font></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:21.25pt">
+  <td width="34%" valign="top" style="width:34.58%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">B =
+  Incorrect Service Charged <o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" style="width:32.92%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">I = Charged
+  Incorrect Weight<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" valign="top" style="width:32.5%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">P = Non Con
+  Credit &amp; Reinvoice<o:p></o:p></font></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2;height:21.25pt">
+  <td width="34%" valign="top" style="width:34.58%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">C = Wrong
+  Account Charged<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" style="width:32.92%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">J =
+  Duplicate Documents Charged<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" valign="top" style="width:32.5%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">Q = NEI
+  Surcharge Refund<o:p></o:p></font></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;height:21.25pt">
+  <td width="34%" valign="top" style="width:34.58%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">E = Special
+  Quote Not Applied<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" style="width:32.92%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">K = Transit
+  Liability Refund<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" valign="top" style="width:32.5%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">R = Credit/Reinvoice
+  amended<o:p></o:p></font></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;height:21.25pt">
+  <td width="34%" valign="top" style="width:34.58%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">F = Rate
+  Registered Incorrectly<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" style="width:32.92%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">L =
+  Suppression Not Applied<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" valign="top" style="width:32.5%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">Rio =
+  Reverse Invoice Option<o:p></o:p></font></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;mso-yfti-lastrow:yes;height:21.25pt">
+  <td width="34%" valign="top" style="width:34.58%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">G = Charges
+  Forward Inbound<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" style="width:32.92%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">N =
+  Commercial Decision<o:p></o:p></font></span></p>
+  </td>
+  <td width="32%" valign="top" style="width:32.5%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><span style="font-family: Helv, sans-serif;"><font size="2">S =
+  Subscription Refund</font><span style="font-size: 10pt;"><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</tbody></table></div><div><br></div><div><table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 191;mso-padding-alt:0cm 0cm 0cm 0cm">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:21.25pt">
+  <td width="23%" valign="top" style="width:23.96%;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><b><u><span style="font-size: 10pt; font-family: Arial, sans-serif;">Consignment Number:<o:p></o:p></span></u></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.02%;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><b><u><span style="font-size: 10pt; font-family: Arial, sans-serif;">Nature Of Query:<o:p></o:p></span></u></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:21.25pt">
+  <td width="23%" valign="bottom" style="width:23.96%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+  <td width="76%" valign="bottom" style="width:76.02%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2;height:21.25pt">
+  <td width="23%" valign="bottom" style="width:23.96%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+  <td width="76%" valign="bottom" style="width:76.02%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;height:21.25pt">
+  <td width="23%" valign="bottom" style="width:23.96%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+  <td width="76%" valign="bottom" style="width:76.02%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;height:21.25pt">
+  <td width="23%" valign="bottom" style="width:23.96%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+  <td width="76%" valign="bottom" style="width:76.02%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;height:21.25pt">
+  <td width="23%" valign="bottom" style="width:23.96%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+  <td width="76%" valign="bottom" style="width:76.02%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:6;mso-yfti-lastrow:yes;height:21.25pt">
+  <td width="23%" valign="bottom" style="width:23.96%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+  <td width="76%" valign="bottom" style="width:76.02%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:21.25pt">
+  <p class="MsoNormal" style="margin: 0cm 0cm 0.0001pt 0.75pt; page-break-after: avoid;"><br></p>
+  </td>
+ </tr>
+</tbody></table></div><div><span class="Apple-tab-span" style="white-space:pre"><font face="arial">	</font></span></div><div><span class="Apple-tab-span" style="white-space:pre"><font face="arial">	</font></span></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div>]]></td>
+</tr>
+</table>

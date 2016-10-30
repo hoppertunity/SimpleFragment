@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c:SUM / RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>AHT</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <description>Shows Inbound Call Time + Wrap Time for the week</description>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_Type__c</column>
+            <operator>equals</operator>
+            <value>Inbound Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c</column>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Week_of_Year__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AHT By Week Template</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

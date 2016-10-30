@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CALL_COUNT</field>
+    </columns>
+    <description>Shows SOAP API usage, but REST API (including Bulk API) calls are not included in the report, which might explain why the data displayed in the report does not match the figure returned by the System Overview page</description>
+    <filter>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <operator>contains</operator>
+            <value>nvm,integration,kishan,glen,maxine,darryl,jamie</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TIME_SEGMENT</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <aggregateType>Sum</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortByName>CALL_COUNT</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>API Usage Last 7 Days by User</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ApiUsage</reportType>
+    <showDetails>false</showDetails>
+    <sortColumn>CALL_COUNT</sortColumn>
+    <sortOrder>Desc</sortOrder>
+</Report>

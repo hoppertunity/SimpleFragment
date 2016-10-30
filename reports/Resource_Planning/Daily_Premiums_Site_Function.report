@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_16893625</developerName>
+        <masterLabel>Premium?</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>User.Booking__c$OwnerId$Service__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>09:00 EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>09:00 SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>09:00 SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SAT COLL MON DEL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SATURDAY DELIVERY</sourceValue>
+            </sourceValues>
+            <value>Premium</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>10:00 EXPRESS (DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10:00 EXPRESS (NON DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12:00 EXPRESS (DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2 DAY EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3 DAY EXPRESS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>9:00 EXPRESS (DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>9:00 EXPRESS (NON DOCS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DEDICATED NETWORK</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EXPRESS</sourceValue>
+            </sourceValues>
+            <value>Non-Premium</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.Booking__c$OwnerId$Service__c</field>
+    </columns>
+    <columns>
+        <field>User.Booking__c$OwnerId$Name</field>
+    </columns>
+    <description>Used by reporting team for Daily premiums report</description>
+    <filter>
+        <criteriaItems>
+            <column>User*User$User_Site__c</column>
+            <operator>notContain</operator>
+            <value>Maur</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Booking__c$OwnerId$Booking_Id__c</column>
+            <operator>startsWith</operator>
+            <value>177</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User*User$User_Site__c</column>
+            <operator>contains</operator>
+            <value>Lount,Atherstone,Manchester</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_16893625</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User*User$User_Site__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Daily Premiums (Site &amp; Function)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Bookings__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Booking__c$OwnerId$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

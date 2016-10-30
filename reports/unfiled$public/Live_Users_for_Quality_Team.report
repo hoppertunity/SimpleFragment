@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_92737977</developerName>
+        <masterLabel>Function</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>User$UserRole</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 3 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 4 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 5 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 5 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Man MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Man MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <value>Majors</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Ath FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 3 CSR</sourceValue>
+            </sourceValues>
+            <value>Frontline</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Ath Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Support Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Man Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Man Support Team Lead</sourceValue>
+            </sourceValues>
+            <value>Support</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lount Admin CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Admin Team Lead</sourceValue>
+            </sourceValues>
+            <value>Admin</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mauritius CSR</sourceValue>
+            </sourceValues>
+            <value>Mauritius</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Security Team</sourceValue>
+            </sourceValues>
+            <value>Security</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lount Fashion CSR</sourceValue>
+            </sourceValues>
+            <value>Fashion</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User*User$NVMContactWorld__NVM_Agent_Id__c</field>
+    </columns>
+    <columns>
+        <field>User$Title</field>
+    </columns>
+    <columns>
+        <field>BucketField_92737977</field>
+    </columns>
+    <columns>
+        <field>User$Id</field>
+    </columns>
+    <columns>
+        <field>User$LastLoginDate</field>
+    </columns>
+    <columns>
+        <field>User$Division</field>
+    </columns>
+    <columns>
+        <field>User$Department</field>
+    </columns>
+    <columns>
+        <field>User$Profile</field>
+    </columns>
+    <columns>
+        <field>User$UserRole</field>
+    </columns>
+    <columns>
+        <field>User$Manager</field>
+    </columns>
+    <columns>
+        <field>User$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>User$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>User$LastModifiedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$Profile</column>
+            <operator>notContain</operator>
+            <value>chatter</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Name</column>
+            <operator>notEqual</operator>
+            <value>claims site guest user</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User*User$NVMContactWorld__NVM_Agent_Id__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Live Users for Quality Team</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>User$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

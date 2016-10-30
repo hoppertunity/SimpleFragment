@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Id</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Auto_Case_Creation__c</field>
+    </columns>
+    <columns>
+        <field>Account.Bookings__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account$International_Account__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Bookings__r$Status__c</column>
+            <operator>equals</operator>
+            <value>Rejected to Customer Services</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Auto_Case_Creation__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Major_Account__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Account with Rejected Bookings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Booking_Data__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account.Bookings__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST120</interval>
+    </timeFrameFilter>
+</Report>

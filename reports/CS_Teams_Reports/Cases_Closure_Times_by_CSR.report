@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_31316592</developerName>
+        <masterLabel>Closure Time</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Case.Case_Age_In_Business_Hours__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>10</to>
+            </sourceValues>
+            <value>Within 24 Hours</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>10</from>
+                <to>20</to>
+            </sourceValues>
+            <value>24 to 48 Hours</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>20</from>
+            </sourceValues>
+            <value>Over 48 Hours</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_31316592</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Closed within 24 Hour Percentage</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Case.Case_Age_In_Business_Hours__c</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <description>Cases Closed in 24 &amp; 48 Hrs by CSR</description>
+    <filter>
+        <criteriaItems>
+            <column>CLOSED</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <operator>notEqual</operator>
+            <value>FCR - Record Track</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_31316592</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>CLOSED_DATEONLY</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Cases Closure Times by CSR</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

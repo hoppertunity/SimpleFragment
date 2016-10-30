@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Case$OwnerId$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$Account</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$Delivery_Depot__c</field>
+    </columns>
+    <description>Lists cases with users who are no longer in CS</description>
+    <filter>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Case$OwnerId$IsClosed</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Inactive Users with Open Cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Cases__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

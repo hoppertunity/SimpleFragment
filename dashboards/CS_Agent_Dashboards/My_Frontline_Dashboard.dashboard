@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>MyTeamUser</dashboardType>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>The data on this report is updated approximately 90 minutes behind the calls taking place</footer>
+            <groupingColumn>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_Type__c</groupingColumn>
+            <header>Call Activity</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/X4_My_Calls_Today_NVM</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Calls Today</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>Please use these stats as a guide to your real time stats for today.</footer>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>CS_Agent_Reports/My_Calls_Today_NVM</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Approx Calls Taken Today (Real Time)</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>The data on this report is updated approximately 90 minutes behind the calls taking place</footer>
+            <groupingColumn>CUST_CREATED_DATE</groupingColumn>
+            <groupingColumn>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_Type__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/My_Calls_last_7_days_NVM_call_summary</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Call Activity Last 7 Days</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Line</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/X1a_1_My_Not_Ready_agent_level</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Not Ready - last 7 days</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Gauge</componentType>
+            <displayUnits>Integer</displayUnits>
+            <footer>These Bookings have not saved correctly. Please open the Booking, Click Edit and then Click Save to resave</footer>
+            <gaugeMin>0.0</gaugeMin>
+            <header>Bookings &amp; Quotes Statistics</header>
+            <indicatorBreakpoint1>1.0</indicatorBreakpoint1>
+            <indicatorBreakpoint2>10.0</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#54C254</indicatorLowColor>
+            <indicatorMiddleColor>#C25454</indicatorMiddleColor>
+            <report>CS_Agent_Reports/My_Teams_Bookings_that_need_Resaving</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <title>My Teams Bookings That Need Resaving</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Based on Booking Created Date and grouped by current Status</footer>
+            <groupingColumn>CUST_CREATED_DATE</groupingColumn>
+            <groupingColumn>Booking__c.Status__c</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/My_Booking_Activity</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Booking Activity for Last 7 Days</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>BucketField_24683112</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/My_Premium_Bookings_LW</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Bookings Last Week - Standard/Premium</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CUST_CREATED_DATE</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/My_Quotes_Last_7_Days</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Quote Activity for Last 7 Days</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Blue = Unconverted Quotes</footer>
+            <groupingColumn>Quote__c.Bookings__r$Name</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/My_Quote_Conversions_Last_Week</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My Quote Conversions Last Week</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>Based on number of &apos;Record Tracks&apos; logged</footer>
+            <header>Case &amp; Other Statistics</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>CS_Agent_Reports/My_First_Call_Resolutions_Last_Week</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>My First Call Resolution Cases</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Metric</componentType>
+            <displayUnits>Auto</displayUnits>
+            <header>Cases I Need to Assign</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>These cases are currently assigned to you but should be assigned to a team queue</metricLabel>
+            <report>CS_Agent_Reports/My_Open_Cases</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Metric</componentType>
+            <displayUnits>Auto</displayUnits>
+            <header>Cases I&apos;ve logged without a Call Back SLA</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Please make sure all Cases are logged with a Call Back SLA</metricLabel>
+            <report>CS_Agent_Reports/My_Cases_without_a_Call_Back_SLA</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA2</column>
+            </chartSummary>
+            <componentType>Pie</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>true</expandOthers>
+            <footer>(-) Means the call has not been Tagged</footer>
+            <groupingColumn>Activity.Call_Tagging__c</groupingColumn>
+            <header>Call Tagging</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>CS_Agent_Reports/My_Call_Tagging_Today</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <title>My Call Tagging Today</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>lisa.louise.smith@tnt.co.uk</runningUser>
+    <textColor>#000000</textColor>
+    <title>My Frontline Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

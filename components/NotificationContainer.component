@@ -1,0 +1,67 @@
+<apex:component >
+	<apex:attribute name="mainColour" type="String" description="Main colour of the container in CSS values." default="#CC0000" />
+	<apex:attribute name="textColour" type="String" description="Colour of the text in CSS values." default="#FFFFFF" />
+	<apex:attribute name="circleColour" type="String" description="Colour of the circle element." default="#FFFFFF" />
+	<apex:attribute name="messageText" type="String" description="Text of the message." required="true" />
+	
+	<style>
+		/* I have moved colour properties into elements to prevent interference if there are more elements in page */
+		
+		.containerClassMM {
+			margin:10px 0px 10px 0px;
+		}
+		.messageTableMM {
+			/* background-color:{!mainColour}; */
+			width:100%;
+		}
+		.colourDivMM {
+			/* background-color:{!mainColour}; */
+		}
+		.circleMM {
+			/* background-color:{!circleColour}; */
+			border-radius: 40px;
+			width: 40px;
+			height: 40px; 
+			/* width and height can be anything, as long as they're equal */
+		}
+		.circleTextMM {
+			/* color:{!mainColour}; */
+			padding:4px 0px 0px 15px;
+			font-size:30px; 
+			font-weight:bold; 
+			font-family: 'Times New Roman';
+		}
+		.messageDivMM {
+			font-family: Helvetica; 
+			/* color:{!textColour}; */
+			font-size:15px;
+		}
+		
+	</style>
+
+	<apex:outputPanel rendered="{!!ISBLANK(messageText)}">
+	<div class="containerClassMM">
+		<table class="messageTableMM" style="background-color:{!mainColour};">
+			<tr>
+				<td style="width:70px;">
+					<div class="colourDivMM" style="background-color:{!mainColour};">
+						<div style="padding:10px;">
+							<div class="circleMM" style="background-color:{!circleColour};">
+								<div class="circleTextMM" style="color:{!mainColour};">
+									!
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
+			
+				<td style="padding:10px 10px 10px 0px">
+					<div class="colourDivMM messageDivMM" style="background-color:{!mainColour}; color:{!textColour}; ">
+						<apex:outputText value="{!messageText}" escape="false" />
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</apex:outputPanel>
+</apex:component>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to send SSS pack to contacts who respond to Campaigns</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TNT_People_Network</letterhead>
+    <name>Speech Self Service Pack</name>
+    <style>freeForm</style>
+    <subject>TNT Speech Self Service Promo</subject>
+    <textOnly>Hi,
+
+Thanks for your interest in our Speech Self Service facility.
+
+Attached to this email is our welcome pack. It contains everything you need to get started using SSS.
+
+Main features:
+
+Automated Booking Service
+Auotmated Consignment tracking Service
+
+If you have any questions regarding this please call Domestic Customer Service on 0800 100 600 quoting your name.
+
+For more information on all TNT services including tracking your consignment, please visit www.tnt.co.uk.
+
+Yours sincerely,
+TNT Domestic Customer Service</textOnly>
+    <type>html</type>
+</EmailTemplate>

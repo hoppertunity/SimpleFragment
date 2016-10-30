@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_24607918</developerName>
+        <masterLabel>Site</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>User$UserRole</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Ath Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Apple 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Central Support Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Central Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <value>Atherstone</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lount Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Admin CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 5 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 2 Team Lead</sourceValue>
+            </sourceValues>
+            <value>Lount</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Manchester MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester Support CSR</sourceValue>
+            </sourceValues>
+            <value>Manchester</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>User.Quote__c$OwnerId$Name</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Service_Name__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Is_Premium_Service__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Value__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Total_Weight__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Carriage_Forward__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Enhanced_Liability_Option__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Fuel_Supplement__c</field>
+    </columns>
+    <columns>
+        <field>User.Quote__c$OwnerId$Price__c</field>
+    </columns>
+    <description>Quotes grouped by User Site for. Excludes unpriced Quotes.</description>
+    <filter>
+        <criteriaItems>
+            <column>User.Quote__c$OwnerId$Price__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User*User$User_Site__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$UserRole</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Quotes by Site Last Week (Priced)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Quotes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Quote__c$OwnerId$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

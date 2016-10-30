@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>OL_OLIEditNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>OL_OLIEditNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>EditFields</fullName>
+        <description>fields to show on edit page that are not name or parent</description>
+        <displayedFields>
+            <field>Number_of_Items__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Weight__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Length__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Width__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Height__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Pallet_Policy__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>EditFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>OtherEditFields</fullName>
+        <description>Other edit fields for line edit page</description>
+        <displayedFields>
+            <field>Number_of_Items__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Pallet_Policy__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>OtherEditFields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Height__c</fullName>
+        <description>Field to save one item&apos;s height in meters</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item height in meters</inlineHelpText>
+        <label>Height (cm)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Length__c</fullName>
+        <description>Field to save one item&apos;s length in meters</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item length in meters</inlineHelpText>
+        <label>Length (cm)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Items</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pallet_Policy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Pallet Policy</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Quote__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote</label>
+        <referenceTo>Quote__c</referenceTo>
+        <relationshipLabel>Quote Line Items</relationshipLabel>
+        <relationshipName>Quote_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Total_Weight__c</fullName>
+        <externalId>false</externalId>
+        <formula>Number_of_Items__c  *  Weight__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume__c</fullName>
+        <externalId>false</externalId>
+        <formula>Height__c * Length__c * Width__c * 0.000001 * Number_of_Items__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <description>Field to save one item&apos;s weight in kilograms</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item weight in kilograms</inlineHelpText>
+        <label>Weight (kg)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Width__c</fullName>
+        <description>Field to save one item&apos;s width in meters</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item width in meters</inlineHelpText>
+        <label>Width (cm)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Quote Line Item</label>
+    <nameField>
+        <displayFormat>Line-{0000}</displayFormat>
+        <label>Quote Line Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Quote Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Dimensions_have_to_be_positive_integer</fullName>
+        <active>true</active>
+        <description>All dimensions must be set and be a number greater than 0.</description>
+        <errorConditionFormula>(ISBLANK( Height__c ) || Height__c &lt;= 0 || ISBLANK( Length__c ) || Length__c &lt;= 0 || ISBLANK( Width__c ) || Width__c &lt;= 0) &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>All dimensions must be set and be a number greater than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Height_has_to_be_integer</fullName>
+        <active>true</active>
+        <errorConditionFormula>FLOOR( Height__c ) &lt;&gt; Height__c</errorConditionFormula>
+        <errorMessage>Height cannot have any decimal places - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Length_has_to_be_integer</fullName>
+        <active>true</active>
+        <errorConditionFormula>FLOOR( Length__c ) &lt;&gt; Length__c</errorConditionFormula>
+        <errorMessage>Length cannot have any decimal places - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_height_210</fullName>
+        <active>true</active>
+        <description>every item must have a max length, width or height of 3.6m</description>
+        <errorConditionFormula>(ISNEW() || ISCHANGED(Height__c)) &amp;&amp; Height__c &gt; 210 &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Maximum Height is 210cm - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_length_360</fullName>
+        <active>true</active>
+        <description>every item must have a max length, width or height of 3.6m</description>
+        <errorConditionFormula>(ISNEW() || ISCHANGED(Length__c)) &amp;&amp; Length__c &gt; 360 &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Maximum Length is 360cm - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_width_180</fullName>
+        <active>true</active>
+        <description>every item must have a max length, width or height of 3.6m</description>
+        <errorConditionFormula>(ISNEW() || ISCHANGED(Width__c)) &amp;&amp; Width__c  &gt; 180 &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Maximum Width is 180cm - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoI_has_to_be_positive_integer</fullName>
+        <active>true</active>
+        <description>Number of Items must be set and be a number greater than 0.</description>
+        <errorConditionFormula>(ISBLANK( Number_of_Items__c ) || Number_of_Items__c &lt;= 0) &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Number of Items must be set and be a number greater than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Weight_has_to_be_positive_integer</fullName>
+        <active>true</active>
+        <description>Weight must be set and be a number greater than 0.</description>
+        <errorConditionFormula>(ISBLANK( Weight__c ) || Weight__c &lt;= 0) &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorMessage>Weight must be set and be a number greater than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Width_has_to_be_integer</fullName>
+        <active>true</active>
+        <errorConditionFormula>FLOOR( Width__c ) &lt;&gt; Width__c</errorConditionFormula>
+        <errorMessage>Width cannot have any decimal places - Please Correct Dimensions.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,19 @@
+<messaging:emailTemplate subject="TNT Claim. Claim Reference no: {!relatedTo.Reference_no__c} Consignment no: {!relatedTo.Consignment_no__c}" recipientType="Contact" relatedToType="CS_Claims__c">
+
+<messaging:htmlEmailBody >
+<p><span style="color:red;">**Please do not reply to this e-mail**</span> - Should you have any enquiries or should you require any assistance in completing the claim form please respond to <a href="#">uk.claims.info@tnt.com</a></p>
+
+<p>Thank you for your recent enquiry in respect of the above consignment.</p>
+
+<p>Further to our recent telephone conversation please find enclosed a TNT claim form for completion. I would be grateful if you could provide as much information as possible when completing the claim form, in particular information relating to the description of the goods. Any additional paperwork, e.g. invoices, brochures etc can be returned by separate e-mail to <a href="#">uk.claims.info@tnt.com</a>. Please ensure that you quote the TNT reference number when sending additional information or attachments.</p>
+
+<p>Your completed claim form is returned to our Central Claims Department who will contact you directly should they require any additional information. Whilst initial enquiries have been completed the Central Claims Department will complete further investigations with regards to your claim. The majority of claims are processed within 15 working days of receipt; however some claims may take longer depending on the circumstances of the loss / damage. Please note that your claim form must be returned within 21 days of the date of issue to comply with the time limits as stipulated in our terms and conditions of carriage. TNT reserves the right to reject any claims that are not submitted within this time limit.</p>
+
+<p>Please click the link below to complete the claim details and select the 'Click to Submit’ option at the bottom of the form to return it to TNT.</p>
+
+<a href="{!$Setup.CS_TNT_Claims__c.Site_URL__c}/cs_claims_form_page?cid={!relatedTo.Id}">Click Here to open the Claim Form.</a>
+<p>Kind regards,</p>
+
+<p>TNT Customer Service Support Team </p>
+</messaging:htmlEmailBody> 
+</messaging:emailTemplate>

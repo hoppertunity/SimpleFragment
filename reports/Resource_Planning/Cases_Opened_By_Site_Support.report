@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.Case$OwnerId$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User*User$User_Function__c</field>
+    </columns>
+    <description>Cases opened by support CSR&apos;s by site (No TSM)</description>
+    <filter>
+        <criteriaItems>
+            <column>User*User$User_Function__c</column>
+            <operator>equals</operator>
+            <value>Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Case$OwnerId$Type</column>
+            <operator>notEqual</operator>
+            <value>FCR - Record Track</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Case$OwnerId$Type</column>
+            <operator>notContain</operator>
+            <value>Bookings</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.Case$OwnerId$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User*User$User_Site__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>(Support Overview)Cases Opened By Site</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Cases__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Case$OwnerId$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template for users to email a quote</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Simple_TNT_Logo</letterhead>
+    <name>Email a Quote</name>
+    <style>freeForm</style>
+    <subject>TNT Quote - {!Quote__c.Name}</subject>
+    <textOnly>Dear {!Quote__c.Contact__c}{!Quote__c.Contact_First_Name__c}                                           {!Quote__c.CreatedDate}
+
+Thank you for contacting TNT
+
+Please find below the details of the quotation that you requested
+
+Company Name {!Quote__c.Account__c}{!Quote__c.Company_Name__c}
+Account number {!Quote__c.Account_Number__c}
+
+From
+
+{!Quote__c.Collection_Postcode__c}
+
+UK
+
+To
+
+{!Quote__c.Delivery_Postcode__c}, {!Quote__c.Delivery_Town__c}
+
+UK
+
+Actual Total Weight
+
+{!Quote__c.Total_Weight__c} kg
+
+Quoted weight {!Quote__c.Total_Volume__c} m3
+
+We charge for either the actual weight of the shipment or the volumetric weight of the shipment whichever is the higher and the volumetric weight is calculated in accordance with the volumetric equation set out in our rate card
+
+Number of items  {!Quote__c.Total_Number_of_Items__c}
+
+
+Collection date or quoted date: {!Quote__c.Collection_Date__c}
+Delivery Date and Time: {!Quote__c.Delivery_Date__c}
+Service: {!Quote__c.Service_Name__c}
+Quoted Price –excluding “local equiv of VAT”:{!Quote__c.Price__c}
+
+If you have any questions regarding your quotation please reply to this email. Please ensure you do not change the information contained within the subject field of the email.
+
+The estimated prices shown are based upon the shipment details provided by you, any changes to any of the above information will make the quote invalid.
+
+Please note that:
+· All prices refer to services whereby the caller pays
+· All prices are exclusive of Value Added Tax (VAT) and any customs duties
+· All prices exclude Long Length surcharges that will be applied to items exceeding 160cm
+· All prices are subject to change without prior notice TNT’s standard terms and conditions apply to the delivery of all goods
+
+Yours Sincerely
+
+TNT Domestic Customer Service</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount/PARENTGROUPVAL(RowCount, GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Percentage of Total Calls</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>BucketField_27101073</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>%</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_27101073</developerName>
+        <masterLabel>TNT Total Call Duration Buckets</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>60</to>
+            </sourceValues>
+            <value>0-1 Minute</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>60</from>
+                <to>120</to>
+            </sourceValues>
+            <value>1-2 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>120</from>
+                <to>180</to>
+            </sourceValues>
+            <value>2-3 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>180</from>
+                <to>240</to>
+            </sourceValues>
+            <value>3-4 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>240</from>
+                <to>600</to>
+            </sourceValues>
+            <value>5-10 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>600</from>
+                <to>900</to>
+            </sourceValues>
+            <value>10-15 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>900</from>
+                <to>1,200</to>
+            </sourceValues>
+            <value>15-20 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,200</from>
+                <to>1,500</to>
+            </sourceValues>
+            <value>20-25 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,500</from>
+                <to>1,800</to>
+            </sourceValues>
+            <value>25-30 Minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,800</from>
+            </sourceValues>
+            <value>30+ Minutes</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallDisposition__c</field>
+    </columns>
+    <description>Shows call duration bucketed into 5 minute periods. Use this to assess sweep times for the NVM Stats Package integration.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_27101073</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Total Call Duration Last 30 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

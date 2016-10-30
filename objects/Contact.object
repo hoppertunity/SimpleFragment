@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddToCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnablePartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ListClean</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Merge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewContact</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewPartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active_Status__c</fullName>
+        <description>Converts the Inactive field into a visual field using static resource images</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+IF( Inactive__c  = False , &quot;/resource/Contact_Status_Icons/tick.png&quot;,&quot;/resource/Contact_Status_Icons/cross.png&quot;), &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Active Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssistantName</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>AssistantPhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Authorized_for_bookings__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to mark a contact as authorised to make bookings</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contact is authorised to make booking. This permission is only observed if the account requests so</inlineHelpText>
+        <label>Authorized for bookings</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Authorized_to_see_rates__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to mark a contact as authorised to see rates</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contact is authorised to see rates. This permission is only observed if the account requests so</inlineHelpText>
+        <label>Authorized to see rates</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Birthdate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CanAllowPortalSelfReg</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CleanStatus</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Contact_Number__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Contact Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Score_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Contact_Score__c =100,&quot;All Contact Details Captured&quot;, 
+&quot;Issues: &quot;&amp;
+IF( CONTAINS(Phone, &quot;000000&quot;), &quot;Fake Phone Number, &quot;,&quot;&quot;)&amp;
+&quot;&quot;
+&amp;
+IF(LEN( Email) = 0, &quot;Missing Email, &quot;,&quot;&quot;)&amp;
+&quot;&quot;
+&amp;
+IF( LEN(Title) = 0, &quot;Missing Job Title, &quot;,&quot;&quot;)&amp;
+&quot;&quot;
+&amp;
+IF( ISPICKVAL( Salutation,&quot;&quot;), &quot;Missing Salutation&quot;,&quot;&quot;))</formula>
+        <label>Contact Score Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Salutation,&quot;&quot;), 0,10) +
+IF( LEN( FirstName) = 0, 0,20) + 
+IF( LEN( LastName) = 0, 0,20) + 
+IF( CONTAINS(Phone, &quot;000000&quot;) , 0, 20) +
+IF( LEN( Email) = 0, 0,20) + 
+IF( LEN(Title) = 0, 0,10)</formula>
+        <label>Contact Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HomePhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Tick the box if this contact is no longer active. E.g. they have left the company they are associated with or have asked TNT to stop contacting them.</inlineHelpText>
+        <label>Inactive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Jigsaw</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LastCURequestDate</fullName>
+    </fields>
+    <fields>
+        <fullName>LastCUUpdateDate</fullName>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MailingAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Middle_Initials__c</fullName>
+        <externalId>false</externalId>
+        <label>Middle Initials</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Asst_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Assistants Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( AssistantPhone )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(AssistantPhone, &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Contact&quot;, 
+                   AssistantPhone , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Assistants Phone</inlineHelpText>
+        <label>NVM Asst. Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Home_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Home Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( HomePhone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(HomePhone , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Contact&quot;, 
+                   HomePhone  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Home Phone</inlineHelpText>
+        <label>NVM Home Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Mobile__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Mobile Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( MobilePhone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(MobilePhone , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Contact&quot;, 
+                   MobilePhone  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Mobile Phone</inlineHelpText>
+        <label>NVM Mobile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Other_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Other Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( OtherPhone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(OtherPhone , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Contact&quot;, 
+                   OtherPhone  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Other Phone</inlineHelpText>
+        <label>NVM Other Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN(  Phone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(Phone, &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Contact&quot;, 
+                   Phone, &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Phone</inlineHelpText>
+        <label>NVM Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OtherAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OtherPhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Phone_Extension__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Extension</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReportsToId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>AllContacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Contacts</label>
+    </listViews>
+    <listViews>
+        <fullName>Inactive_Contacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Active_Status__c</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Inactive__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Inactive Contacts</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Phone_Extension__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.EMAIL</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Active_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.PHONE1</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Phone_Extension__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.EMAIL</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account_Number__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE1</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Phone_Extension__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.EMAIL</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.PHONE1</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Phone_Extension__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.EMAIL</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Valid_Phone</fullName>
+        <active>true</active>
+        <description>We must enforce that phones don&apos;t contain spaces</description>
+        <errorConditionFormula>NOT(REGEX( Phone , &quot;[0-9]{7,15}&quot;)) &amp;&amp; NOT($Profile.Name = &apos;System Administrator&apos;) &amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;)</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>please enter a valid phone (7-15 digit, no spaces)</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Contact</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/003/e?retURL=%2F{!Account.Id}&amp;accid={!Account.Id}&amp;con10=</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendGmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Send Gmail</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Contact_Email}&lt;{!Contact_LastName}, {!Contact_FirstName}&gt;&amp;tf=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo! Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Contact_MailingCountry}&amp;csz={!Contact_MailingCity}+{!Contact_MailingState}+{!Contact_MailingPostalCode}+&amp;addr={!Contact_MailingAddress}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooWeather</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo! Weather</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://weather.yahoo.com/search/weather2?p={!Contact_MailingPostalCode}</url>
+    </webLinks>
+</CustomObject>

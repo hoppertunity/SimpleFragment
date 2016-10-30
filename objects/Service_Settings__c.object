@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>settings for service cloud</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Account_Address_Picklist_Size__c</fullName>
+        <defaultValue>20</defaultValue>
+        <description>how many rows of addresses are shown when creating booking</description>
+        <externalId>false</externalId>
+        <label>Account Address Picklist Size</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_in_Booking__c</fullName>
+        <externalId>false</externalId>
+        <label>Account in Booking</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_in_Quote__c</fullName>
+        <externalId>false</externalId>
+        <label>Account in Quote</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Action_Record_Type__c</fullName>
+        <defaultValue>&apos;012110000000T5q&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Action Record Type</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_in_Booking__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact in Booking</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_in_Quote__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact in Quote</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>See_On_Stop_Button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>see button to request on stop approval from quote/booking page</description>
+        <externalId>false</externalId>
+        <label>See On Stop Button</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Task_Record_Type__c</fullName>
+        <defaultValue>&apos;012110000000T5l&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Task Record Type</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service Settings</label>
+</CustomObject>

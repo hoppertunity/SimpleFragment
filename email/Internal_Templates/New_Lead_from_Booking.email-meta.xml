@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to send potential leads to Sales/Account Team when a non-account holding contact requests a booking</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Simple_TNT_Logo</letterhead>
+    <name>New Lead from Booking</name>
+    <style>freeForm</style>
+    <subject>New Lead from Booking for a contact without an account</subject>
+    <textOnly>Hello
+
+A booking has been requested from {!Booking__c.Contact_First_Name__c} {!Booking__c.Contact_Last_Name__c} at {!Booking__c.Company_Name__c}.
+
+This contact does not have an existing account with TNT, and could be considered a potential account lead.
+
+Please check the following booking and follow up as necessary:
+
+{!Booking__c.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

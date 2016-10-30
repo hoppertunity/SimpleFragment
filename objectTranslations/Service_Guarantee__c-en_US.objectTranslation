@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Not Guaranteed</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Not Guaranteed</value>
+    </caseValues>
+    <fields>
+        <label><!-- Routing Table --></label>
+        <name>Routing_Table__c</name>
+        <relationshipLabel><!-- Service Not Guaranteed --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Available --></label>
+        <name>Service_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Guarantee Key --></label>
+        <name>Service_Guarantee_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Guaranteed --></label>
+        <name>Service_Guaranteed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Service Not Guaranteed --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Service Guarantee Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quote Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quote Line Items</value>
+    </caseValues>
+    <fields>
+        <help><!-- Item height in meters --></help>
+        <label><!-- Height (cm) --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <help><!-- Item length in meters --></help>
+        <label><!-- Length (cm) --></label>
+        <name>Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Items --></label>
+        <name>Number_of_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pallet Policy --></label>
+        <name>Pallet_Policy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Quote Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Weight --></label>
+        <name>Total_Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume --></label>
+        <name>Volume__c</name>
+    </fields>
+    <fields>
+        <help><!-- Item weight in kilograms --></help>
+        <label><!-- Weight (kg) --></label>
+        <name>Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Item width in meters --></help>
+        <label><!-- Width (cm) --></label>
+        <name>Width__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- All dimensions must be set and be a number greater than 0. --></errorMessage>
+        <name>Dimensions_have_to_be_positive_integer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Height cannot have any decimal places - Please Correct Dimensions. --></errorMessage>
+        <name>Height_has_to_be_integer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Length cannot have any decimal places - Please Correct Dimensions. --></errorMessage>
+        <name>Length_has_to_be_integer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Maximum Height is 210cm - Please Correct Dimensions. --></errorMessage>
+        <name>Maximum_height_210</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Maximum Length is 360cm - Please Correct Dimensions. --></errorMessage>
+        <name>Maximum_length_360</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Maximum Width is 180cm - Please Correct Dimensions. --></errorMessage>
+        <name>Maximum_width_180</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Number of Items must be set and be a number greater than 0. --></errorMessage>
+        <name>NoI_has_to_be_positive_integer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Weight must be set and be a number greater than 0. --></errorMessage>
+        <name>Weight_has_to_be_positive_integer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Width cannot have any decimal places - Please Correct Dimensions. --></errorMessage>
+        <name>Width_has_to_be_integer</name>
+    </validationRules>
+</CustomObjectTranslation>

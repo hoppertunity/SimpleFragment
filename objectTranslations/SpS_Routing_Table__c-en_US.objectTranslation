@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SpS Routing Table</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sps Routing Tables</value>
+    </caseValues>
+    <fields>
+        <label><!-- PLACE --></label>
+        <name>PLACE__c</name>
+    </fields>
+    <fields>
+        <label><!-- POSTCODE --></label>
+        <name>POSTCODE__c</name>
+    </fields>
+    <fields>
+        <label><!-- POSTTOWN --></label>
+        <name>POSTTOWN__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

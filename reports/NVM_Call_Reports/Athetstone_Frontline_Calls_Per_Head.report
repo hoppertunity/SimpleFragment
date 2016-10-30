@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Calls Taken</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c:SUM + NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c:SUM + NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_Transfer_Time__c:SUM) / RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg. Handle time w/o wrap up in seconds</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c:SUM) / 3600</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA5</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Call Duration (hrs)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallTime__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Ring_Duration__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Queue_Duration__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_Transfer_Time__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_Service_Name__c</column>
+            <operator>equals</operator>
+            <value>Frontline,SSS Booking,SSS Track,SSS DG</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</column>
+            <operator>equals</operator>
+            <value>Amanda Timms,Bronwyn Linford,Callum Davies,Carrie-Anne Tsinontas,Catherine Sweet,Danny Farrington,Debbie Hopkins,Deepak Gordhan,Gillian Snape,James Taylor,Jonathon Nickless,Karen Samson,Laura Christie,Louise Brotherhood,Lulu Namposya,Megan Godderidge,Michael Nicholls,Michelle Everitt,Niall Gallagher,Robyn Muir,Roy Baynham,Sandra Konigsman,Sarah Kemp,Sheetal Sharma,Stephen Miller,Timothy Banks,Victoria Powell,Sam Barton,Pam Clarke,Natasha Everton,Melissa Haynes,Charlotte Westwood,Alexis Lunn,Adelle Lyn</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Atherstone Frontline Calls Per Head</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

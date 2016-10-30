@@ -1,0 +1,18 @@
+<messaging:emailTemplate subject="TNT Claim Submitted. Claim Reference no:{!relatedTo.Reference_no__c} Consignment no: {!relatedTo.Consignment_no__c}" recipientType="Contact" relatedToType="CS_Claims__c">
+<messaging:htmlEmailBody >
+<p>
+Dear {!relatedTo.Sender_Contact_Name__c},
+</p>
+<p>
+Thank you for submitting your claim form, your completed claim form has been returned to our Central Claims Department who will contact you directly should they require any additional information. Whilst initial enquiries have been completed the Central Claims Department will complete further investigations with regards to your claim. The majority of claims are processed within 15 working days of receipt; however some claims may take longer depending on the circumstances of the loss / damage.
+</p>
+<p>
+<a href="{!$Setup.CS_TNT_Claims__c.Site_URL__c}/cs_claims_form_page?cid={!relatedTo.Id}">Click Here to open the Claim Form.</a>
+</p>
+
+<p>Kind regards,</p>
+<p>
+TNT Customer Service Support Team
+</p>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

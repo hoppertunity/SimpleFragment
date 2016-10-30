@@ -1,0 +1,18 @@
+<messaging:emailTemplate subject="Claim form not sent reminder" recipientType="User" relatedToType="CS_Claims__c">
+<messaging:htmlEmailBody >
+<p>Dear {!relatedTo.Owner.FirstName} {!relatedTo.Owner.LastName}</p>
+<p>This is a notification email to remind you that claim {!relatedTo.Name} has been created but not yet sent to the customer.</p>
+<p>Reference no: {!relatedTo.Reference_no__c}</p>
+<p>TNT Account no: {!relatedTo.TNT_account_no__c}</p>
+<p>Consignment no: {!relatedTo.Consignment_no__c}</p>
+
+<p>Please click this link to progress this claim. This is the only reminder you will receive, if this claim is no longer required the system will automatically set the status to 'Closed' after 21 days.  </p>
+
+<p><apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+'ui/support/servicedesk/ServiceDeskPage#/'+relatedTo.Id}">Go to Claim</apex:outputlink></p>
+
+<p>Thank you,</p>
+
+<p>TNT Customer Service Support Team</p>
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

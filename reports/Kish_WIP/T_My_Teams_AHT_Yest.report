@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>NVMStatsSF__NVM_Call_Summary__c.TNT_Handle_Time__c:SUM  / NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Number_of_Inbound_Calls_FORMULA__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Average Handle Time</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>NVMStatsSF__NVM_Agent_Summary__c$NVMStatsSF__Agent__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>AHT</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c$Name</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__NVM_Call_Summaries__r$Name</field>
+    </columns>
+    <description>Average Handle Time or (AHT)</description>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__NVM_Call_Summaries__r$TNT_Handle_Time__c</column>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Agent_Summary__c$NVMStatsSF__Agent__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>T. My Teams AHT Yest</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>NVM_Agent_Summaries_with_or_without_Call_Summaries__c</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>NVMStatsSF__NVM_Agent_Summary__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

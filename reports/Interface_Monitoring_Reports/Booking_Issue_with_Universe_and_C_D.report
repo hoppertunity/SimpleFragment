@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Collection_Ready_Time__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Coll_Org_Name__c</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Coll_Postcode__c</field>
+    </columns>
+    <description>Report to investigate issue discovered on Mon 19th Jan</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <operator>equals</operator>
+            <value>1/19/2015 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <operator>notEqual</operator>
+            <value>integration user</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Booking__c.Status__c</column>
+            <operator>equals</operator>
+            <value>Confirmed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Booking__c.Collection_Ready_Time__c</column>
+            <operator>lessThan</operator>
+            <value>1/20/2015 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Booking Issue with Universe and C&amp;D</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Booking__c.Collection_Ready_Time__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

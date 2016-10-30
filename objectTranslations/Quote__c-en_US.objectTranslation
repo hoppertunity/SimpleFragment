@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quote</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quotes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Am I the record Owners Manager? --></label>
+        <name>Am_I_the_record_Owners_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carriage Forward --></label>
+        <name>Carriage_Forward__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Date --></label>
+        <name>Collection_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection: Postcode --></label>
+        <name>Collection_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of packaging --></label>
+        <name>Commodity__c</name>
+        <picklistValues>
+            <masterLabel>ASSORTED</masterLabel>
+            <translation><!-- ASSORTED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BUNDLE</masterLabel>
+            <translation><!-- BUNDLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CARTON</masterLabel>
+            <translation><!-- CARTON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DANGEROUS GOODS</masterLabel>
+            <translation><!-- DANGEROUS GOODS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENVELOPE</masterLabel>
+            <translation><!-- ENVELOPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FULL SET</masterLabel>
+            <translation><!-- FULL SET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GARMENTS</masterLabel>
+            <translation><!-- GARMENTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INCOMPATIBLE TRAFFIC</masterLabel>
+            <translation><!-- INCOMPATIBLE TRAFFIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIFFY BAG</masterLabel>
+            <translation><!-- JIFFY BAG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LONG LENGTH</masterLabel>
+            <translation><!-- LONG LENGTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MEDICAL SUPPLIES</masterLabel>
+            <translation><!-- MEDICAL SUPPLIES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PALLET</masterLabel>
+            <translation><!-- PALLET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROLL</masterLabel>
+            <translation><!-- ROLL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SACK</masterLabel>
+            <translation><!-- SACK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TECHNOLOGY</masterLabel>
+            <translation><!-- TECHNOLOGY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 1</masterLabel>
+            <translation><!-- TSL 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 2</masterLabel>
+            <translation><!-- TSL 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 3</masterLabel>
+            <translation><!-- TSL 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 4</masterLabel>
+            <translation><!-- TSL 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSL 5</masterLabel>
+            <translation><!-- TSL 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Phone --></label>
+        <name>Company_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact First Name --></label>
+        <name>Contact_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Last Name --></label>
+        <name>Contact_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone --></label>
+        <name>Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- Contact must belong to the same Account as specified on Quote record. --></errorMessage>
+        </lookupFilter>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dangerous Goods --></label>
+        <name>Dangerous_Goods__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Date --></label>
+        <name>Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery: Postcode --></label>
+        <name>Delivery_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery: Town --></label>
+        <name>Delivery_Town__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email_Only__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the contact want the quote emailed to them? --></help>
+        <label><!-- Email the quote? --></label>
+        <name>Email_the_quote__c</name>
+    </fields>
+    <fields>
+        <help><!-- What level of Enhanced Liability does the customer want for this quote? --></help>
+        <label><!-- Enhanced Liability Option --></label>
+        <name>Enhanced_Liability_Option__c</name>
+        <picklistValues>
+            <masterLabel>0 - None</masterLabel>
+            <translation><!-- 0 - None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - £3.00</masterLabel>
+            <translation><!-- 1 - £3.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - £6.00</masterLabel>
+            <translation><!-- 2 - £6.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - £9.00</masterLabel>
+            <translation><!-- 3 - £9.00 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Fuel Supplement should be entered only when you receive communication of a rate change.  If left blank a default value is used in the quotation. --></help>
+        <label><!-- Fuel Supplement --></label>
+        <name>Fuel_Supplement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Guaranteed Service --></label>
+        <name>Is_Guaranteed_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Premium Service --></label>
+        <name>Is_Premium_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description of Content --></label>
+        <name>Items_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- No. Long Length Items --></label>
+        <name>No_Long_Length_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pallet Pollicy --></label>
+        <name>Pallet_Pollicy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- A quote remains valid to proceed to a booking until midnight on the day it is created --></help>
+        <label><!-- Quote is Valid --></label>
+        <name>Quote_is_Valid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Not Booking --></label>
+        <name>Reason_for_Not_Booking__c</name>
+        <picklistValues>
+            <masterLabel>Customer to book via CIT</masterLabel>
+            <translation><!-- Customer to book via CIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incompatible traffic</masterLabel>
+            <translation><!-- Incompatible traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to confirm with bill payer</masterLabel>
+            <translation><!-- Need to confirm with bill payer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to confirm with receiver</masterLabel>
+            <translation><!-- Need to confirm with receiver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Old rate removed</masterLabel>
+            <translation><!-- Old rate removed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Too expensive</masterLabel>
+            <translation><!-- Too expensive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to offer EL</masterLabel>
+            <translation><!-- Unable to offer EL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to offer required service</masterLabel>
+            <translation><!-- Unable to offer required service --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Record Owners Manager --></label>
+        <name>Record_Owners_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>Service_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Instructions --></label>
+        <name>Special_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplements Details --></label>
+        <name>Supplements_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Number of Items --></label>
+        <name>Total_Number_of_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Volume Rounded --></label>
+        <name>Total_Volume_Rounded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Volume --></label>
+        <name>Total_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Weight (kg) --></label>
+        <name>Total_Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Expiry Date --></label>
+        <name>Validation_Deadline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volumetric Weight (kg) --></label>
+        <name>Volumetric_Weight__c</name>
+    </fields>
+    <layouts>
+        <layout>Closed Quote Layout</layout>
+        <sections>
+            <label><!-- Collection/Delivery Details --></label>
+            <section>Collection/Delivery Details</section>
+        </sections>
+        <sections>
+            <label><!-- Consignment Details --></label>
+            <section>Consignment Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Info --></label>
+            <section>Contact Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Information --></label>
+            <section>Customer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Based On --></label>
+            <section>Quote Based On</section>
+        </sections>
+        <sections>
+            <label><!-- Service Details --></label>
+            <section>Service Details</section>
+        </sections>
+        <sections>
+            <label><!-- Weights &amp; Dimensions --></label>
+            <section>Weights &amp; Dimensions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Quote Layout</layout>
+        <sections>
+            <label><!-- Collection/Delivery Details --></label>
+            <section>Collection/Delivery Details</section>
+        </sections>
+        <sections>
+            <label><!-- Consignment Details --></label>
+            <section>Consignment Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Info --></label>
+            <section>Customer Info</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Information --></label>
+            <section>Customer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Price Based On --></label>
+            <section>Price Based On</section>
+        </sections>
+        <sections>
+            <label><!-- Service Details --></label>
+            <section>Service Details</section>
+        </sections>
+        <sections>
+            <label><!-- Weights &amp; Dimensions --></label>
+            <section>Weights &amp; Dimensions</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- New Quote --></label>
+        <name>NewQuote</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Priced Quote --></label>
+        <name>PricedQuote</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot save a dangerous goods item to an account which doesn&apos;t ship dangerous goods. --></errorMessage>
+        <name>Dangerous_Goods</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Delivery Postcode or Town should be entered --></errorMessage>
+        <name>Delivery_Postcode_or_Town_are_mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To email the quote, you have to select a contact with a stored email address, or populate the email field with an email address --></errorMessage>
+        <name>Email_or_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Account is On Stop. Approval must be given from Stubbins to save a Quote for this Account. --></errorMessage>
+        <name>On_Stop_Quote_Prevention_Rule</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- CreateNew --></label>
+        <name>CreateNew</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Booking --></label>
+        <name>Create_Booking</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_from_Contact --></label>
+        <name>New_from_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Request_Price --></label>
+        <name>Request_Price</name>
+    </webLinks>
+</CustomObjectTranslation>

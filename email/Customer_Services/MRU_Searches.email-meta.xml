@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to send to Mauritius to start searches</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TNT_People_Network</letterhead>
+    <name>MRU Searches</name>
+    <style>freeForm</style>
+    <subject>MRU Searches: Case Number {!Case.CaseNumber}</subject>
+    <textOnly>Please start the checks for this missing item(s). Once you&apos;ve completed one day of searches remember to:
+
+1) Update the Action on the Case to &apos;Completed&apos;
+2) Tick the &apos;Case Owner Review Required&apos; box on the Case
+
+Description of Goods
+
+{!Case.Goods_Description__c}
+
+Make
+
+{!Case.Make__c}
+
+Model
+
+{!Case.Model__c}
+
+Serial Number
+
+{!Case.Serial_Number__c}
+
+Dimensions
+
+{!Case.Dimensions__c}
+
+Colour
+
+{!Case.Colour__c}
+
+Packaging
+
+{!Case.Packaging_Type__c}
+
+Comments
+
+(Logos/Labels etc.)
+
+{!Case.Comments__c}
+
+
+Kind Regards,
+{!Case.OwnerFullName}</textOnly>
+    <type>html</type>
+</EmailTemplate>

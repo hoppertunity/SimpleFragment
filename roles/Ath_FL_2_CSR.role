@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Ath FL 2 CSR</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Ath FL 2 CSR</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Ath_FL_2_Team_Lead</parentRole>
+</Role>

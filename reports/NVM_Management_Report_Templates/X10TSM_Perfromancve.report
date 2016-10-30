@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Calls Presented</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>NVMStatsSF__NVM_Call_Summary__c.In_SLA__c:SUM / RowCount</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Day_of_Week__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Service Level</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_78544673</developerName>
+        <masterLabel>Answered in SLA</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Queue_Duration__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>10</to>
+            </sourceValues>
+            <value>Within SLA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>10</from>
+            </sourceValues>
+            <value>Outside SLA</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_55246535</developerName>
+        <masterLabel>Call Outcome</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>Abandoned</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+            </sourceValues>
+            <value>Answered</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>NVMStatsSF__NVM_Call_Summary__c.In_SLA__c</field>
+    </columns>
+    <description>10a. TSM Perfromance Summary By Day</description>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Queue_Name__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_55246535</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Day_of_Week__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>10a. TSM Perfromance Summary By Day</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$NVMStatsSF__NVM_Call_Summary__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

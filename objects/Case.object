@@ -1,0 +1,3929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Claim Case Support Process</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Claim Form Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Claim Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated %2F Upgraded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reopened</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting for customer</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Standard Support Process</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated %2F Upgraded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reopened</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting for customer</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Am_I_the_Case_Owners_Manager__c</fullName>
+        <description>Used to calculate whether the logged in user is the Case Owners Manger or not.</description>
+        <externalId>false</externalId>
+        <formula>IF( Owner:User.ManagerId  = $User.Id , True , False)</formula>
+        <inlineHelpText>Used to calculate whether the logged in user is the Case Owners Manger or not.</inlineHelpText>
+        <label>Am I the Case Owners Manager?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booking__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Lookup field to a Booking so that case can be related to a specific booking e.g. for failed collections</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this case related to a Booking?</inlineHelpText>
+        <label>Booking</label>
+        <referenceTo>Booking__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_me_back__c</fullName>
+        <description>create task with reminder</description>
+        <externalId>false</externalId>
+        <label>Call me back</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1 hour</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 hours</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 hours</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4 hours</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5 hours</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24 hours</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>48 hours</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Case_Age_In_Business_Hours__c</fullName>
+        <description>The total case age in business hours from open to close.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total case age in business hours from open to close.</inlineHelpText>
+        <label>Case Age In Business Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Days__c) &amp; &apos; days &apos; &amp; TEXT( Hours__c) &amp; &apos; hours &apos; &amp; TEXT(Minutes__c ) &amp; &apos; minutes&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Age</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Back_to_Queue_MA__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Case back to queue (Major Accounts)</description>
+        <externalId>false</externalId>
+        <label>Case back to queue (Major Accounts)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case_Owner_Review_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If ticked, it means another agent has made an update that requires the Case Owner to review</inlineHelpText>
+        <label>Case Owner Review Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case_Owners_Manager__c</fullName>
+        <description>Shows the name of the Case Owners Manager as setup on User records. This field is used for reporting at team level.</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.Manager.FirstName + &apos; &apos; + Owner:User.Manager.LastName</formula>
+        <label>Case Owners Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Types_Level_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Type</label>
+        <picklist>
+            <controllingField>Type</controllingField>
+            <picklistValues>
+                <fullName>Check Address</fullName>
+                <default>false</default>
+                <controllingFieldValues>Bookings</controllingFieldValues>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Late Collection</fullName>
+                <default>false</default>
+                <controllingFieldValues>Bookings</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Collection</fullName>
+                <default>false</default>
+                <controllingFieldValues>Bookings</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partial Collection</fullName>
+                <default>false</default>
+                <controllingFieldValues>Bookings</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Damage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Claim</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loss</fullName>
+                <default>false</default>
+                <controllingFieldValues>Claim</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Update</fullName>
+                <default>false</default>
+                <controllingFieldValues>General Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C.I.T Query</fullName>
+                <default>false</default>
+                <controllingFieldValues>General Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoice Query</fullName>
+                <default>false</default>
+                <controllingFieldValues>General Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redelivery Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>General Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stationary Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>General Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transit Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>General Enquiry</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Late Delivery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Delivery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Data</fullName>
+                <default>false</default>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partial Delivery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paperwork Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Return to Sender</fullName>
+                <default>false</default>
+                <controllingFieldValues>Bookings</controllingFieldValues>
+                <controllingFieldValues>Track</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accessibility</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agreement not Met</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company Complaint</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Damaged Consignment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Complaint</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Bookings</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Change_Priority__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Change Priority</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Claim__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Claim</label>
+        <referenceTo>CS_Claims__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Closed_to_Standard_Acheved__c</fullName>
+        <description>Used to calculate what records have been closed to standard. (Removes the need to use bucket fields on reports and allows percentage calculations on report groupings).</description>
+        <externalId>false</externalId>
+        <formula>IF( Case_Age_In_Business_Hours__c  &lt;= 10, True, False)</formula>
+        <label>Closed to Standard Achieved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Collection_Depot__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If a Collection Exception is selected then the Case will be assigned using the &apos;Collection Queue&apos; field for this Depot. 
+
+Click on the Depot to see where this case would be assigned to.</inlineHelpText>
+        <label>Collection Depot</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You must select an account of type &apos;Depot&apos;.</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Depot</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Collection Depot)</relationshipLabel>
+        <relationshipName>CollectionCases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Colour__c</fullName>
+        <externalId>false</externalId>
+        <label>Colour</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifiable Features / Logos /Labels etc</inlineHelpText>
+        <label>Comments</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CommunityId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Consignment_Number__c</fullName>
+        <description>This is the Consignment Number, and is used to relate specific Consignment Number if a case is raised for it</description>
+        <externalId>false</externalId>
+        <label>Consignment Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR((now() - CreatedDate))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Depot__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If a Delivery Exception is selected then the Case will be assigned using the &apos;Origin Queue&apos; field from this Depot. 
+
+Click on the Depot to see where this case would be assigned to.</inlineHelpText>
+        <label>Origin Depot</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Account must be of type &apos;Depot&apos;.</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Depot</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Delivery Depot)</relationshipLabel>
+        <relationshipName>DeliveryCases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Dimensions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter dimensions of Length, Height and Width of each item</inlineHelpText>
+        <label>Dimensions</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EntitlementId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Escalate_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Escalate Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Escalated_Upgraded_Audit_Trail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used with a workflow rule to set an audit history for cases that were ever set to a status of &apos;Escalated / Upgraded&apos;.</description>
+        <externalId>false</externalId>
+        <label>Escalated / Upgraded Audit Trail</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Exception__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Chose whether this Case is related to a Collection or Delivery issue. 
+
+This info is then used with either the Collection Depot or Origin Depot fields respectively to Assign the case when the &apos;Assign using active assignment rules&apos; checkbox is ticked.</inlineHelpText>
+        <label>Exception</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Goods_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>General Description of the Items related to the consignment</inlineHelpText>
+        <label>Goods Description</label>
+        <length>150</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR(MOD((now() - CreatedDate)*24,24))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to control when a cases enters and exits an approval process</description>
+        <externalId>false</externalId>
+        <label>In Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsSelfServiceClosed</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsStopped</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Last_Scan__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Scan</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Scan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hub</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Status_Change__c</fullName>
+        <description>Stores the last time the status changed -- used by the Case Business Hours Tools package.</description>
+        <externalId>false</externalId>
+        <label>Last Status Change</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Make__c</fullName>
+        <externalId>false</externalId>
+        <label>Make</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatus</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatusIcon</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR(MOD((now() - CreatedDate)*24*60,60))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monitor_Until_Audit_History__c</fullName>
+        <description>Used to save the date/time for which the case monitoring was set for.  This can be used for reporting purposes once the field has been cleared by the user.</description>
+        <externalId>false</externalId>
+        <label>Monitor Until Audit History</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Monitor_Until__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to flag any cases that need to be monitored after Case Closure due to customer request.</inlineHelpText>
+        <label>Monitor Until</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Monitored_At__c</fullName>
+        <description>Once the user clears the Monitor Until field this field is set with the current time</description>
+        <externalId>false</externalId>
+        <label>Monitored At</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__EmailSentTo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>EmailSentTo</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVMAccountOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>NVMAccountOverride</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVMCaseOrigin__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The content of this field is presented on the contact pad when a case is assigned to an agent. For example: Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The content of this field is presented on the contact pad when a case is assigned to an agent. For example: Email</inlineHelpText>
+        <label>NVM Case Origin</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVMNodeOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to override the NewVoiceMedia node a case routing request is sent to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to override the NewVoiceMedia node a case routing request is sent to</inlineHelpText>
+        <label>NVMNodeOverride</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVMOverrideCaseOwnerTimeoutLoggedIn__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Override: how long to try to route replies to the case owner, when they are logged in</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Override: how long to try to route replies to the case owner, when they are logged in</inlineHelpText>
+        <label>NVMOverrideCaseOwnerTimeoutLoggedIn</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVMOverrideCaseOwnerTimeoutLoggedOut__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Override: how long to try to route replies to the case owner, when they are logged out</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Override: how long to try to route replies to the case owner, when they are logged out</inlineHelpText>
+        <label>NVMOverrideCaseOwnerTimeoutLoggedOut</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVMRoutable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used to determine whether a case should be routed to an agent via NVM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to determine whether a case should be routed to an agent via NVM</inlineHelpText>
+        <label>NVMRoutable</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__RoutePlanIdentifier__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>RoutePlanIdentifier</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__Skills__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Skills</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_opened_on_business_hours__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Not opened on business hours</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Agent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail (Paper)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SSS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Origin__c</fullName>
+        <description>Field to show an icon for each different Case Origin. It need a static resource containing all icons and the correct URL to access it</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(&apos;/resource/Icons/&apos;&amp; 
+
+ CASE( Origin , 
+    &apos;Chat&apos;,&apos;sales_force_icons_20px_vector_05.png&apos;,
+    &apos;Email&apos;,&apos;sales_force_icons_20px_vector_14.png&apos;,
+    &apos;Phone&apos;,&apos;sales_force_icons_20px_vector_34.png&apos;,
+    &apos;Social Media&apos;,&apos;sales_force_icons_20px_vector_38.png&apos;,
+    &apos;Direct Mail (Paper)&apos;,&apos;sales_force_icons_20px_vector_10.png&apos;,
+    &apos;SSS&apos;,&apos;sales_force_icons_20px_vector_42.png&apos;,
+    &apos;SSS Track&apos;,&apos;sales_force_icons_20px_vector_46.png&apos;,
+    &apos;Web&apos;,&apos;sales_force_icons_20px_vector_52.png&apos;,
+    &apos;Face to Face&apos;,&apos;sales_force_icons_20px_vector_22.png&apos;,
+    &apos;Email Campaign&apos;,&apos;sales_force_icons_20px_vector_18.png&apos;,
+    &apos;Fax&apos;,&apos;sales_force_icons_20px_vector_27.png&apos;,
+    &apos;Managing Directors Office&apos;,&apos;sales_force_icons_20px_vector_30.png&apos;,
+    &apos;System&apos;, &apos;sales_force_icons_20px_vector_101.png&apos;,
+    &apos;Agent&apos;, &apos;sales_force_icons_20px_agent.png&apos;, 
+    &apos;&apos;)
+, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Origin</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Role_for_ListViews__c</fullName>
+        <description>Calculates the Role of the Case Owner. This field was created so that it can be used as List View criteria. 
+
+For example use it to create a view of all Manchester Cases Including Assigned by filtering on Owner Name Contains Manchester MAD (for any in the queues) OR Case Owner Role Contains &apos;Manchester MAD&apos;.  
+
+Note:Queue and Role names are subject to change.</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Role for List Views</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.LastName  &lt;&gt; &apos;&apos;,Owner:User.FirstName &amp;&apos; &apos;&amp; Owner:User.LastName, Owner:Queue.QueueName &amp;&apos; &apos;&amp; HYPERLINK(&apos;/&apos;&amp;  Id  &amp;&apos;/a?retURL=%2F&apos;&amp; Id, &apos;[Change]&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Packaging_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Packaging Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>TSL 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSL 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assorted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envelope</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Garments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dangerous Goods</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incompatible Traffic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jiffy Bag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Long Length</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical Supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pallet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roll</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Set</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bundle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Extension__c</fullName>
+        <description>Used to capture additional info to the Phone Number field if required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to capture additional info to the Phone Number field if required</inlineHelpText>
+        <label>Phone Extension</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Priority_Change_Accepted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field must be kept hidden. It&apos;s used to control the change of priority in the approval process</description>
+        <externalId>false</externalId>
+        <label>Priority Change Accepted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Priority_Change_Explanation__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority Change Explanation</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Proactive_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>By default, any case which results from a customer contacting TNT first is Reactive. Checking this field indicates that a Proactive Case has been raised on behalf of the customer, before the customer has contacted TNT.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By default, any case which results from a customer contacting TNT first is Reactive. Checking this field indicates that a Proactive Case has been raised on behalf of the customer, before the customer has contacted TNT.</inlineHelpText>
+        <label>Proactive Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProductId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>QuestionId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>CIT</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Criss Cross</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Error</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Services</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customs</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insufficient packaging</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Damage TNT</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Linehaul Failure</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost Consignment</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miscode</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misroute</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No System Information</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paperwork Missing</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Undeliverable</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsendable</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Cause</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reopened_Audit_Trail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used with a workflow rule to set an audit history for cases that were ever set to a status of &apos;Reopened&apos;.</description>
+        <externalId>false</externalId>
+        <label>Reopened Audit Trail</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reviewed_by_Team_Leader__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When the source origin for a case is not a phone call, it is routed to the Non-Phone Origin Queue.  A Team Leader has access to this queue, and must review the case to save the relevant Case Type and Case Priority against it. Then they should check this Checkbox to indicate that it has been reviewed by them. By checking this, it will trigger a workflow to place this case in the unassigned case queue.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Has this case been reviewed by a Team Leader? (e.g. Case Type and Priority)</inlineHelpText>
+        <label>Reviewed by Team Leader</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Save_as_3rd_Party_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This should be checked if you&apos;d like to save the contact information to use again</inlineHelpText>
+        <label>Save as 3rd Party Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SlaExitDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SlaStartDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SourceId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting for customer</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reopened</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Work In Progress</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalated / Upgraded</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim Rejected</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim Form Sent</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StopStartDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Surname__c</fullName>
+        <externalId>false</externalId>
+        <label>Surname</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_With_Customer__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The time in business hours that this case spent in the hands of the customer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time in business hours that this case spent in the hands of the customer.</inlineHelpText>
+        <label>Time With Customer</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_With_Support__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The time in business hours that this case spent with support.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time in business hours that this case spent with support.</inlineHelpText>
+        <label>Time With Support</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Twentyfour_Hour_Deadline__c</fullName>
+        <description>calculate the 24 hour deadline based on case opened datetime by taking into consideration business days and holidays</description>
+        <externalId>false</externalId>
+        <label>24 Hour Deadline</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Bookings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Enquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_Goods__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Goods</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home Ent.General</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Televisions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DVD Players</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iPods / MP3 Players</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tablets (iPads etc)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Phones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Cameras</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vehicle Parts Gen.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windscreens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computer Equip Gen.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clothing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perfumes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Household Goods</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Furniture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Garden Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Luggage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrical Goods Gen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical &amp; Samples</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liquids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consumables</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Building</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Animal Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food Stuffs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coffins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifestyle Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UUCN_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Track Consignment Button can be used only if the UUCN is known</inlineHelpText>
+        <label>UUCN Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>Origin__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Owner__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Support_including_assigned</fullName>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Owner_Role_for_ListViews__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Lount Support,Manchester Support,Atherstone Support,unassigned</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>support</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>notContain</operation>
+            <value>central support</value>
+        </filters>
+        <label>All Support (Including Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Apple_Support</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Apple Support</label>
+        <queue>Apple_Support</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_Central_Support</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone Central Support</label>
+        <queue>Atherstone_Central_Support</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_MAD_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone MAD 1</label>
+        <queue>Atherstone_MAD_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_MAD_2</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone MAD 2</label>
+        <queue>Atherstone_MAD_2</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_MAD_3</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone MAD 3</label>
+        <queue>Atherstone_MAD_3</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_MAD_4_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone MAD 4</label>
+        <queue>Atherstone_MAD_4</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_Support_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone Support 1</label>
+        <queue>Atherstone_Support_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_Support_Including_Assigned</fullName>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Atherstone Support</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>Ath Support</value>
+        </filters>
+        <label>Atherstone Support (Including Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_TSM_Support</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Twentyfour_Hour_Deadline__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>Atherstone TSM Support</label>
+        <queue>Atherstone_TSM_Support</queue>
+    </listViews>
+    <listViews>
+        <fullName>Atherstone_TSM_Support_Inc_Assigned</fullName>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>Twentyfour_Hour_Deadline__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.ORIGIN</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Atherstone TSM Support</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>Ath TSM Support</value>
+        </filters>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Atherstone TSM Support (Inc Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Emergency_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Emergency Queue</label>
+        <queue>Emergency_Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>FL_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Case_Owners_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Case_Owners_Manager__c</field>
+            <operation>contains</operation>
+            <value>Ryan O Dunning,Richard Trow,Chris Lakenby,Chessman,Laura Christie,Tracy,Lambert</value>
+        </filters>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>FL Cases</label>
+        <sharedTo>
+            <role>UKIT</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Fashion_Majors_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>notEqual</operation>
+            <value>1</value>
+        </filters>
+        <label>Fashion Majors</label>
+        <queue>Fashion_Majors</queue>
+    </listViews>
+    <listViews>
+        <fullName>Fashion_Support_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>Phone_Number__c</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.STATUS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>notEqual</operation>
+            <value>1</value>
+        </filters>
+        <label>Fashion Support</label>
+        <queue>Fashion_Support</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_Admin_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Booking__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CASES.CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Lount Admin 1</label>
+        <queue>Lount_Admin_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_Admin_1_Including_Assigned</fullName>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Booking__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Owner_Role_for_ListViews__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Lount Admin</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>Lount Admin</value>
+        </filters>
+        <label>Lount Admin 1 (Including Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Lount_MAD_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Lount MAD 1</label>
+        <queue>Lount_MAD_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_MAD_2</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Lount MAD 2</label>
+        <queue>Lount_MAD_2</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_MAD_3</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Lount MAD 3</label>
+        <queue>Lount_MAD_3</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_MAD_4</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Lount MAD 4</label>
+        <queue>Lount_MAD_4</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_Support_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Lount Support 1</label>
+        <queue>Lount_Support_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Lount_Support_Including_Assigned</fullName>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Owner_Role_for_ListViews__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Lount Support</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>lount support</value>
+        </filters>
+        <label>Lount Support (Including Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Lount_TSM_Support_Inc_Assigned</fullName>
+        <booleanFilter>(1 or 2) AND 3</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>Twentyfour_Hour_Deadline__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.ORIGIN</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Lount TSM Support</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>Lount TSM Support</value>
+        </filters>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Lount TSM Support (Inc Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Major_Accounts</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>Origin__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Major Accounts</label>
+        <queue>Major_Accounts</queue>
+    </listViews>
+    <listViews>
+        <fullName>Manchester_MAD_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Manchester MAD 1</label>
+        <queue>Manchester_MAD_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Manchester_MAD_2_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Manchester MAD 2</label>
+        <queue>Manchester_MAD_2</queue>
+    </listViews>
+    <listViews>
+        <fullName>Manchester_Majors_Including_Assigned</fullName>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Owner_Role_for_ListViews__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Manchester MAD</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>manchester mad</value>
+        </filters>
+        <label>Manchester Majors (Including Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Manchester_Support_1</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Manchester Support 1</label>
+        <queue>Manchester_Support_1</queue>
+    </listViews>
+    <listViews>
+        <fullName>Manchester_Support_including_Assigned</fullName>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Call_me_back__c</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OWNER_NAME</field>
+            <operation>contains</operation>
+            <value>Manchester Support</value>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>manchester support</value>
+        </filters>
+        <label>Manchester Support (including Assigned)</label>
+    </listViews>
+    <listViews>
+        <fullName>Mauritius_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Mauritius Team</label>
+        <queue>Mauritius_Team</queue>
+    </listViews>
+    <listViews>
+        <fullName>Monitoring_Required_Atherstone</fullName>
+        <columns>Monitor_Until__c</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Monitor_Until__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>ath</value>
+        </filters>
+        <label>Monitoring Required Atherstone</label>
+    </listViews>
+    <listViews>
+        <fullName>Monitoring_Required_Lount</fullName>
+        <columns>Monitor_Until__c</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Monitor_Until__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>lount</value>
+        </filters>
+        <label>Monitoring Required Lount</label>
+    </listViews>
+    <listViews>
+        <fullName>Monitoring_Required_Manchester</fullName>
+        <columns>Monitor_Until__c</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>CASES.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Monitor_Until__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Owner_Role_for_ListViews__c</field>
+            <operation>contains</operation>
+            <value>manchester</value>
+        </filters>
+        <label>Monitoring Required Manchester</label>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>Origin__c</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>Case_Owner_Review_Required__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>Origin__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Twentyfour_Hour_Deadline__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>1. My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Rejected_to_Customer_CS</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Booking__c</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.SUBJECT</field>
+            <operation>contains</operation>
+            <value>rejected to cs</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <filters>
+            <field>CASES.ORIGIN</field>
+            <operation>equals</operation>
+            <value>System</value>
+        </filters>
+        <label>Rejected to Customer CS</label>
+    </listViews>
+    <listViews>
+        <fullName>Saturday_Cases_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Saturday Cases</label>
+        <queue>Saturday_Cases</queue>
+    </listViews>
+    <listViews>
+        <fullName>TSM_Support_1_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.TYPE</columns>
+        <columns>Case_Types_Level_2__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Twentyfour_Hour_Deadline__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>Lount TSM Support</label>
+        <queue>Lount_TSM_Support</queue>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>Origin__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <columns>Consignment_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Claim Rejected,Claim Form Sent</value>
+        </filters>
+        <label>Unassigned</label>
+        <queue>Unassigned</queue>
+    </listViews>
+    <listViews>
+        <fullName>stats_is_reopened</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>OWNER_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>Reopened</value>
+        </filters>
+        <label>Reopened Cases</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Claim_Case_Support_Process</fullName>
+        <active>true</active>
+        <businessProcess>Claim Case Support Process</businessProcess>
+        <description>Claim Case</description>
+        <label>Claim Case Support Process</label>
+        <picklistValues>
+            <picklist>Call_me_back__c</picklist>
+            <values>
+                <fullName>1 hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 hours</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Types_Level_2__c</picklist>
+            <values>
+                <fullName>Accessibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agreement not Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2EI%2ET Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check Address</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damaged Consignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paperwork Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redelivery Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return to Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationary Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transit Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exception__c</picklist>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Scan__c</picklist>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Scan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail %28Paper%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>SSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Packaging_Type__c</picklist>
+            <values>
+                <fullName>Assorted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bundle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dangerous Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Envelope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Set</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incompatible Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jiffy Bag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Length</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pallet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Roll</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>CIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Criss Cross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damage TNT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insufficient packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linehaul Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Consignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misroute</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Cause</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No System Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paperwork Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undeliverable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsendable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Bookings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Goods__c</picklist>
+            <values>
+                <fullName>Animal Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clothing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coffins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Equip Gen%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVD Players</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Cameras</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical Goods Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Stuffs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furniture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garden Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Ent%2EGeneral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liquids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luggage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical %26 Samples</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Phones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Perfumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablets %28iPads etc%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Televisions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle Parts Gen%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windscreens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPods %2F MP3 Players</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard_Support_Process</fullName>
+        <active>true</active>
+        <businessProcess>Standard Support Process</businessProcess>
+        <description>Standard Cases</description>
+        <label>Standard Support Process</label>
+        <picklistValues>
+            <picklist>Call_me_back__c</picklist>
+            <values>
+                <fullName>1 hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 hours</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Types_Level_2__c</picklist>
+            <values>
+                <fullName>Accessibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agreement not Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2EI%2ET Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check Address</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damaged Consignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paperwork Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redelivery Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return to Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationary Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transit Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exception__c</picklist>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Scan__c</picklist>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Scan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail %28Paper%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>SSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Packaging_Type__c</picklist>
+            <values>
+                <fullName>Assorted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bundle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dangerous Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Envelope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Set</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incompatible Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jiffy Bag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Length</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pallet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Roll</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSL 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>CIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Criss Cross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Damage TNT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insufficient packaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linehaul Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Consignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misroute</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Cause</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No System Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paperwork Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undeliverable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsendable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Bookings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Goods__c</picklist>
+            <values>
+                <fullName>Animal Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clothing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coffins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Equip Gen%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVD Players</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Cameras</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical Goods Gen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Stuffs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furniture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garden Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Ent%2EGeneral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liquids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luggage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical %26 Samples</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Phones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Perfumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablets %28iPads etc%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Televisions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle Parts Gen%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windscreens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPods %2F MP3 Players</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Consignment_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.TYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Case_Types_Level_2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Add_Priority_Change_Explanation</fullName>
+        <active>false</active>
+        <description>add a new explanation every time you change the priority from &apos;Low&apos; to &apos;Medium&apos; or &apos;Medium&apos; to &apos;Low&apos;</description>
+        <errorConditionFormula>(((ISPICKVAL(Priority,&apos;Medium&apos;) &amp;&amp; ISPICKVAL(PRIORVALUE(Priority),&apos;Low&apos;))) || (ISPICKVAL(Priority,&apos;Low&apos;) &amp;&amp; ISPICKVAL(PRIORVALUE(Priority),&apos;Medium&apos;))) &amp;&amp; (ISBLANK(Priority_Change_Explanation__c) || !ISCHANGED( Priority_Change_Explanation__c ))</errorConditionFormula>
+        <errorDisplayField>Priority_Change_Explanation__c</errorDisplayField>
+        <errorMessage>Please add a new explanation every time you change the priority from &apos;Low&apos; to &apos;Medium&apos; or &apos;Medium&apos; to &apos;Low&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Case_Priority_Setting_Changes</fullName>
+        <active>false</active>
+        <description>Case Priority can be changed between &apos;Low&apos; and &apos;Medium&apos; priority by an agent at all times. Agents cannot change a &apos;Low&apos;/&apos;Medium&apos; case to a &apos;High&apos; Priority, or change a &apos;High&apos; Priority case to &apos;Low&apos;/Medium&apos; priority, without requesting approval.</description>
+        <errorConditionFormula>NOT( ISNEW()) &amp;&amp; 
+ISCHANGED( Priority ) &amp;&amp;  ( ISPICKVAL(Priority, &apos;High&apos;)  || (ISPICKVAL(PRIORVALUE(Priority),&apos;High&apos;))) &amp;&amp; 
+($Profile.Name = &apos;CS Agent&apos;)</errorConditionFormula>
+        <errorDisplayField>Priority</errorDisplayField>
+        <errorMessage>Previously set Case Priority settings can only changed from/to a &apos;High&apos; Priority by requesting approval</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Case_Type_Selection</fullName>
+        <active>false</active>
+        <description>Once the Type of Case has been Selected, it cannot be changed</description>
+        <errorConditionFormula>!ISNEW() &amp;&amp;  ISCHANGED( Type ) &amp;&amp;  !ISPICKVAL(PRIORVALUE(Type),&apos;&apos;) &amp;&amp; !ISPICKVAL(Type,&apos;Claim&apos;) &amp;&amp;  NOT($Profile.Name = &apos;System Administrator&apos;)</errorConditionFormula>
+        <errorDisplayField>Type</errorDisplayField>
+        <errorMessage>Once the Type of Case has been Selected, it cannot be changed, unless it&apos;s a Claim</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_Enter_Depot</fullName>
+        <active>true</active>
+        <description>If you have entered an Exception, you must enter the corresponding depot.</description>
+        <errorConditionFormula>(ISPICKVAL(Exception__c,&apos;Collection&apos;) &amp;&amp; ISBLANK( Collection_Depot__c )) || (ISPICKVAL(Exception__c,&apos;Delivery&apos;) &amp;&amp; ISBLANK( Delivery_Depot__c ))</errorConditionFormula>
+        <errorDisplayField>Exception__c</errorDisplayField>
+        <errorMessage>If you have entered an Exception, you must enter the corresponding depot.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_Enter_an_Exception</fullName>
+        <active>true</active>
+        <description>Prevents cases being unnassigned by forcing the user to enter an Exception and therefore also a Depot to route on. (Linked to &apos;Must_Enter_Depot&apos; validation rule)</description>
+        <errorConditionFormula>ISPICKVAL(Exception__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Exception__c</errorDisplayField>
+        <errorMessage>You must enter an Exception and a corresponding Collection/Delivery Depot for the Case to be assigned to the correct team.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Valid_Phone_Number</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX(  Phone_Number__c  , &quot;[0-9]{7,15}&quot;))
+&amp;&amp; NOT($Profile.Name = &apos;System Administrator&apos;)
+&amp;&amp; NOT($Profile.Name = &apos;Integration User&apos;) &amp;&amp; NOT(ISBLANK(Phone_Number__c))</errorConditionFormula>
+        <errorDisplayField>Phone_Number__c</errorDisplayField>
+        <errorMessage>Please enter a valid phone number (7-15 digits, no spaces)</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Case</fullName>
+        <availability>online</availability>
+        <description>Creates a Case from the Booking Screen and copies the Account</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Case</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/500/e?cas4_lkid={!Booking__c.AccountId__c}
+&amp;cas3={!Booking__c.Order_Contact__c}
+&amp;cas5=Bookings
+&amp;cas15={!Booking__c.Goods_Description__c}
+&amp;00N20000009JmUz={!Booking__c.Value__c}
+&amp;00N20000009HELE={!Booking__c.Consignment_Number__c}
+&amp;CF00N20000009HEL6={!Booking__c.Name}
+&amp;00N20000009HELI=Collection
+&amp;CF00N20000009HELD={!Booking__c.Collection_Depot__c}
+&amp;retURL=/{!Booking__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Track_Consignment</fullName>
+        <availability>online</availability>
+        <description>open consignment search page</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Track Consignment</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/30.0/integration.js&quot;)}
+if(&apos;{!Case.UUCN_Number__c}&apos; != &apos;&apos;)
+{
+	if(sforce.console.isInConsole())
+	{
+		var openSubtab = function openSubtab(result) {
+				var primaryTabId = result.id;
+				sforce.console.openSubtab(primaryTabId , &quot;/apex/OL_SearchConsignmentById?lock=1&amp;conId={!Case.UUCN_Number__c}&quot;, true, &apos;Consignment Tracking&apos;, null);
+		};
+		sforce.console.getEnclosingPrimaryTabId(openSubtab);
+	}
+	else
+	{
+		window.open(&quot;/apex/OL_SearchConsignmentById?lock=1&amp;conId={!Case.UUCN_Number__c}&quot;,&quot;_blank&quot;);
+	}
+}
+else
+{
+	alert(&quot;UUCN Number is blank.&quot;);
+}</url>
+    </webLinks>
+</CustomObject>

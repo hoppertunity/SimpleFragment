@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account LOB</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account LOBs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account LOB Id --></label>
+        <name>Account_LOB_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account LOBs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Charge Last Updated On --></label>
+        <name>Charge_Last_Updated_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default LOB Indicator --></label>
+        <name>Default_LOB_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Trade Date --></label>
+        <name>First_Trade_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inspection Required --></label>
+        <name>Inspection_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Collection Date --></label>
+        <name>Last_Collection_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <relationshipLabel><!-- Account LOBs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This charge was introduced in July 2015 in line with other suppliers.
+ 
+Charges are based on the Customers Divisional Account Tariff. 
+
+The charge applies if an item is operationally scanned as a Long Length. (Has a 339B Scan Status in Ops Enquiry) --></help>
+        <label><!-- Long Length Charge --></label>
+        <name>Long_Length_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Residential Collection Charge --></label>
+        <name>Residential_Collection_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Residential Delivery Charge --></label>
+        <name>Residential_Delivery_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transit Liability Charge --></label>
+        <name>Transit_Liability_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transit Liability Value --></label>
+        <name>Transit_Liability_Value__c</name>
+    </fields>
+    <layouts>
+        <layout>Account LOB Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Long Length Charging --></label>
+            <section>Long Length Charging</section>
+        </sections>
+        <sections>
+            <label><!-- Residential Charging --></label>
+            <section>Residential Charging</section>
+        </sections>
+        <sections>
+            <label><!-- Transit Liability --></label>
+            <section>Transit Liability</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

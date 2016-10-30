@@ -1,0 +1,509 @@
+<apex:page controller="OL_SearchConsignmentController" tabStyle="Quote__c" action="{!searchConsignment}" id="conPage">
+	<apex:includeScript value="{!URLFOR($Resource.jquery1110)}" />
+	<apex:includeScript value="/support/console/31.0/integration.js"/>
+	<apex:includeScript value="{!URLFOR($Resource.tooltipster, 'js/jquery.tooltipster.min.js')}" />
+    
+    <apex:stylesheet value="{!URLFOR($Resource.tooltipster, 'css/tooltipster.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tooltipster, 'css/themes/tooltipster-light.css')}" />
+	<script>
+		function checkSearchVal(){
+			var res = false;
+			if( $(".searchBox")[0].value.trim().length > 2) {
+				res = true;
+				$(".srchValMsg").css('display','none');
+			} else {
+				$(".srchValMsg").css('display','inline');
+			}
+			
+			return res;
+		}
+		
+		var lastRow;
+		function highlight(elem){
+		    if(lastRow != undefined)
+		        lastRow.style.backgroundColor = 'white';
+		
+		    elem.style.backgroundColor = 'yellow';
+		    lastRow = elem;
+		    var rowNum = $(elem).find('[name="RowNum"]');
+		    setRowNum(rowNum.val());
+		}
+	</script>
+	<style>
+		.threeColTbl td.data2Col {width: 20% !important;}
+		.threeColTbl th.labelCol {width: 12% !important;}
+		
+		.highlighted {background-color: yellow;}
+	</style>
+	
+	<apex:form id="myForm">
+		<apex:outputpanel id="messagePanel">
+			<apex:pageMessages escape="false"/>
+		</apex:outputpanel>
+		<apex:outputpanel id="casesPanel">
+			<apex:outputpanel rendered="{!createAndSave || createAndOpen}">
+				<table style="background-color:#ffc842; width: 100%">
+					<tr>
+						<td style="padding:10px 10px 10px 0px" width="10%">
+						</td>
+						<td style="padding:10px 10px 10px 0px">
+							<div style="background-color:#ffc842; color:#666; ">
+								<apex:outputText value="The following Cases related to the same Consignment Number already exist:" escape="false" /><br/>
+								<apex:repeat value="{!recentCases}" var="rc">
+									<a href="#" onclick="openObject('{!rc.Id}', '{!rc.CaseNumber}');">{!rc.CaseNumber}</a><br/>
+								</apex:repeat>
+								<apex:outputText value="Do you still wish to continue?" escape="false" />
+							</div>
+						</td>
+					</tr><tr>
+						<td></td>
+						<td>
+							<apex:commandButton action="{!createAndSaveCase}" value="Yes" rendered="{!createAndSave}" rerender="casesPanel, messagePanel"/>
+							<apex:commandButton action="{!createAndOpenCase}" value="Yes" rendered="{!createAndOpen}" rerender="casesPanel, messagePanel"/>
+							<apex:commandButton action="{!hideCasePanel}" value="No" rerender="casesPanel"/>
+						</td>
+					</tr>
+				</table>
+			</apex:outputpanel>
+			<script>
+				if('{!caseToOpen}' != ''){
+			  		openObject('{!caseToOpen.Id}/e?', '{!caseToOpen.CaseNumber}');
+	            }
+			</script>
+		</apex:outputpanel>
+		<apex:actionFunction name="setRowNum" action="{!setSelectedItemRaw}" rerender="itemTrackingPanel">
+			<apex:param name="firstParam" assignTo="{!rowItemForTracking}" value="" />
+		</apex:actionFunction>
+		<apex:pageBlock id="mainBlock">
+			<apex:pageBlockSection columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputtext value="Consigment Id is not specified" rendered="{!consignmentId == null && consignment == null}"/>
+					<apex:outputpanel >
+						<span class="helpButton" id="RecordTrack-_help">
+							<apex:commandButton action="{!runCreateAndSaveCase}" value="Record Track" rendered="{!consignment != null}" rerender="casesPanel, messagePanel"/>
+							<img src="/s.gif" alt="" class="helpOrb" title=""/>
+							<script>sfdcPage.setHelp('RecordTrack', '{!$Label.TrackingReckordTrackHelpText}');
+							</script>
+						</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="helpButton" id="OpenCase-_help">
+							<apex:commandButton action="{!runCreateAndOpenCase}" value="Open a Case" rendered="{!consignment != null}" rerender="casesPanel, messagePanel"/>
+							<img src="/s.gif" alt="" class="helpOrb" title=""/>
+							<script>sfdcPage.setHelp('OpenCase', '{!$Label.TrackingCreateCaseHelpText}');
+							</script>
+						</span>
+						<div style="float:right"><apex:commandButton action="{!backToSearch}" value="Back to Advanced Search" rendered="{!isFromSearch}"/></div>
+					</apex:outputpanel>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:actionStatus id="dataLoadingStatus" >
+	 			<apex:facet name="start" >
+	            	<img src="/img/loading.gif" alt="Loading..."/>                   
+	        	</apex:facet>
+	  		</apex:actionStatus>
+			<apex:outputpanel id="consignmentPanel">
+				<apex:outputpanel rendered="{!consignment != null}">
+					<apex:pageBlockSection columns="1" title="Consignment Details (Consignment Number - {!consignment.tntConNum} and UUCN Number - {!consignment.unqConNum})">
+						<apex:outputpanel >
+							<table width="100%" cellspacing="0" cellpadding="0" class="detailList threeColTbl">
+								<tr>
+									<th class="labelCol"><apex:outputLabel value="Original" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.orgConNum}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Col Req num" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.bkgNum}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Type" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.ntTyp}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Service" /></th>
+                                    <td class="data2Col"><apex:outputpanel rendered="{!!CONTAINS(serviceKeys, '*' + consignment.svcCd + '*')}">
+											<apex:outputText value="{!consignment.svcCd}" />
+										</apex:outputpanel>
+										<apex:outputpanel rendered="{!CONTAINS(serviceKeys, '*' + consignment.svcCd + '*')}">
+											<a href="#" onclick="openObject('{!services[consignment.svcCd].Id}', '{!services[consignment.svcCd].Name}');">
+												{!services[consignment.svcCd].Name}</a>
+										</apex:outputpanel></td>
+									<th class="labelCol"><apex:outputLabel value="Sub" /></th>
+                                    <td class="data2Col"><apex:outputText value="{!consignment.options}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Div" /></th>
+									<td class="data2Col"><apex:outputpanel rendered="{!!CONTAINS(lobKeys, '*' + consignment.lobRef + '*')}">
+											<apex:outputText value="{!consignment.svcCd}" />
+										</apex:outputpanel>
+										<apex:outputpanel rendered="{!CONTAINS(lobKeys, '*' + consignment.lobRef + '*')}">
+											<a href="#" onclick="openObject('{!lobs[consignment.lobRef].Id}', '{!lobs[consignment.lobRef].Name}');">
+												{!lobs[consignment.lobRef].Name}</a>
+										</apex:outputpanel></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Description" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.cmm}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Account Num" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.act.actNum}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Account Name" /></th>
+									<td class="data2Col"><apex:outputpanel rendered="{!account.Id != null}">
+											<a href="#" onclick="openObject('{!account.Id}', '{!account.Name}');">
+												{!account.Name}</a>
+										</apex:outputpanel></td>
+								</tr>
+							</table>
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+					<apex:pageBlockSection columns="1" title="Consignment Information (Consignment Number - {!consignment.tntConNum} and UUCN Number - {!consignment.unqConNum})" id="conInfo">	
+						<apex:outputpanel >
+							<table width="100%" cellspacing="0" cellpadding="0" class="detailList threeColTbl">
+								<tr>
+									<th class="labelCol"><apex:outputLabel value="ITS" /></th>
+									<td class="data2Col" colspan="5"><apex:commandLink action="{!searchConsignmentItems}" value="click here for item scanning details" 
+											status="dataLoadingStatus" rerender="consignmentItemsPanel, messagePanel"/></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Del Instruction" /></th>
+									<td class="data2Col" colspan="2"><apex:outputText value="{!consignment.delInst}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Customer Ref" /></th>
+									<td class="data2Col" colspan="2"><apex:outputText value="{!consignment.custRef}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Coll Depot" /></th>
+									<td class="data2Col">
+										<apex:outputpanel rendered="{!!CONTAINS(depotKeys, '*' + consignment.colDep + '*')}">
+											<apex:outputText value="{!consignment.colDep}" />
+										</apex:outputpanel>
+										<apex:outputpanel rendered="{!CONTAINS(depotKeys, '*' + consignment.colDep + '*') && !ISBLANK(TRIM(consignment.colDep))}">
+											<a href="#" onclick="openObject('{!depots[consignment.colDep].Id}', '{!depots[consignment.colDep].Name}');">
+												{!depots[consignment.colDep].Name}</a>
+										</apex:outputpanel>
+									</td>
+									<th class="labelCol"><apex:outputLabel value="Coll Date" /></th>
+									<td class="data2Col">
+										<apex:outputText value="{0,date,EEE dd MMM yyyy}">
+						                    <apex:param value="{!consignment.colDt}" />
+						                </apex:outputText></td>
+									<th class="labelCol"><apex:outputLabel value="Coll Round" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.colRnd}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Del Depot" /></th>
+									<td class="data2Col">
+										<apex:outputpanel rendered="{!!CONTAINS(depotKeys, '*' + consignment.delDep + '*')}">
+											<apex:outputText value="{!consignment.delDep}" />
+										</apex:outputpanel>
+										<apex:outputpanel rendered="{!CONTAINS(depotKeys, '*' + consignment.delDep + '*') && !ISBLANK(TRIM(consignment.delDep))}">
+											<a href="#" onclick="openObject('{!depots[consignment.delDep].Id}', '{!depots[consignment.delDep].Name}');">
+												{!depots[consignment.delDep].Name}</a>
+										</apex:outputpanel>
+									</td>
+									<th class="labelCol"><apex:outputLabel value="Del Date" /></th>
+									<td class="data2Col">
+										<apex:outputText value="{0,date,EEE dd MMM yyyy}">
+						                    <apex:param value="{!consignment.delDat}" />
+						                </apex:outputText></td>
+									<th class="labelCol"><apex:outputLabel value="Del Round" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.delRnd}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Orig Depot" /></th>
+									<td class="data2Col">
+										<apex:outputpanel rendered="{!!CONTAINS(depotKeys, '*' + consignment.orgnDep + '*')}">
+											<apex:outputText value="{!consignment.orgnDep}" />
+										</apex:outputpanel>
+										<apex:outputpanel rendered="{!CONTAINS(depotKeys, '*' + consignment.orgnDep + '*') && !ISBLANK(TRIM(consignment.orgnDep))}">
+											<a href="#" onclick="openObject('{!depots[consignment.orgnDep].Id}', '{!depots[consignment.orgnDep].Name}');">
+												{!depots[consignment.orgnDep].Name}</a>
+										</apex:outputpanel>
+									</td>
+									<th class="labelCol"><apex:outputLabel value="Due Date" /></th>
+									<td class="data2Col">
+						                <c:MFSI_FormatDateTime date_Timevalue="{!consignment.dueDtTm}"/></td>
+									<th class="labelCol"></th>
+									<td class="data2Col"></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Dec Item" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.dclItms}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Dec Weight" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.dclWght}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Bay Number" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.bayNum}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Check Items" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.chkItms}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Check Weight" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.chkWght}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Seq" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.sqNum}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Upload" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.uplMeth}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Universe Queries" /></th>
+									<td class="data2Col"><apex:inputCheckbox value="{!consignment.qryInd}" disabled="true"/></td>
+									<th class="labelCol"></th>
+									<td class="data2Col"></td>
+								</tr>
+							</table>
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+					<apex:pageBlockSection columns="1" title="Sender/Receiver Details">
+						<apex:outputpanel >
+							<table width="100%" cellspacing="0" cellpadding="0" class="detailList threeColTbl">
+								<tr>
+									<th class="labelCol"><apex:outputLabel value="Sender Name" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.sndrNm}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Deliver To Name" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.delToNm}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Deliver To Contact" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.delToCnt}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Delivery Address" /></th>
+									<td class="data2Col" colspan="5"><apex:outputText value="{!consignment.addr.premNum}" rendered="{!IF(IsBlank(TRIM(consignment.addr.premNum)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.premNum)) || (IsBlank(TRIM(consignment.addr.premNm+consignment.addr.strAddr1+consignment.addr.strAddr2+
+												consignment.addr.strAddr3+consignment.addr.strAddr4+consignment.addr.dstct+consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.premNm}" rendered="{!IF(IsBlank(TRIM(consignment.addr.premNm)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.premNm)) || (IsBlank(TRIM(consignment.addr.strAddr1+consignment.addr.strAddr2+
+												consignment.addr.strAddr3+consignment.addr.strAddr4+consignment.addr.dstct+consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.strAddr1}" rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr1)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr1)) || (IsBlank(TRIM(consignment.addr.strAddr2+consignment.addr.strAddr3+consignment.addr.strAddr4+
+												consignment.addr.dstct+consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.strAddr2}" rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr2)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr2)) || (IsBlank(TRIM(consignment.addr.strAddr3+consignment.addr.strAddr4+
+												consignment.addr.dstct+consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.strAddr3}" rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr3)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr3)) || (IsBlank(TRIM(consignment.addr.strAddr4+
+												consignment.addr.dstct+consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.strAddr4}" rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr4)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.strAddr4)) || (IsBlank(TRIM(consignment.addr.dstct+consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.dstct}" rendered="{!IF(IsBlank(TRIM(consignment.addr.dstct)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.dstct)) || (IsBlank(TRIM(consignment.addr.twn+consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.twn}" rendered="{!IF(IsBlank(TRIM(consignment.addr.twn)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.twn)) || (IsBlank(TRIM(consignment.addr.cnty+consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.cnty}" rendered="{!IF(IsBlank(TRIM(consignment.addr.cnty)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.cnty)) || (IsBlank(TRIM(consignment.addr.cntry+consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.cntry}" rendered="{!IF(IsBlank(TRIM(consignment.addr.cntry)), false, true)}"/>
+											<apex:outputText value=", " rendered="{!IF(IsBlank(TRIM(consignment.addr.cntry)) || (IsBlank(TRIM(consignment.addr.pstCd))), false, true)}"/>
+										<apex:outputText value="{!consignment.addr.pstCd}" /></td>
+								</tr>
+							</table>
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+					<apex:pageBlockSection columns="1" title="POD Details for Consignment Number - {!consignment.tntConNum}" id="podDet">
+						<apex:outputpanel >
+							<table width="100%" cellspacing="0" cellpadding="0" class="detailList threeColTbl">
+								<tr>
+									<th class="labelCol"><apex:outputLabel value="Pod" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.pod.rcvrNm}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Pod Date Time" /></th>
+									<td class="data2Col" colspan="3">
+									<c:MFSI_FormatDateTime date_Timevalue="{!consignment.pod.podDtTm}"/></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Items" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.pod.numItms}" /></td>
+									<th class="labelCol"><apex:outputLabel value="SOS" /></th>
+									<td class="data2Col" colspan="3"><apex:inputCheckbox value="{!consignment.pod.sosInd}" disabled="true"/></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Comments" /></th>
+									<td class="data2Col" colspan="5"><apex:outputText value="{!consignment.pod.rcvrCmts}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Pod Status" /></th>
+									<td class="data2Col" colspan="5"><apex:outputText value="{!consignment.pod.podSts}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="File" /></th>
+									<td class="data2Col" colspan="5"><apex:outputText value="{!consignment.pod.file}" /></td>
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="POD Image" /></th>
+									<td class="data2Col" colspan="5"><apex:inputCheckbox value="{!consignment.pod.imgInd}" disabled="true"/></td>
+								</tr>
+							</table>
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+					<apex:pageBlockSection columns="1" title="History for Consignment Number - {!consignment.tntConNum}" id="history">
+						<apex:outputpanel >
+							<table width="100%" cellspacing="0" cellpadding="0" class="list">
+								<thead class="rich-table-thead">
+									<tr class="headerRow">
+										<th class="headerRow">Movement Date Time</th>
+										<th class="headerRow">Dep</th>
+										<th class="headerRow">Type</th>
+										<th class="headerRow">SubType</th>
+										<th class="headerRow">Round</th>
+										<th class="headerRow">Discrepancy Comments</th>
+									</tr>
+								</thead>
+								<tbody>
+									<apex:repeat value="{!consignment.conStss.conSts}" var="conSts">
+										<tr class="dataRow {!IF(conSts.hasDscrp, 'highlighted', '')}">
+											<td class="dataCell"><c:MFSI_FormatDateTime date_Timevalue="{!conSts.stsDtTm}"/></td>
+											<td class="dataCell"><apex:outputText value="{!conSts.dep}" /></td>
+											<td class="dataCell"><apex:outputText value="{!conSts.sts}" /></td>
+											<td class="dataCell"><apex:outputText value="{!conSts.subSts}" /></td>
+											<td class="dataCell"><apex:outputText value="{!conSts.rnd}" /></td>
+											<td class="dataCell"><apex:outputText value="{!conSts.dscrpCmmts}" /></td>
+										</tr>
+									</apex:repeat>
+								</tbody>
+							</table>
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+					<div style="width:90%; float:right;">
+						<apex:pageBlockSection columns="1" title="Discrepancy comments for Consignment Number - {!consignment.tntConNum}"
+							rendered="{!consignment.dscrps != null && consignment.dscrps.dscrp.size != null}" id="discrepency">
+							<apex:outputpanel >
+								<table width="100%" cellspacing="0" cellpadding="0" class="list">
+									<thead class="rich-table-thead">
+										<tr class="headerRow">
+											<th class="headerRow">Date</th>
+											<th class="headerRow">Round</th>
+											<th class="headerRow">Discrepancy</th>
+											<th class="headerRow">Comments</th>
+										</tr>
+									</thead>
+									<tbody>
+										<apex:repeat value="{!consignment.dscrps.dscrp}" var="dscrp">
+											<tr class="dataRow">
+												<td class="dataCell"><c:MFSI_FormatDateTime date_Timevalue="{!dscrp.dscrpDt}"/></td>
+												<td class="dataCell"><apex:outputText value="{!dscrp.rnd}" /></td>
+												<td class="dataCell"><apex:outputText value="{!dscrp.dscrp}" /></td>
+												<td class="dataCell"><apex:outputText value="{!dscrp.cmmts}" /></td>
+											</tr>
+										</apex:repeat>
+									</tbody>
+								</table>
+							</apex:outputpanel>
+						</apex:pageBlockSection>
+					</div>
+					<div style="clear:both;"></div>
+					<apex:pageBlockSection columns="1" title="Ratings for Consignment Number - {!consignment.tntConNum}" id="rating">
+						<apex:outputpanel >
+							<table width="100%" cellspacing="0" cellpadding="0" class="detailList threeColTbl">
+								<tr>
+									<th class="labelCol"><apex:outputLabel value="EL Level" /></th>
+									<td class="data2Col"><apex:inputCheckbox value="{!consignment.rtng.trnsLiabLvl}" disabled="true"/></td>
+									<th class="labelCol"><apex:outputLabel value="Schedule Revenue Amount" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.rtng.schRvAmt}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Rated Date" /></th>
+									<td class="data2Col">
+										<apex:outputText value="{0,date,EEE dd MMM yyyy}">
+						                    <apex:param value="{!consignment.rtng.rtdDt}" />
+						                </apex:outputText></td>
+									
+								</tr><tr>
+									<th class="labelCol"><apex:outputLabel value="Rating Depot" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.rtng.rtngDep}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Net Revenue Amount" /></th>
+									<td class="data2Col"><apex:outputText value="{!consignment.rtng.netRvAmt}" /></td>
+									<th class="labelCol"><apex:outputLabel value="Invoice Date" /></th>
+									<td class="data2Col">
+										<apex:outputText value="{0,date,EEE dd MMM yyyy}">
+						                    <apex:param value="{!consignment.rtng.invDt}" />
+						                </apex:outputText></td>
+								</tr>
+							</table>
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+				</apex:outputpanel>
+			</apex:outputpanel>
+			<br/>
+			<apex:outputpanel id="consignmentItemsPanel">
+				<apex:outputpanel rendered="{!consignmentItems != null}">
+					<apex:variable var="rowNumber" value="{!0}"/>
+					<apex:pageBlockSection columns="1" title="Item List - {!consignment.tntConNum}">
+						<apex:outputpanel >
+							<apex:pageBlockTable value="{!consignmentItems}" var="itm" rules="rows" id="myTable1" onRowClick="highlight(this);">
+							    <apex:column >
+				            		<apex:facet name="header">Item<br/>Number</apex:facet>
+				            		<apex:outputText value="{!itm.itmNum}" />
+				            		<input type="hidden" name="RowNum" value="{!rowNumber}"/>
+				            		<apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+				            	</apex:column>
+							    <apex:column >
+							    	<apex:facet name="header">Piece<br/>Number</apex:facet>
+				            		<apex:outputText value="{!itm.pcNum}" />
+							    </apex:column>
+							    <apex:column >
+				            		<apex:facet name="header">Last Collection<br/>Scanned Date/Time</apex:facet>
+					                <c:MFSI_FormatDateTime date_Timevalue="{!itm.lstColScnDtTm}"/>
+				            	</apex:column>
+				            	<apex:column >
+				            		<apex:facet name="header">Last Hub Scan<br/>Date/Time</apex:facet>
+				            		<c:MFSI_FormatDateTime date_Timevalue="{!itm.lstHubScnDtTm}"/>
+				            	</apex:column>
+				            	<apex:column >
+				            		<apex:facet name="header">Last Delivery<br/>Scanned Date/Time</apex:facet>
+					                <c:MFSI_FormatDateTime date_Timevalue="{!itm.lstDelScnDtTm}"/>
+				            	</apex:column>
+				            	<apex:column >
+				            		<apex:facet name="header">Last Pod Scanned<br/>Date/Time</apex:facet>
+					                <c:MFSI_FormatDateTime date_Timevalue="{!itm.lstPodScnDtTm}"/>
+				            	</apex:column>
+				            	<apex:column >
+				            		<apex:facet name="header">Item Source</apex:facet>
+				            		<apex:outputText value="{!itm.itmSrc}"/>
+				            	</apex:column>
+				            	<apex:column >
+				            		<apex:facet name="header">Item Type<br/>Code</apex:facet>
+				            		<apex:outputText value="{!itm.itmTyp}"/>
+				            	</apex:column>
+				            	<apex:column >
+				            		<apex:facet name="header"></apex:facet>
+				            		<a href="" class="tooltip" title="<div>Chk weight: {!itm.chkWght} Kg<br/>Chk height: {!itm.chkHght} cms<br/> 
+				            			Chk width: {!itm.chkWdth} cms<br/>Chk length: {!itm.chkLen} cms<br/>Chk cubed wt: {!itm.chkCbWght}</div>"
+				            			>Extra info</a>
+				            	</apex:column>
+							</apex:pageBlockTable> 
+						</apex:outputpanel>
+					</apex:pageBlockSection>
+					<apex:outputpanel id="itemTrackingPanel">
+						<apex:outputpanel rendered="{!rowItemForTracking != null}">
+							<apex:pageBlockSection columns="1" title="Item List Details for Item - {!consignmentItems[rowItemForTracking].itmNum} Delivering Depot:">
+								<apex:pageBlockTable value="{!consignmentItems[rowItemForTracking].itmstrck.itmtrck}" var="itmTr" >
+								    <apex:column headerValue="Location Code" value="{!itmTr.locCd}"/>
+								    <apex:column headerValue="Location Type" value="{!itmTr.locTyp}"/>
+								    <apex:column >
+					            		<apex:facet name="header">Scan Type Indicator(S/T)</apex:facet>
+					            		<apex:outputText value="{!itmTr.scnTypInd}"/>
+					            	</apex:column>
+								    <apex:column headerValue="Scan Type" value="{!itmTr.scnTyp}"/>
+								    <apex:column >
+					            		<apex:facet name="header">Tracking Date Time</apex:facet>
+						                <c:MFSI_FormatDateTime date_Timevalue="{!itmTr.scnDtTm}"/>
+					            	</apex:column>
+					            	<apex:column headerValue="Vehicle" value="{!itmTr.vhcl}"/>
+					            	<apex:column headerValue="Operator" value="{!itmTr.oprUsrId}"/>
+					            	<apex:column headerValue="Re-dir" value="{!itmTr.redirDepNum}"/>
+					            	<apex:column >
+					            		<apex:facet name="header">Unit ?</apex:facet>
+					            		<apex:inputCheckbox value="{!itmTr.untScnInd}" disabled="true"/>
+					            	</apex:column>
+								</apex:pageBlockTable> 
+							</apex:pageBlockSection>
+						</apex:outputpanel>
+					</apex:outputpanel>				
+				</apex:outputpanel>
+				
+				<script>
+					$('.tooltip').tooltipster({
+		                contentAsHTML: true,
+		                trigger: 'click',
+		                theme: 'tooltipster-light'
+		            });
+				</script>
+			</apex:outputpanel>
+		</apex:pageBlock>
+	</apex:form>
+	
+	<script>
+		
+		
+		$( document ).ready(function() {
+		    if(sforce.console.isInConsole())
+		  	{
+		  		$('html, body, form').css('height', '100%');
+		  		$('form').css('overflow', 'scroll');
+		  	}
+		  	
+            //twistSection(document.getElementById('conPage:myForm:mainBlock:rating').childNodes[0].childNodes[0]);
+		});
+		
+		function openObject(dId, dName){
+			if(sforce.console.isInConsole()){
+				sforce.console.openPrimaryTab(null, location.protocol+'//'+location.host+'/'+dId, true, 
+	                dName);
+	        } else {
+	        	window.open('/'+dId, '_blank');
+	        }
+		}
+		
+	</script>
+
+</apex:page>

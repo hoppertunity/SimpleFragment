@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Tracking History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Tracking History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Waiting --></label>
+        <name>Case_Waiting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Case Tracking History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Approval</masterLabel>
+            <translation><!-- Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Priority</masterLabel>
+            <translation><!-- Priority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reason</masterLabel>
+            <translation><!-- Reason --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Status</masterLabel>
+            <translation><!-- Status --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Type</masterLabel>
+            <translation><!-- Type --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Days --></label>
+        <name>Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finished on --></label>
+        <name>Finished_on__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours --></label>
+        <name>Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Field Current Value --></label>
+        <name>Main_Field_Current_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Field Prior Value --></label>
+        <name>Main_Field_Prior_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Field --></label>
+        <name>Main_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minutes --></label>
+        <name>Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Field Current Value --></label>
+        <name>Secondary_Field_Current_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Field Prior Value --></label>
+        <name>Secondary_Field_Prior_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Field --></label>
+        <name>Secondary_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Started On --></label>
+        <name>Started_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time length --></label>
+        <name>Time_length__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Case Tracking History --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Case Tracking History Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- User field must be populated. --></errorMessage>
+        <name>User_field_requiered</name>
+    </validationRules>
+</CustomObjectTranslation>

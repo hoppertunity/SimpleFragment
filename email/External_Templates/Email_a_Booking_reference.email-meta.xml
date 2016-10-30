@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template for users to email a booking reference</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Simple_TNT_Logo</letterhead>
+    <name>Email a Booking reference</name>
+    <style>freeForm</style>
+    <subject>TNT Booking Reference: {!Booking__c.Name}</subject>
+    <textOnly>Dear {!Booking__c.OC_First_Name__c},
+
+Thank you for using TNT. Please find below confirmation of your collection request.
+
+Contact Name: {!Booking__c.OC_First_Name__c}
+Company Name: {!Booking__c.Account__c}{!Booking__c.Company_Name__c}
+Account Number: {!Booking__c.Account_Number__c}
+Town: {!Booking__c.Coll_City__c}
+Postcode: {!Booking__c.Coll_Postcode__c}
+
+Collection Date / Ready From Time: {!Booking__c.Collection_Ready_Time__c}
+Close time at the collection address: {!Booking__c.Close_Time__c}
+Customer Reference: {!Booking__c.Customer_Reference__c}
+
+If you have any questions regarding your collection please call Domestic Customer Service on 0800 100 600 quoting your booking reference number {!Booking__c.Name}.
+
+For more information on all TNT services including tracking your consignment, please visit www.tnt.co.uk.
+
+Yours sincerely,
+
+TNT Domestic Customer Service</textOnly>
+    <type>html</type>
+</EmailTemplate>

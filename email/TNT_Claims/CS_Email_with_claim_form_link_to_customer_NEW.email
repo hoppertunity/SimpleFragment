@@ -1,0 +1,41 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p style="font-family: 'Times New Roman'; font-size: medium;"><span style="COLOR: red">*Please do not reply to this e-mail**</span>&nbsp;- Should you 
+have any enquiries or should you require any assistance in completing the claim 
+form please respond to&nbsp;<a href="https://c.cs18.content.force.com/email/templaterenderer?id=00X11000000DsFl&amp;base_href=https%3A%2F%2Fcs18.salesforce.com&amp;preview_frame=previewFrame&amp;render_type=REPLACED_HTML_BODY&amp;setupid=CommunicationTemplatesEmail#">uk.claims.info@tnt.com</a></p>
+<p style="font-family: 'Times New Roman'; font-size: medium;"><br></p>
+<p style="font-family: 'Times New Roman'; font-size: medium;">Thank you for your 
+recent enquiry in respect of the above consignment.</p>
+<p style="font-family: 'Times New Roman'; font-size: medium;"><br></p>
+<p style="font-family: 'Times New Roman'; font-size: medium;">Further to our 
+recent telephone conversation please find enclosed a TNT claim form for 
+completion. I would be grateful if you could provide as much information as 
+possible when completing the claim form, in particular information relating to 
+the description of the goods. Any additional paperwork, e.g. invoices, brochures 
+etc can be returned by separate e-mail to&nbsp;<a href="https://c.cs18.content.force.com/email/templaterenderer?id=00X11000000DsFl&amp;base_href=https%3A%2F%2Fcs18.salesforce.com&amp;preview_frame=previewFrame&amp;render_type=REPLACED_HTML_BODY&amp;setupid=CommunicationTemplatesEmail#">uk.claims.info@tnt.com</a>. 
+Please ensure that you quote the TNT reference number when sending additional 
+information or attachments.</p>
+<p style="font-family: 'Times New Roman'; font-size: medium;"><br></p>
+<p style="font-family: 'Times New Roman'; font-size: medium;">Please return your 
+completed form to our Central Claims Team who will contact you if they require 
+any additional information. Whilst initial enquiries have been completed the 
+Central Claims Department will complete further investigations with regards to 
+your claim. The majority of claims are processed within 15 working days of 
+receipt; however some claims may take longer depending on the circumstances of 
+the loss / damage. Please note that your claim form must be returned within 21 
+days of the date of issue to comply with the time limits as stipulated in our 
+terms and conditions of carriage. TNT reserves the right to reject any claims 
+that are not submitted within this time limit.</p>
+<p style="font-family: 'Times New Roman'; font-size: medium;"><br></p>
+<p style="font-family: 'Times New Roman'; font-size: medium;">Please click the 
+link below to complete the claim details and select the 'Click to Submit’ option 
+at the bottom of the form to return it to TNT.</p>
+<p style="font-family: 'Times New Roman'; font-size: medium;"><br></p><span style="font-family: 'Times New Roman'; font-size: medium;"><a style="FONT-SIZE: 12pt" href="https://cs18.salesforce.com/p/email/template/EmailTemplateEditorUi/{!$Setup.CS_TNT_Claims__c.Site_URL__c}/cs_claims_form_page?cid={!CS_Claims__c.Id}">Click here to open the 
+Claim Form.</a></span><div><br></div><div><a href="{!$Setup.CS_TNT_Claims__c.Site_URL__c}/cs_claims_form_page">Click2</a><br><div><br></div><div><br><div style="font-family: arial; font-size: 12pt;"><div style="font-family: arial; font-size: 12pt;"><div><br><span style="FONT-FAMILY: 'Times New Roman'; FONT-SIZE: medium"></span>
+<p style="FONT-FAMILY: 'Times New Roman'; FONT-SIZE: medium">Kind regards,</p>
+<p style="FONT-FAMILY: 'Times New Roman'; FONT-SIZE: medium"><br></p>
+<p style="FONT-FAMILY: 'Times New Roman'; FONT-SIZE: medium">TNT Customer 
+Service Support Team</p></div></div></div></div></div>]]></td>
+</tr>
+</table>

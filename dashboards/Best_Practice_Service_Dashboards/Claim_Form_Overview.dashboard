@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <displayUnits>Integer</displayUnits>
+            <header>Current Workload</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Claim Forms Created MTD</metricLabel>
+            <report>Best_Practice_Service_Reports/Claim_Forms_Created_MTD</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>Best_Practice_Service_Reports/Claim_Forms_Status_for_Those_Create_MTD</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Created MTD Claim Form Status</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>true</expandOthers>
+            <groupingColumn>CS_Claims__c.Claims_Stage__c</groupingColumn>
+            <legendPosition>Right</legendPosition>
+            <report>Best_Practice_Service_Reports/Open_Claim_Forms_by_Status</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Claim Forms by Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Line</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <groupingColumn>CUST_CREATED_DATE</groupingColumn>
+            <legendPosition>Bottom</legendPosition>
+            <report>Best_Practice_Service_Reports/Trend_of_Claim_Forms_Created</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Trend of Claim Form Creation</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>Only Showing the Top 15 Accounts on the Dashboard</footer>
+            <header>Things to Review</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <maxValuesDisplayed>15</maxValuesDisplayed>
+            <report>Best_Practice_Service_Reports/Top_Customers_by_Open_Claim_Forms</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Top Customers by Open Claim Forms</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Grouped by current Claim Stage</footer>
+            <groupingColumn>CUST_CREATED_DATE</groupingColumn>
+            <groupingColumn>CS_Claims__c.Claims_Stage__c</groupingColumn>
+            <legendPosition>Right</legendPosition>
+            <report>Best_Practice_Service_Reports/Claim_Form_Stage_by_Created_Month</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Open Claim Forms by Created Date</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <footer>Shows Top 30 Agents</footer>
+            <header>Things to Review</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <maxValuesDisplayed>30</maxValuesDisplayed>
+            <report>Best_Practice_Service_Reports/Open_Claim_Forms_by_Agent</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Agents with Most Open Claim Forms</title>
+        </components>
+    </rightSection>
+    <runningUser>kishan.patel@tnt.co.uk</runningUser>
+    <textColor>#000000</textColor>
+    <title>Claim Form Overview</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

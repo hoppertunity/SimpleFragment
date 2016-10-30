@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_40469798</developerName>
+        <masterLabel>Site</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>User$UserRole</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Ath FL CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath Support CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath FL 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ath MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <value>Atherstone</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lount FL 1 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 4 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 5 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Fashion CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount MAD 3 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount FL 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lount Support 2 Team Lead</sourceValue>
+            </sourceValues>
+            <value>Lount</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Manchester MAD 1 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester MAD 2 CSR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester MAD 2 Team Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manchester Support CSR</sourceValue>
+            </sourceValues>
+            <value>Manchester</value>
+        </values>
+        <values>
+            <value>Mauritius</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Name</field>
+    </columns>
+    <columns>
+        <field>User$Account</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Recipient_Contact_Name__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$TNT_account_no__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Contact__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Sender_Contact_Name__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Sender_Email_Address__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Depot__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$Claims_Stage__c</field>
+    </columns>
+    <columns>
+        <field>User.CS_Claims__c$OwnerId$CreatedDate</field>
+    </columns>
+    <description>Grouped by Site based on User Role</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_40469798</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$UserRole</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.CS_Claims__c$OwnerId$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Claims by Site Last Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_with_Claims__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.CS_Claims__c$OwnerId$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Service --></label>
+        <name>Premium_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ranking --></label>
+        <name>Ranking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing Service Group --></label>
+        <name>Routing_Service_Group__c</name>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Saturday Collection --></label>
+        <name>Saturday_Collection__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Service --></label>
+        <name>Saturday_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Code --></label>
+        <name>Service_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Days --></label>
+        <name>Service_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Hour --></label>
+        <name>Service_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Minutes --></label>
+        <name>Service_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Time --></label>
+        <name>Service_Time__c</name>
+    </fields>
+    <layouts>
+        <layout>Service Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>TNT Service Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

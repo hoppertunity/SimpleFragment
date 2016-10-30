@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>22.0</apiVersion>
+    <available>true</available>
+    <description>Sending the confirmation mail to customer with form as read only link</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CS Confirmation to customer</name>
+    <style>none</style>
+    <subject>TNT Claim Submitted. Claim Reference no: Consignment no:</subject>
+    <type>visualforce</type>
+</EmailTemplate>

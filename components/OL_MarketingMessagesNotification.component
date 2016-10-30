@@ -1,0 +1,8 @@
+<apex:component controller="OL_MarketingMessagesController" >
+	<apex:attribute name="contactId" assignTo="{!compContactId}" type="Id" description="Id of the contact object"/>
+
+	{!init}
+	
+	<c:NotificationContainer messageText="{!marketingMessageElement}" mainColour="#F88017" rendered="{!hasMarketingMessages}"/>
+	
+</apex:component>

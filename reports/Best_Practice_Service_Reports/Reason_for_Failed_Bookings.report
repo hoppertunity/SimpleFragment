@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Booking__c$Name</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Booking_History_Records__r$Name</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Booking_History_Records__r$Collection_Comments__c</field>
+    </columns>
+    <description>For Dave Allridge</description>
+    <filter>
+        <criteriaItems>
+            <column>Booking__c$Collection_Ready_Time__c</column>
+            <operator>greaterThan</operator>
+            <value>YESTERDAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Booking__c$Collection_Ready_Time__c</column>
+            <operator>lessThan</operator>
+            <value>TOMORROW</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Booking__c.Booking_History_Records__r$Depot__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Booking__c.Booking_History_Records__r$Movement_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Booking__c.Booking_History_Records__r$Movement_Sub_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Reason for Failed Bookings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Bookings_with_Booking_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Booking__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST7</interval>
+    </timeFrameFilter>
+</Report>

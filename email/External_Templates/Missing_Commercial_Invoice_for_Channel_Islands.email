@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div><font face="arial">Hi&nbsp;{!Contact.FirstName}</font></div><div><font face="arial"><br></font></div><div><font face="arial">I am emailing in relation to consignment number&nbsp;{!Case.Consignment_Number__c}</font><span style="font-family: arial;">&nbsp;that is going to the Channel Islands.</span></div><div><font face="arial"><br></font></div><div><font face="arial">The consignment has been held at our depot as the goods need a commercial invoice for Customs purposes. Please can you provide this to us by return email.</font></div><div><font face="arial"><br></font></div><div><div style="font-family: arial; font-size: 12pt;"><span style="background-color: rgb(255, 255, 255);">Yours sincerely,</span></div><div style="font-family: arial; font-size: 12pt;"><span style="background-color: rgb(255, 255, 255);"><br></span></div><div style="font-family: arial; font-size: 12pt;"><font face="arial">TNT Domestic Customer Service</font></div></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Case.Consignment_Number__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>CONTACT.NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>equals</operator>
+            <value>sarah scaysbrook,laura holliday,julie brown,hannah nicholls</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Hilti Case Report</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

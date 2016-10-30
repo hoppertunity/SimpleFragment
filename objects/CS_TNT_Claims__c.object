@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Check_list_opt_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Check list opt 1</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_list_opt_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Check list opt 2</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_list_opt_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Check list opt 3</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_list_opt_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Check list opt 4</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claims_damaged_section_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Claims damaged section Title</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claims_postal_address__c</fullName>
+        <externalId>false</externalId>
+        <label>Claims postal address</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Claims_type_details_section_content__c</fullName>
+        <externalId>false</externalId>
+        <label>Claims type details section Content</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Claims_type_details_section_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Claims type details section Title</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claims_type_fieldset_label__c</fullName>
+        <externalId>false</externalId>
+        <label>Claims type fieldset label</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_value_of_consignment_label__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost value of consignment label</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_value_of_items_label__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost value of items label</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Declaration_section_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Declaration section Title</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Id</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Fax_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Header__c</fullName>
+        <externalId>false</externalId>
+        <label>Header</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Method_of_payment_fieldset_label__c</fullName>
+        <externalId>false</externalId>
+        <label>Method of payment fieldset label</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient_Section_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Recipient Section  Title</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Replacement_consignment_no_Label__c</fullName>
+        <externalId>false</externalId>
+        <label>Replacement consignment no Label</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Sender_section_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Sender section Title</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Site URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Telephone__c</fullName>
+        <externalId>false</externalId>
+        <label>Telephone</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>damaged_items_inspection_label__c</fullName>
+        <externalId>false</externalId>
+        <label>damaged items inspection Label</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>TNT UK Claims</label>
+</CustomObject>

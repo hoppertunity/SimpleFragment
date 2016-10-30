@@ -1,0 +1,9 @@
+<apex:page standardController="Quote__c">
+	<apex:pageblock >
+		<apex:pageBlockTable value="{!Quote__c.Quote_Line_Items__r}" var="qi">
+			<apex:repeat value="{!$ObjectType.Quote_Line_Item__c.FieldSets.EditFields}" var="f" >
+            	<apex:column value="{!qi[f]}"/>
+            </apex:repeat>
+		</apex:pageBlockTable>
+	</apex:pageblock>
+</apex:page>

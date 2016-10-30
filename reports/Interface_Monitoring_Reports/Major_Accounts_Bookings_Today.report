@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Booking__c.Collection_Ready_Time__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Major_Account__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Account.Major_Account__c</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Account.Account_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Major Accounts Bookings Today</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Booking__c@Booking__c.Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Booking__c.Collection_Ready_Time__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

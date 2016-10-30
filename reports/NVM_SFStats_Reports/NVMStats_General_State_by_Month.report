@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_91407517</developerName>
+        <masterLabel>General State</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Last_State__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Agent Handled</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CCR Handled</sourceValue>
+            </sourceValues>
+            <value>A- Handled</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Automation Abandoned</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Queue Abandoned</sourceValue>
+            </sourceValues>
+            <value>B-Abandoned</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Outbound Call</sourceValue>
+            </sourceValues>
+            <value>C-Outbound</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Message Taken (A)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Message Taken (Q)</sourceValue>
+            </sourceValues>
+            <value>D-Message Taken</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnGrouped</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Month_of_Year__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_91407517</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$Name</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Last_State__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Queue_Duration__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__NVM_AgentID__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Agent_Talk_Time__c</field>
+    </columns>
+    <columns>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__After_Call_Work_Time__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__EndRecorded__c</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_91407517</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Month_of_Year__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Queue_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>NVMStats General State by Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>NVM_Stats_Call_Summaries__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>NVMStatsSF__NVM_Call_Summary__c$NVMStatsSF__Date__c</dateColumn>
+        <interval>INTERVAL_PREVCURY</interval>
+    </timeFrameFilter>
+</Report>
